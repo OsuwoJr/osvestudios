@@ -2,11 +2,11 @@
     import Button from "./Button.svelte";
     export let y;
     let tabs = [
-        { name: "Artists", link: "#artists" },
-        { name: "Beats/Instrumentals", link: "#beats" },
+        { name: "Artists", link: "/artists" },
+        { name: "Beats/Instrumentals", link: "/beats" },
         { name: "Music", link: "/music" },
         { name: "Merch", link: "/merch" },
-        { name: "The Movement", link: "#movement" },
+        { name: "The Troublers", link: "/troublers" },
         { name: "Join Us", link: "/join" }
     ];
     
@@ -46,7 +46,7 @@
         </button>
 
         <!-- Call to Action Buttons -->
-        <Button text="Troublers!" phone="+254790932575" />
+        <Button text="OSVE STUDIOS" phone="+254790932575" />
         
 
         <!-- Mobile Menu Button -->
