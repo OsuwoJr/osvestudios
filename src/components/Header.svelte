@@ -6,8 +6,10 @@
         { name: "Beats/Instrumentals", link: "/beats" },
         { name: "Music", link: "/music" },
         { name: "Merch", link: "/merch" },
+        { name: "Join Us", link: "/join" },
+        {name: "Blog", link: "/Blog" },
         { name: "The Troublers", link: "/troublers" },
-        { name: "Join Us", link: "/join" }
+        
     ];
     
     let menuOpen = false;
@@ -19,11 +21,12 @@
     <!-- Logo -->
     <a href="/" class="text-white font-medium text-xl flex items-center">
         <img src="/logo.png" alt="KenyanTroublers Logo" class="h-10 w-10 mr-2" />
-        the<b class="font-extrabold text-[#81C14B]">KenyanTroublers</b>
+
+      <div class="sm:hidden lg:flex ">the<b class="font-extrabold text-[#81C14B]">KenyanTroublers</b></div>  
     </a>
 
     <!-- Desktop Navigation -->
-    <nav class="hidden sm:flex ml-auto pr-4 items-center gap-6">
+    <nav class="hidden lg:flex ml-auto pr-4 items-center gap-6">
         {#each tabs as tab}
             <a href={tab.link} 
                class="text-white text-lg transition-all duration-300 hover:text-[#81C14B] relative group">
@@ -34,7 +37,7 @@
     </nav>
 
     <!-- Right Section (Buttons + Icons) -->
-    <div class="flex items-center gap-4">
+    <div class="flex sm:text-sm items-center gap-4">
         <!-- Music Player Icon -->
         <button class="relative w-10 h-10 flex items-center justify-center rounded-full bg-[#81C14B] hover:bg-[#6A9A52] transition-all duration-300">
             🎵 <!-- Placeholder icon -->
@@ -46,11 +49,11 @@
         </button>
 
         <!-- Call to Action Buttons -->
-        <Button text="OSVE STUDIOS" phone="+254790932575" />
+        <Button  text="OSVE STUDIOS" phone="+254790932575" />
         
 
         <!-- Mobile Menu Button -->
-        <button class="sm:hidden block text-white text-2xl" on:click={() => menuOpen = !menuOpen}>
+        <button class=" lg:hidden block text-white text-2xl" on:click={() => menuOpen = !menuOpen}>
             ☰
         </button>
     </div>
