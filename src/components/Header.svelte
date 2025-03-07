@@ -6,7 +6,6 @@
         { name: "Beats/Instrumentals", link: "/beats" },
         { name: "Music", link: "/music" },
         { name: "Merch", link: "/merch" },
-        { name: "Join Us", link: "/join" },
         {name: "Blog", link: "/Blog" },
         { name: "The Troublers", link: "/troublers" },
         
@@ -22,7 +21,7 @@
     <a href="/" class="text-white font-medium text-xl flex items-center">
         <img src="/logo.png" alt="KenyanTroublers Logo" class="h-10 w-10 mr-2" />
 
-      <div class="sm:hidden lg:flex ">the<b class="font-extrabold text-[#81C14B]">KenyanTroublers</b></div>  
+      <div class="hidden md:flex ">the<b class="font-extrabold text-[#81C14B]">KenyanTroublers</b></div>  
     </a>
 
     <!-- Desktop Navigation -->
