@@ -1,9 +1,8 @@
-<script>
-    export let className = "";
-  </script>
-  
-  <svg class={className} width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="3" y="8" width="18" height="10" stroke="white" stroke-width="2"/>
-    <path d="M7 8V18M11 8V18M15 8V18" stroke="white" stroke-width="2"/>
-  </svg>
-  
+<script lang="ts">
+	export let width = "40";
+	export let height = "40";
+</script>
+
+<svg {...$$props} width={width} height={height} viewBox="0 0 24 24">
+	<path d="M4 3v18h16V3H4zm6 16H6V5h4v14zm2 0V5h4v14h-4zm6 0h-2V5h2v14z"/>
+</svg>
