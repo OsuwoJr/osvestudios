@@ -6,14 +6,13 @@
     import StreetTalent from "../components/StreetTalent.svelte";
   
     let featuredArtists = [
-        { name: "Artist 1", img: "/artist1.jpg" },
-        { name: "Artist 2", img: "/artist2.jpg" },
-        { name: "Artist 3", img: "/artist3.jpg" }
+        { name: "OsuwoJr", img: "/OsuwoJr.png" },
+       
     ];
     
     let latestReleases = [
-        { title: "Track 1", img: "/track1.jpg" },
-        { title: "Track 2", img: "/track2.jpg" }
+        { title: "Forbidden", img: "/Forbidden.png" },
+        
     ];
   </script>
   
