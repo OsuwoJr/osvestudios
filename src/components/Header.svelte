@@ -59,7 +59,7 @@
 
     <!-- Mobile Menu Overlay -->
     {#if menuOpen}
-        <div class="fixed inset-0 bg-black/90 backdrop-blur-lg z-40 flex flex-col items-center justify-center text-white space-y-6 text-xl">
+        <div class="fixed inset-0 bg-black/90 backdrop-blur-lg z-40 flex flex-col items-center justify-center text-white hover:text-[#81C14B] space-y-6 text-xl">
             {#each tabs as tab}
                 <a href={tab.link} class="hover:text-[#81C14B] transition-all duration-300" on:click={() => menuOpen = false}>
                     {tab.name}

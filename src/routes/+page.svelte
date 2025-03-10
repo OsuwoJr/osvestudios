@@ -7,11 +7,14 @@
   
     let featuredArtists = [
         { name: "OsuwoJr", img: "/OsuwoJr.png" },
+        {name:"theKenyanTroublers", img:"/10.jpeg" },
        
     ];
     
     let latestReleases = [
-        { title: "Forbidden", img: "/Forbidden.png" },
+        { title: "Forbidden Abum-OsuwoJr", img: "/Forbidden.png" },
+        {title:"Plan-OsuwoJr",img:"/plan.jpg"},
+        {title:"Troublers Arise Album-theKenyanTroublers", img:"/11.jpeg"}
         
     ];
   </script>
