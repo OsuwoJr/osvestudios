@@ -14,7 +14,7 @@
     let latestReleases = [
         { title: "Forbidden Abum-OsuwoJr", img: "/Forbidden.png" },
         {title:"Plan-OsuwoJr",img:"/plan.jpg"},
-        {title:"Troublers Arise Album-theKenyanTroublers", img:"/11.jpeg"}
+        {title:"Troublers Arise Album-theKenyanTroublers", img:"/forbidden2.png"}
         
     ];
   </script>

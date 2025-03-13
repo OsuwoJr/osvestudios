@@ -20,8 +20,11 @@
     <!-- Logo -->
     <a href="/" class="text-white font-medium text-xl flex items-center">
         <img src="/logo.png" alt="KenyanTroublers Logo" class="h-10 w-10 mr-2" />
-
-      <div class="hidden md:flex ">the<b class="font-extrabold text-[#81C14B]">KenyanTroublers</b></div>  
+     <div class="hidden md:flex font-bold text-2xl tracking-tighter">
+         <span class="text-white">the</span>
+         <span class="text-[#81C14B] ml-1.5">Kenyan</span>
+         <span class="text-white">Troublers</span>
+       </div>
     </a>
 
     <!-- Desktop Navigation -->
@@ -58,14 +61,29 @@
     </div>
 
     <!-- Mobile Menu Overlay -->
-    {#if menuOpen}
-        <div class="fixed inset-0 bg-black/90 backdrop-blur-lg z-40 flex flex-col items-center justify-center text-white hover:text-[#81C14B] space-y-6 text-xl">
-            {#each tabs as tab}
-                <a href={tab.link} class="hover:text-[#81C14B] transition-all duration-300" on:click={() => menuOpen = false}>
-                    {tab.name}
-                </a>
-            {/each}
-            <button class="text-3xl absolute top-6 right-6" on:click={() => menuOpen = false}>✖</button>
-        </div>
-    {/if}
+  {#if menuOpen}
+  <div 
+    class="fixed inset-0 bg-black/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center space-y-8 text-2xl"
+    role="dialog"
+    aria-label="Mobile menu"
+  >
+    {#each tabs as tab}
+      <a 
+        href={tab.link} 
+        class="text-white/90 hover:text-[#81C14B] transition-all duration-300 hover:scale-105"
+        on:click={() => menuOpen = false}
+      >
+        {tab.name}
+      </a>
+    {/each}
+    
+    <!-- Modern close button -->
+    <button 
+      class="absolute top-8 right-8 p-2 hover:text-[#81C14B] transition-transform hover:rotate-90 duration-500"
+      on:click={() => menuOpen = false}
+    >
+      ✕ <!-- Styled X -->
+    </button>
+  </div>
+{/if}
 </header>
