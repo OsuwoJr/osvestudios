@@ -6,7 +6,7 @@
     import VideoShowcase from "../../components/ArtistVideoShowcase.svelte";
     import ArtistApplication from "../../components/ArtistApplication.svelte";
     import FanComments from "../../components/ArtistFanComments.svelte";
-    import NewsletterSignup from "../../components/ArtistNewsletter.svelte";
+   
 </script>
 
 <div class="artists-page">
@@ -17,7 +17,7 @@
     <VideoShowcase />
     <ArtistApplication />
     <FanComments />
-    <NewsletterSignup />
+    
 </div>
 
 <style>

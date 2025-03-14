@@ -1,11 +1,11 @@
 <script lang="ts">
     export let artists = [
-        { name: "Artist One", genre: "Afrobeat", image: "/artist1.jpg", link: "/artists/artist-one" },
-        { name: "Artist Two", genre: "Hip-Hop", image: "/artist2.jpg", link: "/artists/artist-two" }
+        { name: "OsuwoJr", genre: "Alternative-Indie", image: "/OsuwoJr.png", link: "/artists/OsuwoJr.png" },
+        { name: "theKenyanTroublers", genre: "Versatile", image: "/10.jpeg", link: "/artists/10.jpeg" }
     ];
 </script>
 
-<section id="featured-artists" class="grid">
+<section id="featured-artists" class="grid ">
     {#each artists as artist}
         <a href={artist.link} class="artist-card">
             <img src={artist.image} alt={artist.name} />

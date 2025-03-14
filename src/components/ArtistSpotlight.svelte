@@ -1,5 +1,5 @@
 <script lang="ts">
-    export let spotlightArtist = { name: "Artist Spotlight", bio: "This is the featured artist.", image: "/spotlight.jpg" };
+    export let spotlightArtist = { name: "OsuwoJr", bio: "OsuwoJr Is Multigenre-mltilingual artist,musician and a producer", image: "/OsuwoJr.png" };
 </script>
 
 <section class="spotlight">

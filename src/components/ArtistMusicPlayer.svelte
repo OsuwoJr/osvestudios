@@ -1,5 +1,5 @@
 <script lang="ts">
-    export let track = { title: "Hit Song", artist: "Artist", src: "/track.mp3" };
+    export let track = { title: "Hit Song", artist: "Artist", src: "/1. ONE DAY.wav" };
 </script>
 
 <audio controls>
