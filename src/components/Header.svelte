@@ -6,7 +6,7 @@
         { name: "Beats/Instrumentals", link: "/beats" },
         { name: "Music", link: "/music" },
         { name: "Merch", link: "/merch" },
-        {name: "Blog", link: "/Blog" },
+        {name: "Blog", link: "/blog" },
         { name: "The Troublers", link: "/troublers" },
         
     ];
