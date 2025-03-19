@@ -1,4 +1,5 @@
 <script lang="ts">
+    import "@fortawesome/fontawesome-free/css/all.min.css";
     import Hero from "../components/Hero.svelte";
     import About from "../components/About.svelte";
     import FeaturedArtists from "../components/FeaturedArtists.svelte";
