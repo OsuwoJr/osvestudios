@@ -1,7 +1,6 @@
 <script lang="ts">
     import "@fortawesome/fontawesome-free/css/all.min.css";
-    import Hero from "../components/Hero.svelte";
-    import About from "../components/About.svelte";
+    import Hero from "../components/Hero.svelte";    
     import FeaturedArtists from "../components/FeaturedArtists.svelte";
     import LatestReleases from "../components/LatestReleases.svelte";
     import StreetTalent from "../components/StreetTalent.svelte";
@@ -22,7 +21,7 @@
   
   <main class="text-white min-h-screen">
       <Hero />
-      <About />
+      <!-- <About /> -->
       <FeaturedArtists {featuredArtists} />
       <LatestReleases {latestReleases} />
       <StreetTalent />
