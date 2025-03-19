@@ -20,7 +20,7 @@
     ];
   </script>
   
-  <main class="bg-black text-white min-h-screen">
+  <main class="text-white min-h-screen">
       <Hero />
       <About />
       <FeaturedArtists {featuredArtists} />
