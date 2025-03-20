@@ -15,7 +15,7 @@
 </script>
 
 <section class="featured-artists">
-    <h2 class="section-title">✨ Featured Artists ✨</h2>
+    <h2 class="section-title">Featured Artists </h2>
 
     <!-- Floating Music Particles -->
     <div class="floating-icons">
@@ -83,8 +83,7 @@
 .section-title {
     font-size: 2.8rem;
     font-weight: bold;
-    color: #81C14B;
-    text-shadow: 0 0 15px #81C14B;
+    color: #81C14B;    
     margin-bottom: 40px;
     position: relative;
     z-index: 2;
