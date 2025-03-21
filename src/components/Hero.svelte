@@ -12,8 +12,8 @@
           target="_blank" 
           rel="noopener noreferrer"
           aria-label="Listen to TheKenyanTroublers on Spotify">
-   🎵 Explore Music
-</a>
+         🎵 Explore Music
+       </a>
 
     </div>
 </section>

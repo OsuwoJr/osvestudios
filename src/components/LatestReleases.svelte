@@ -15,7 +15,19 @@
 </script>
 
 <section class="latest-releases">
-    <h2 class="title">Latest Releases</h2>
+    <h2 class="title">Latest <span class="highlight">Releases</span></h2>
+
+    <!-- Floating Music Particles -->
+    <div class="floating-icons">
+        {#each Array(50) as _, i}
+            <i class="fas fa-music floating" style="
+                left: {Math.random() * 100}vw; 
+                top: {Math.random() * 100}vh; 
+                animation-duration: {Math.random() * 8 + 5}s;
+                font-size: {Math.random() * 25 + 15}px;">
+            </i>
+        {/each}
+    </div>
 
     <div class="release-grid">
         {#each latestReleases as release}
@@ -31,7 +43,7 @@
         {/each}
     </div>
 
-    <!-- Audio Preview Player (Supports MP3 & Spotify) -->
+    <!-- Audio Preview Player (MP3 & Spotify) -->
     {#if currentTrack}
         <div class="audio-player">
             {#if isSpotify}
@@ -61,13 +73,41 @@
     text-align: center;
     color: white;
     overflow: hidden;
-    background: transparent; /* ✅ Fully Transparent Background */
+    background: transparent;
+}
+
+/* Floating Music Particles */
+.floating-icons {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.floating {
+    position: absolute;
+    color: rgba(129, 193, 75, 0.5);
+    animation: float 8s infinite ease-in-out alternate;
+    text-shadow: 0 0 10px rgba(129, 193, 75, 0.8);
+}
+
+@keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); opacity: 0.6; }
+    50% { transform: translateY(-20px) rotate(10deg); opacity: 1; }
+    100% { transform: translateY(0px) rotate(0deg); opacity: 0.6; }
 }
 
 /* Title */
 .title {
     font-size: 3rem;
     font-weight: bold;
+    position: relative;
+    z-index: 2;
+}
+
+/* Highlight Text */
+.highlight {
+    color: #81C14B;
 }
 
 /* Releases Grid */
@@ -77,6 +117,8 @@
     justify-content: center;
     gap: 20px;
     margin-top: 30px;
+    position: relative;
+    z-index: 2;
 }
 
 /* Album Card with 3D Flip */
@@ -139,6 +181,8 @@
 /* Audio Player */
 .audio-player {
     margin-top: 20px;
+    position: relative;
+    z-index: 2;
 }
 
 audio {
@@ -153,5 +197,17 @@ iframe {
     max-width: 400px;
     box-shadow: 0 0 10px #81C14B;
     border-radius: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .release-card {
+        width: 140px;
+        height: 140px;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
 }
 </style>

@@ -3,11 +3,8 @@
     export let subtitle = "Discover the most talented artists signed under TheKenyanTroublers.";
 </script>
 
-<section class="hero">
-    <video autoplay muted loop class="background-video">
-        <source src="/hero-bg.mp4" type="video/mp4" />
-    </video>
-    <div class="overlay">
+<section class="hero">   
+    <div class="content">
         <h1 class="title">{title}</h1>
         <p class="subtitle">{subtitle}</p>
         <div class="buttons">
@@ -20,33 +17,24 @@
 <style>
 .hero {
     position: relative;
-    height: 80vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: white;
     overflow: hidden;
+    color: white;
 }
 
-/* Background Video Styling */
-.background-video {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(50%);
-}
-
-/* Overlay Styling */
-.overlay {
+/* Main Content */
+.content {
     position: relative;
     z-index: 2;
-    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
-    padding: 2rem;
-    border-radius: 12px;
-    backdrop-filter: blur(5px);
-    max-width: 80%;
+    text-align: center;
+    padding: 20px;
+    backdrop-filter: blur(2px); /* Adds slight blur for readability */
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.027); /* Transparent black for better contrast */
 }
 
 /* Title Styling */

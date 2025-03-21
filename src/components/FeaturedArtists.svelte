@@ -19,7 +19,7 @@
 
     <!-- Floating Music Particles -->
     <div class="floating-icons">
-        {#each Array(10) as _, i}
+        {#each Array(50) as _, i}  <!-- ✅ Increased from 10 to 13 -->
             <i class="fas fa-music floating" style="
                 left: {Math.random() * 100}vw; 
                 top: {Math.random() * 100}vh; 
@@ -58,6 +58,7 @@
 .featured-artists {
     padding: 80px 20px;
     text-align: center;
+    overflow:hidden;
     position: relative;
 }
 

@@ -15,7 +15,6 @@
         { title: "Drill", src: "/beats/2.DRILL.mp3" },
         { title: "Trap", src: "/beats/3.TRAP.mp3" },
         { title: "Dancehall", src: "/beats/4.DANCEHALL.mp3" },
-        
     ];
 
     // Google Maps Embed URL (Replace with your real location)
@@ -23,6 +22,7 @@
 
     // Play preview beat
     let currentTrack: HTMLAudioElement | null = null;
+   
     function playPreview(src: string) {
         if (currentTrack) {
             currentTrack.pause();
@@ -32,10 +32,23 @@
     }
 </script>
 
-<section class="py-20 px-6 text-center relative">
+<section class="street-talent">
     <h2 class="section-title">🔥 The Troublers Street Talent</h2>
     <p class="mt-4 text-lg">Discover and support the raw talents of Nairobi’s streets.</p>
-    <Button text="Join Us" />
+    <Button text="Join Us" link="https://wa.me/254790932575" />
+
+
+    <!-- Floating Music Notes -->
+    <div class="floating-icons">
+        {#each Array(50) as _, i}
+            <i class="fas fa-music floating" style="
+                left: {Math.random() * 100}vw; 
+                top: {Math.random() * 100}vh; 
+                animation-duration: {Math.random() * 8 + 5}s;
+                font-size: {Math.random() * 25 + 15}px;">
+            </i>
+        {/each}
+    </div>
 
     <!-- 🎥 Dynamic Video Showcase -->
     <div class="video-grid mt-10">
@@ -59,14 +72,46 @@
 
     <!-- 📍 Live Location Map -->
     <div class="map-container mt-10">
-        <h3 class="text-2xl font-semibold  text-white">📍 Next Meetup Spot</h3>
+        <h3 class="text-2xl font-semibold text-white">📍 Next Meetup Spot</h3>
         
-        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8122244260076!2d36.81762417486731!3d-1.2867372987010328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d74ed34601%3A0x8d93c04b184dbe9e!2sCARDINAL%20OTUNGA%20PLAZA!5e0!3m2!1sen!2ske!4v1742399389073!5m2!1sen!2ske" width="600" height="450" style="border:0;" allowfullscreen={true} loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Google Maps - Cardinal Otunga Plaza"></iframe>
+        <iframe class="map" src={mapUrl} width="600" height="450" style="border:0;" allowfullscreen={true} loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Google Maps - Nairobi CBD"></iframe>
     </div>
 </section>
 
 <style>
-    .section-title {
+/* Floating Music Notes */
+.floating-icons {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.floating {
+    position: absolute;
+    color: rgba(129, 193, 75, 0.5);
+    animation: float 8s infinite ease-in-out alternate;
+    text-shadow: 0 0 10px rgba(129, 193, 75, 0.8);
+}
+
+@keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); opacity: 0.6; }
+    50% { transform: translateY(-20px) rotate(10deg); opacity: 1; }
+    100% { transform: translateY(0px) rotate(0deg); opacity: 0.6; }
+}
+
+/* Section Styling */
+.street-talent {
+    position: relative;
+    padding: 60px 20px;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    background: transparent;
+}
+
+/* Title Styling */
+.section-title {
     font-size: 2.8rem;
     font-weight: bold;
     color: #81C14B;    
@@ -75,21 +120,14 @@
     z-index: 2;
 }
 
-
-/* Section Styling */
-section {
-    color: white;
-    padding: 50px;
-    text-align: center;
-    border-radius: 10px;
-}
-
 /* 🎥 Video Showcase */
 .video-grid {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
+    position: relative;
+    z-index: 2;
 }
 
 .video-container {
@@ -120,6 +158,8 @@ section {
 /* 🎵 Beat Selection */
 .beat-section {
     text-align: center;
+    position: relative;
+    z-index: 2;
 }
 
 .beat-list {
@@ -154,9 +194,8 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
-
-
+    position: relative;
+    z-index: 2;
 }
 
 .map {
