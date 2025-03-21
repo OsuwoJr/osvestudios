@@ -15,7 +15,7 @@
 </script>
 
 <section class="featured-artists">
-    <h2 class="section-title">Featured Artists </h2>
+    <h2 class="section-title">Featured <span class="highlight" >Artists </span> </h2>
 
     <!-- Floating Music Particles -->
     <div class="floating-icons">
@@ -50,12 +50,15 @@
 
 <style>
 /* Featured Artists Section */
+.highlight {
+    color: #f3f3f3;
+    
+}
+
 .featured-artists {
     padding: 80px 20px;
     text-align: center;
     position: relative;
-    background: linear-gradient(135deg, #0a0a0a, #1c1c1c);
-    overflow: hidden;
 }
 
 /* Floating Music Particles */

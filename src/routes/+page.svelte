@@ -20,8 +20,7 @@
   </script>
   
   <main class="text-white min-h-screen">
-      <Hero />
-      <!-- <About /> -->
+      <Hero />      
       <FeaturedArtists {featuredArtists} />
       <LatestReleases {latestReleases} />
       <StreetTalent />

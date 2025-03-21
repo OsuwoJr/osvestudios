@@ -33,7 +33,7 @@
 </script>
 
 <section class="py-20 px-6 text-center relative">
-    <h2 class="text-3xl font-bold text-[#81C14B]">🔥 The Troublers Street Talent</h2>
+    <h2 class="section-title">🔥 The Troublers Street Talent</h2>
     <p class="mt-4 text-lg">Discover and support the raw talents of Nairobi’s streets.</p>
     <Button text="Join Us" />
 
@@ -66,9 +66,18 @@
 </section>
 
 <style>
+    .section-title {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #81C14B;    
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+
 /* Section Styling */
 section {
-    background: linear-gradient(135deg, #000000, #1a1a1a);
     color: white;
     padding: 50px;
     text-align: center;

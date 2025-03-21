@@ -29,7 +29,7 @@
     text-align: center;
     overflow: hidden;
     color: white;
-    background: transparent; /* Makes it fully transparent */
+    
 }
 
 /* Main Content */
@@ -38,9 +38,9 @@
     z-index: 2;
     text-align: center;
     padding: 20px;
-    backdrop-filter: blur(10px); /* Adds slight blur for readability */
+    backdrop-filter: blur(2px); /* Adds slight blur for readability */
     border-radius: 10px;
-    background: rgba(0, 0, 0, 0.3); /* Transparent black for better contrast */
+    background: rgba(0, 0, 0, 0.027); /* Transparent black for better contrast */
 }
 
 /* Title & Button */

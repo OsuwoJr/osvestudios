@@ -4,9 +4,6 @@
     let currentTrack: { title: string; img: string; preview?: string; spotify?: string } | null = null;
     let isSpotify = false;
 
-// Removed duplicate declaration of latestReleases
-
-
     function playPreview(release: { title: string; img: string; preview?: string; spotify?: string }) {
         if (currentTrack === release) {
             currentTrack = null; // Pause if clicking the same track
@@ -60,36 +57,17 @@
 /* Latest Releases Section */
 .latest-releases {
     position: relative;
-    background: black;
     padding: 60px 20px;
     text-align: center;
     color: white;
     overflow: hidden;
-}
-
-/* Background Waveform Effect */
-.latest-releases::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('/waveform.gif') repeat-x;
-    opacity: 0.2;
-    animation: moveWave 8s linear infinite;
-}
-
-@keyframes moveWave {
-    from { background-position: 0 0; }
-    to { background-position: -1000px 0; }
+    background: transparent; /* ✅ Fully Transparent Background */
 }
 
 /* Title */
 .title {
     font-size: 3rem;
     font-weight: bold;
-    text-shadow: 0 0 15px #81C14B;
 }
 
 /* Releases Grid */
