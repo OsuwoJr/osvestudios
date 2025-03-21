@@ -156,8 +156,7 @@
 .artist-name {
     color: white;
     font-weight: bold;
-    font-size: 1.2rem;
-    text-transform: uppercase;
+    font-size: 1.2rem;    
     opacity: 0;
     transition: opacity 0.3s ease;
 }
