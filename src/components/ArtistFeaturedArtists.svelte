@@ -6,6 +6,18 @@
 </script>
 
 <section id="featured-artists" class="artist-section">
+    <!-- Floating Music Particles -->
+    <div class="floating-icons">
+        {#each Array(50) as _, i}
+            <i class="fas fa-music floating" style="
+                left: {Math.random() * 100}vw; 
+                top: {Math.random() * 100}vh; 
+                animation-duration: {Math.random() * 8 + 5}s;
+                font-size: {Math.random() * 25 + 15}px;">
+            </i>
+        {/each}
+    </div>
+
     <h2 class="section-title">🎤 Meet Our Artists</h2>
     <p class="section-subtitle">The rising stars redefining music under <b>theKenyanTroublers</b>.</p>
 
@@ -27,12 +39,36 @@
 <style>
 /* Section Styling */
 .artist-section {
+    position: relative;
     text-align: center;
     padding: 60px 20px;
     color: white;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6));
     border-top: 2px solid #81C14B;
     border-bottom: 2px solid #81C14B;
+    overflow: hidden;
+}
+
+/* Floating Music Particles */
+.floating-icons {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.floating {
+    position: absolute;
+    color: rgba(129, 193, 75, 0.5);
+    animation: float 8s infinite ease-in-out alternate;
+    text-shadow: 0 0 10px rgba(129, 193, 75, 0.8);
+}
+
+@keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); opacity: 0.6; }
+    50% { transform: translateY(-20px) rotate(10deg); opacity: 1; }
+    100% { transform: translateY(0px) rotate(0deg); opacity: 0.6; }
 }
 
 /* Title & Subtitle */
@@ -45,12 +81,16 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 10px;
+    position: relative;
+    z-index: 2;
 }
 
 .section-subtitle {
     font-size: 1.2rem;
     opacity: 0.8;
     margin-bottom: 30px;
+    position: relative;
+    z-index: 2;
 }
 
 /* Grid Styling */
@@ -61,6 +101,8 @@
     padding: 0 20px;
     max-width: 1200px;
     margin: auto;
+    position: relative;
+    z-index: 2;
 }
 
 /* Artist Card */

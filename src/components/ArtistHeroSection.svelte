@@ -4,6 +4,19 @@
 </script>
 
 <section class="hero">   
+    <!-- Floating Music Particles -->
+    <div class="floating-icons">
+        {#each Array(50) as _, i}
+            <i class="fas fa-music floating" style="
+                left: {Math.random() * 100}vw; 
+                top: {Math.random() * 100}vh; 
+                animation-duration: {Math.random() * 8 + 5}s;
+                font-size: {Math.random() * 25 + 15}px;">
+            </i>
+        {/each}
+    </div>
+
+    <!-- Hero Content -->
     <div class="content">
         <h1 class="title">{title}</h1>
         <p class="subtitle">{subtitle}</p>
@@ -24,6 +37,27 @@
     text-align: center;
     overflow: hidden;
     color: white;
+}
+
+/* Floating Music Particles */
+.floating-icons {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.floating {
+    position: absolute;
+    color: rgba(129, 193, 75, 0.5);
+    animation: float 8s infinite ease-in-out alternate;
+    text-shadow: 0 0 10px rgba(129, 193, 75, 0.8);
+}
+
+@keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); opacity: 0.6; }
+    50% { transform: translateY(-20px) rotate(10deg); opacity: 1; }
+    100% { transform: translateY(0px) rotate(0deg); opacity: 0.6; }
 }
 
 /* Main Content */
