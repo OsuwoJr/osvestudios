@@ -13,7 +13,7 @@
 </script>
 
 <section class="beats-page">
-    <h1 class="title">🎼 Discover & Own the Sound of the Future</h1>
+    <h1 class="title">🎼 the Sound of the Future</h1>
     <BeatFilters />
 
     <div class="beats-grid">
@@ -36,9 +36,13 @@
 }
 
 .title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #81C14B;
+    font-size: 3.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #81C14B, #FFD700);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .beats-grid {

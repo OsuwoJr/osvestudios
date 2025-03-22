@@ -3,7 +3,7 @@
     export let y;
     let tabs = [
         { name: "Artists", link: "/artists" },
-        { name: "Beats/Instrumentals", link: "/beats" },
+        // { name: "Beats/Instrumentals", link: "/beats" },
         { name: "Music", link: "/music" },
         { name: "Merch", link: "/merch" },
         {name: "Blog", link: "/blog" },
