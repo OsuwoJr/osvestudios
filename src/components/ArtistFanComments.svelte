@@ -79,6 +79,7 @@
     color: white;
     max-width: 600px;
     margin: auto;
+    margin-bottom: 40px;
     overflow: hidden;
 }
 

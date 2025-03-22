@@ -1,7 +1,7 @@
 <script lang="ts">
     export let artists = [
-        { name: "OsuwoJr", genre: "Alternative-Indie", image: "/OsuwoJr.png", link: "/artists/OsuwoJr" },
-        { name: "theKenyanTroublers", genre: "Versatile", image: "/10.jpeg", link: "/artists/10" }
+        { name: "OsuwoJr", genre: "Alternative-Indie", image: "/OsuwoJr.png" },
+        { name: "theKenyanTroublers", genre: "Versatile", image: "/10.jpeg" }
     ];
 </script>
 
@@ -23,7 +23,7 @@
 
     <div class="grid">
         {#each artists as artist}
-            <a href={artist.link} class="artist-card">
+            <div class="artist-card">
                 <div class="artist-image-container">
                     <img src={artist.image} alt={artist.name} class="artist-image"/>
                 </div>
@@ -31,7 +31,7 @@
                     <h3>{artist.name}</h3>
                     <p>{artist.genre}</p>
                 </div>
-            </a>
+            </div>
         {/each}
     </div>
 </section>

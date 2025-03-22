@@ -22,7 +22,7 @@
         <p class="subtitle">{subtitle}</p>
         <div class="buttons">
             <a href="#featured-artists" class="cta-button">🚀 Explore Artists</a>
-            <a href="#apply" class="cta-button secondary">🌟 Join Us</a>
+            <a href="#ArtistApplication" class="cta-button secondary">🌟 Join Us</a>
         </div>
     </div>
 </section>

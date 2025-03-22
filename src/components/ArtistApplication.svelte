@@ -16,7 +16,7 @@
         {/each}
     </div>
 
-    <form class="apply-form">
+    <form  id="ArtistApplication"  class="apply-form">
         <h2>Join <span>theKenyanTroublers</span></h2>
 
         <input type="text" placeholder="Your Name" required />
@@ -38,6 +38,8 @@
     text-align: center;
     max-width: 500px;
     margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px; 
     overflow: hidden;
 }
 

@@ -6,8 +6,8 @@
     import StreetTalent from "../components/StreetTalent.svelte";
   
     let featuredArtists = [
-        { name: "OsuwoJr", img: "/OsuwoJr.png" },
-        {name:"theKenyanTroublers", img:"/10.jpeg" },
+        { name: "OsuwoJr", img: "/OsuwoJr.png", href: "https://linktr.ee/osuwojr" },
+        {name:"theKenyanTroublers", img:"/10.jpeg", href:"https://linktr.ee/thekenyantroublers"},
        
     ];
     
