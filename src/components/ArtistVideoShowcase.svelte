@@ -35,7 +35,6 @@
     align-items: center;
     padding: 40px 20px;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6));
-    border-top: 2px solid #81C14B;
     border-bottom: 2px solid #81C14B;
     overflow: hidden;
 }
