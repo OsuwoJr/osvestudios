@@ -1,8 +1,7 @@
 <script lang="ts">
     import HeroSection from "../../components/MusicHeroSection.svelte";
     import MusicCatalog from "../../components/MusicCatalogue.svelte";
-    import FloatingPlayer from "../../components/MusicFloatingPlayer.svelte";
-    import AIPlaylistGenerator from "../../components/MusicAIPlaylistGenerator.svelte";
+    import FloatingPlayer from "../../components/MusicFloatingPlayer.svelte";    
     import NFTMusicStore from "../../components/MusicNFTMusicStore.svelte";
 </script>
 
@@ -13,8 +12,7 @@
     <!-- Music Catalog (Albums, Tracks, 3D Covers) -->
     <MusicCatalog />
 
-    <!-- AI-Powered Music Discovery (Mood-Based Playlists) -->
-    <AIPlaylistGenerator />
+    
 
     <!-- NFT Music Marketplace -->
     <NFTMusicStore />
