@@ -1,7 +1,7 @@
 <script>
     let nftItems = [
-        { name: "Exclusive Digital Hoodie", price: "0.03 ETH", image: "/nft-hoodie.png" },
-        { name: "Gold Edition Tee", price: "0.05 ETH", image: "/nft-tee.png" },
+        { name: "Exclusive Digital Hoodie", price: "0.03 ETH", image: "/exclusivedigitalhoodie.webp" },
+        { name: "Gold Edition Tee", price: "0.05 ETH", image: "/goldeditiontee.webp" },
     ];
 </script>
 

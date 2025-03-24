@@ -1,9 +1,9 @@
 <script>
     let products = [
-        { name: "Troublers Hoodie", price: "$49.99", image: "/hoodie.png" },
-        { name: "Snapback Cap", price: "$29.99", image: "/cap.png" },
-        { name: "Limited Edition Tee", price: "$34.99", image: "/tshirt.png" },
-        { name: "Wristband", price: "$9.99", image: "/wristband.png" },
+        { name: "Troublers Hoodie", price: "Ksh.7,000", image: "/nonexclusivehoodie.webp" },
+        { name: "Snapback Cap", price: "$Ksh.2,000", image: "/snapback.webp" },
+        { name: "Limited Edition Tee", price: "Ksh.5,000", image: "/limitedtee.webp" },
+        { name: "Wristband", price: "Ksh.1,000", image: "/wristband.webp" },
     ];
 </script>
 

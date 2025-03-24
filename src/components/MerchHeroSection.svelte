@@ -1,8 +1,8 @@
 <script>
     let featuredProduct = {
         name: "TheKenyanTroublers Exclusive Hoodie",
-        price: "$49.99",
-        image: "/hoodie.png",
+        price: "Ksh.10,000",
+        image: "/exclusivehoodie.webp",
     };
 </script>
 
