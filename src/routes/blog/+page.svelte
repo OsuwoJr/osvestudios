@@ -6,6 +6,9 @@
 
 <main class="bg-black text-white min-h-screen">
     <HeroSection />
-    <BlogGrid />
+    <div id="articles-section">
+        <BlogGrid />
+    </div>
+    
     <DarkModeToggle />
 </main>
