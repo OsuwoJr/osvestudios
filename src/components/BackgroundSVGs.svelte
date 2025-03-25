@@ -23,9 +23,7 @@
 </script>
 
 <style>
-    .floating {
-        animation: float 6s ease-in-out infinite;
-    }
+    
 
     @keyframes float {
         0%, 100% {
