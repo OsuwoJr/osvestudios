@@ -17,7 +17,7 @@
 </script>
 
 <section class="nft-marketplace">
-    <h2 class="section-title">🎼 **Exclusive NFT Music Collection**</h2>
+    <h2 class="section-title">🎼 Exclusive NFT Music Collection</h2>
     
     <div class="nft-grid">
         {#each nftTracks as track}
