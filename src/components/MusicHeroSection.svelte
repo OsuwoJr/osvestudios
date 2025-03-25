@@ -3,25 +3,22 @@
     import { fade } from "svelte/transition";
     import FloatingPlayer from "./MusicFloatingPlayer.svelte";
 
-    let suggestedTrack = { title: "Loading...", artist: "AI Curator" };
-    let isLoading = true;
+    let suggestedTrack = { title: "Kisiwa Cha Upendo", artist: "theKenyanTroublers" };
+    let isLoading = false;
+    let audio: HTMLAudioElement;
 
-    // Fetch AI Suggested Track with error handling
-    async function getSuggestedTrack() {
-        try {
-            const res = await fetch("/api/music/suggestions");
-            if (!res.ok) throw new Error("Network response failed");
-            suggestedTrack = await res.json();
-        } catch (error) {
-            suggestedTrack = { title: "Fallback Track", artist: "TheKenyanTroublers" };
-        } finally {
-            isLoading = false;
+    // Initialize audio player
+    onMount(() => {
+        audio = new Audio("/music/20.Kisiwa Cha Upendo.wav");
+        audio.volume = 0.8; // Set default volume
+    });
+
+    // Play Music Function
+    function playMusic() {
+        if (audio) {
+            audio.play().catch(err => console.error("Error playing audio:", err));
         }
     }
-
-    onMount(() => {
-        getSuggestedTrack();
-    });
 </script>
 
 <section class="music-section">
@@ -37,15 +34,12 @@
     <div class="suggestion" transition:fade>
         <p class="track-info">
             🎧 Suggested Track: 
-            {#if isLoading}
-                <span class="loading">Loading...</span>
-            {:else}
-                <b>{suggestedTrack.title}</b> by {suggestedTrack.artist}
-            {/if}
+            <b>{suggestedTrack.title}</b> by {suggestedTrack.artist}
         </p>
 
-        <button class="listen-btn">
-            Listen Now
+        <!-- Listen Now Button -->
+        <button class="listen-btn" on:click={playMusic}>
+            🎵 Listen Now
         </button>
     </div>
 
@@ -121,16 +115,6 @@
 
 .track-info {
     font-size: 1.2rem;
-}
-
-.loading {
-    color: #81C14B;
-    animation: blink 1s infinite alternate;
-}
-
-@keyframes blink {
-    from { opacity: 1; }
-    to { opacity: 0.5; }
 }
 
 /* Futuristic Button */

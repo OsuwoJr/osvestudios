@@ -2,7 +2,7 @@
     import { onMount } from "svelte";
 
     let nftTracks = [
-        { name: "Cyberwave Symphony", price: 0.8, image: "/images/nft1.jpg" },
+        { name: "Cyberwave Symphony", price: 0.8, image: "/images/nft.jpg" },
         { name: "Neon Pulse", price: 1.2, image: "/images/nft2.jpg" },
         { name: "Bassline Galaxy", price: 0.5, image: "/images/nft3.jpg" },
         { name: "Digital Echo", price: 1.0, image: "/images/nft4.jpg" },
