@@ -33,7 +33,7 @@
 </script>
 
 <section class="street-talent">
-    <h2 class="section-title">🔥 The Troublers Street Talent</h2>
+    <h2 class="section-title">🥑 The Troublers Street Talent 🥑</h2>
     <p class="mt-4 text-lg">Discover and support the raw talents of Nairobi’s streets.</p>
     <Button text="Join Us" link="https://wa.me/254790932575" />
 
