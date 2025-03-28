@@ -2,77 +2,19 @@
     import { onMount } from "svelte";
 </script>
 
-<section class="hero">
+<section class="hero flex items-center justify-center h-screen text-white px-4">
     <!-- Hero Content -->
-    <div class="content">
-        <h1>Welcome to <span class="highlight">theKenyanTroublers</span></h1>
-        <p>The Global Hitmakers.</p>
+    <div class="text-center bg-black/30 backdrop-blur-lg p-6 rounded-lg">
+        <h1 class="text-[calc(100vw/10)] md:text-[4rem] font-bold whitespace-nowrap">
+            the<span class="text-[#81C14B]">Kenyan</span>Troublers
+        </h1>
+        <p class="text-lg md:text-2xl mt-4">The Global Hitmakers.</p>
         <a href="https://open.spotify.com/artist/6F05EgCahYw9U2th0SZVtP?si=OB0niz1DSfCSOdflfSQT1Q" 
-          class="cta-button"
+          class="mt-6 inline-block bg-[#81C14B] px-6 py-3 text-lg md:text-xl font-semibold rounded-lg shadow-lg transition-all hover:bg-[#6A9A52] hover:scale-105"
           target="_blank" 
           rel="noopener noreferrer"
           aria-label="Listen to TheKenyanTroublers on Spotify">
          🎵 Explore Music
        </a>
-
     </div>
 </section>
-
-<style>
-/* HERO SECTION */
-.hero {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    overflow: hidden;
-    color: white;
-    
-}
-
-/* Main Content */
-.content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    padding: 20px;
-    backdrop-filter: blur(2px); /* Adds slight blur for readability */
-    border-radius: 10px;
-    background: rgba(0, 0, 0, 0.027); /* Transparent black for better contrast */
-}
-
-/* Title & Button */
-h1 {
-    font-size: 3rem;
-    font-weight: bold;
-}
-
-.highlight {
-    color: #81C14B;
-    
-}
-
-p {
-    font-size: 1.5rem;
-    margin-top: 10px;
-}
-
-.cta-button {
-    display: inline-block;
-    background: #81C14B;
-    padding: 15px 30px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 1.2rem;
-    transition: 0.3s;
-    margin-top: 20px;
-    box-shadow: 0 0 10px #81C14B;
-}
-
-.cta-button:hover {
-    background: #6A9A52;
-    box-shadow: 0 0 20px #6A9A52;
-}
-</style>
