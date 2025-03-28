@@ -63,7 +63,7 @@
 
 </script>
 
-<main class="bg-[#000000] flex flex-col item-center min-h-screen text-white relative z-[1]" data-sveltekit-preload-data="hover">
+<main class="bg-[#000000]  flex flex-col item-center min-h-screen text-white relative z-[1]" data-sveltekit-preload-data="hover">
     <!-- Background SVGs -->
     <BackgroundSVGs />
 

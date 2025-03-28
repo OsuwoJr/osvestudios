@@ -3,7 +3,6 @@
     export let y;
     let tabs = [
         { name: "Artists", link: "/artists" },
-        // { name: "Beats/Instrumentals", link: "/beats" },
         { name: "Music", link: "/music" },
         { name: "Merch", link: "/merch" },
         {name: "Blog", link: "/blog" },
@@ -63,27 +62,35 @@
     <!-- Mobile Menu Overlay -->
   {#if menuOpen}
   <div 
-    class="fixed inset-0 bg-black/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center space-y-8 text-2xl"
-    role="dialog"
-    aria-label="Mobile menu"
-  >
-    {#each tabs as tab}
-      <a 
-        href={tab.link} 
-        class="text-white/90 hover:text-[#81C14B] transition-all duration-300 hover:scale-105"
-        on:click={() => menuOpen = false}
-      >
-        {tab.name}
-      </a>
-    {/each}
+  class="fixed inset-0 flex items-center justify-center top-70 bg-black/95 backdrop-blur-xl z-40"
+  role="dialog"
+  aria-label="Mobile menu"
+>
+  <!-- Modal Content -->
+  <div class="relative bg-black p-10 rounded-lg shadow-lg text-center space-y-8">
     
-    <!-- Modern close button -->
+    <!-- Close Button (Top Right Inside Modal) -->
     <button 
-      class="absolute top-8 right-8 p-2 hover:text-[#81C14B] transition-transform hover:rotate-90 duration-500"
+      class="absolute top-4 right-4 p-2 text-white text-3xl hover:text-[#81C14B] transition-transform hover:rotate-90 duration-500"
       on:click={() => menuOpen = false}
     >
-      ✕ <!-- Styled X -->
+      ✕
     </button>
+
+    <!-- Menu Items -->
+    <div class="flex flex-col items-center space-y-6 text-2xl">
+      {#each tabs as tab}
+        <a 
+          href={tab.link} 
+          class="text-white/90 hover:text-[#81C14B] transition-all duration-300 hover:scale-105"
+          on:click={() => menuOpen = false}
+        >
+          {tab.name}
+        </a>
+      {/each}
+    </div>
   </div>
+</div>
+
 {/if}
 </header>
