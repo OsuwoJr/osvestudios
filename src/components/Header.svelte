@@ -4,6 +4,7 @@
     let tabs = [
         { name: "Artists", link: "/artists" },
         { name: "Music", link: "/music" },
+        {name:"TTST", link: "/street-talent"},
         { name: "Merch", link: "/merch" },
         {name: "Blog", link: "/blog" },
         { name: "The Troublers", link: "/troublers" },
