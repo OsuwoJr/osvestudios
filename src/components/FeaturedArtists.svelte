@@ -15,11 +15,11 @@
 </script>
 
 <section class="featured-artists">
-    <h2 class="section-title">Featured <span class="highlight" >Artists </span> </h2>
+    <h2 class="section-title">Featured <span class="highlight">Artists</span></h2>
 
     <!-- Floating Music Particles -->
     <div class="floating-icons">
-        {#each Array(50) as _, i}  <!-- ✅ Increased from 10 to 13 -->
+        {#each Array(50) as _, i}
             <i class="fas fa-music floating" style="
                 left: {Math.random() * 100}vw; 
                 top: {Math.random() * 100}vh; 
@@ -33,12 +33,12 @@
     <div class="slider">
         <div class="slider-track" style="transform: translateX(-{currentIndex * 220}px);">
             {#each featuredArtists as artist}
-                <div class="artist-card">
-                    <img src={artist.img} alt={artist.name} class="artist-image" />                   
+                <a href={artist.href} target="_blank" class="artist-card">
+                    <img src={artist.img} alt={artist.name} class="artist-image" />
                     <div class="artist-overlay">
                         <p class="artist-name">{artist.name}</p>
                     </div>
-                </div>
+                </a>
             {/each}
         </div>
     </div>
@@ -50,15 +50,10 @@
 
 <style>
 /* Featured Artists Section */
-.highlight {
-    color: #f3f3f3;
-    
-}
-
 .featured-artists {
     padding: 80px 20px;
     text-align: center;
-    overflow:hidden;
+    overflow: hidden;
     position: relative;
 }
 
@@ -120,6 +115,7 @@
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     cursor: pointer;
     margin: 0 10px;
+    text-decoration: none;
 }
 
 .artist-card:hover {
@@ -156,7 +152,7 @@
 .artist-name {
     color: white;
     font-weight: bold;
-    font-size: 1.2rem;    
+    font-size: 1.2rem;
     opacity: 0;
     transition: opacity 0.3s ease;
 }
