@@ -43,26 +43,7 @@
         {/each}
     </div>
 
-    <!-- Audio Preview Player (MP3 & Spotify) -->
-    {#if currentTrack}
-        <div class="audio-player">
-            {#if isSpotify}
-                <iframe
-                    style="border-radius: 12px"
-                    src={currentTrack.spotify}
-                    width="100%"
-                    height="80"
-                    frameborder="0"
-                    allow="encrypted-media"
-                    title="Spotify audio player"
-                ></iframe>
-            {:else}
-                <audio controls autoplay>
-                    <source src={currentTrack.preview} type="audio/mpeg" />
-                </audio>
-            {/if}
-        </div>
-    {/if}
+ 
 </section>
 
 <style>
@@ -178,26 +159,7 @@
     text-shadow: 0 0 10px #81C14B;
 }
 
-/* Audio Player */
-.audio-player {
-    margin-top: 20px;
-    position: relative;
-    z-index: 2;
-}
 
-audio {
-    width: 80%;
-    max-width: 400px;
-    filter: drop-shadow(0 0 10px #81C14B);
-}
-
-/* Spotify Embed */
-iframe {
-    width: 100%;
-    max-width: 400px;
-    box-shadow: 0 0 10px #81C14B;
-    border-radius: 10px;
-}
 
 /* Responsive */
 @media (max-width: 768px) {
