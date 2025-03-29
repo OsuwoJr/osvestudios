@@ -1,17 +1,5 @@
 <script lang="ts">
     export let latestReleases;
-
-    let currentTrack: { title: string; img: string; preview?: string; spotify?: string } | null = null;
-    let isSpotify = false;
-
-    function playPreview(release: { title: string; img: string; preview?: string; spotify?: string }) {
-        if (currentTrack === release) {
-            currentTrack = null; // Pause if clicking the same track
-        } else {
-            currentTrack = release;
-            isSpotify = release.spotify ? true : false;
-        }
-    }
 </script>
 
 <section class="latest-releases">
@@ -31,19 +19,32 @@
 
     <div class="release-grid">
         {#each latestReleases as release}
-            <button class="release-card" on:click={() => playPreview(release)} aria-label={`Play preview of ${release.title}`}>
+            <div class="release-card">
                 <div class="album">
-                    <img src={release.img} alt={release.title} class="album-art" />
-                    <div class="overlay">
-                        <p class="play-icon">▶</p>
+                    <!-- Front: Album Art -->
+                    <div class="front">
+                        <img src={release.img} alt={release.title} class="album-art" />
+                    </div>
+
+                    <!-- Back: Streaming Links -->
+                    <div class="back">
+                        <p class="stream-title">{release.title}</p>
+                        <ul class="stream-links">
+                            {#if release.spotify}
+                                <li><a href={release.spotify} target="_blank" class="stream-button spotify">Spotify</a></li>
+                            {/if}
+                            {#if release.boomplay}
+                                <li><a href={release.boomplay} target="_blank" class="stream-button boomplay">Boomplay</a></li>
+                            {/if}
+                            {#if release.apple}
+                                <li><a href={release.apple} target="_blank" class="stream-button apple">Apple Music</a></li>
+                            {/if}
+                        </ul>
                     </div>
                 </div>
-                <p class="release-title">{release.title}</p>
-            </button>
+            </div>
         {/each}
     </div>
-
- 
 </section>
 
 <style>
@@ -55,6 +56,7 @@
     color: white;
     overflow: hidden;
     background: transparent;
+    margin-bottom: 2rem;
 }
 
 /* Floating Music Particles */
@@ -118,48 +120,84 @@
     transition: transform 0.5s ease;
 }
 
+/* Flip Effect */
 .release-card:hover .album {
     transform: rotateY(180deg);
 }
 
+/* Front & Back Faces */
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    backface-visibility: hidden;
+}
+
 /* Album Front (Image) */
+.front {
+    background: black;
+}
+
 .album-art {
     width: 100%;
     height: 100%;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(129, 193, 75, 0.7);
-    backface-visibility: hidden;
 }
 
-/* Album Back (Play Button) */
-.overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    border-radius: 10px;
+/* Album Back (Streaming Links) */
+.back {
+    background: rgba(0, 0, 0, 0.9);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 8px;
     transform: rotateY(180deg);
-    backface-visibility: hidden;
 }
 
-.play-icon {
-    font-size: 2rem;
-    color: #81C14B;
-    text-shadow: 0 0 10px #81C14B;
+/* Streaming Links as List */
+.stream-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     text-align: center;
 }
 
-/* Release Title */
-.release-title {
-    margin-top: 10px;
-    font-size: 1.2rem;
-    text-shadow: 0 0 10px #81C14B;
+.stream-links li {
+    margin-bottom: 5px;
 }
 
+/* Streaming Buttons */
+.stream-button {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    padding: 6px 12px;
+    border-radius: 5px;
+    transition: 0.3s;
+    display: block;
+    width: 100px;
+}
 
+.spotify { background: #1DB954; }
+.boomplay { background: #008cff; }
+.apple { background: #FA233B; }
+
+.stream-button:hover {
+    opacity: 0.8;
+}
+
+/* Release Title */
+.stream-title {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 8px;
+    color: #81C14B;
+    text-shadow: 0 0 10px #81C14B;
+}
 
 /* Responsive */
 @media (max-width: 768px) {
