@@ -9,9 +9,8 @@
             the<span class="text-[#81C14B]">Kenyan</span>Troublers
         </h1>
         <p class="text-lg md:text-2xl mt-4">The Global Hitmakers.</p>
-        <a href="https://open.spotify.com/artist/6F05EgCahYw9U2th0SZVtP?si=OB0niz1DSfCSOdflfSQT1Q" 
-          class="mt-6 inline-block bg-[#81C14B] px-6 py-3 text-lg md:text-xl font-semibold rounded-lg shadow-lg transition-all hover:bg-[#6A9A52] hover:scale-105"
-          target="_blank" 
+        <a href="/music" 
+          class="mt-6 inline-block bg-[#81C14B] px-6 py-3 text-lg md:text-xl font-semibold rounded-lg shadow-lg transition-all hover:bg-[#6A9A52] hover:scale-105"          
           rel="noopener noreferrer"
           aria-label="Listen to TheKenyanTroublers on Spotify">
          🎵 Explore Music
