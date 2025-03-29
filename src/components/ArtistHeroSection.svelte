@@ -134,7 +134,7 @@
 /* Responsive Design */
 @media (max-width: 768px) {
     .title {
-        font-size: 2.5rem;
+        font-size: 1.5rem;
     }
 
     .subtitle {

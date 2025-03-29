@@ -34,7 +34,7 @@
         <div class="slider-track" style="transform: translateX(-{currentIndex * 220}px);">
             {#each featuredArtists as artist}
                 <div class="artist-card">
-                    <img src={artist.img} alt={artist.name} class="artist-image" />
+                    <img src={artist.img} alt={artist.name} class="artist-image" />                   
                     <div class="artist-overlay">
                         <p class="artist-name">{artist.name}</p>
                     </div>
