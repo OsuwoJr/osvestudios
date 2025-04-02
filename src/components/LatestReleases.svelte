@@ -1,5 +1,21 @@
 <script lang="ts">
     export let latestReleases;
+
+    import { writable } from 'svelte/store';
+    
+    const flippedCards = writable(new Set<number>());
+
+    function toggleFlip(event: Event) {
+        const cardIndex = Number((event.currentTarget as HTMLElement).dataset.index);
+        flippedCards.update((set) => {
+            if (set.has(cardIndex)) {
+                set.delete(cardIndex);
+            } else {
+                set.add(cardIndex);
+            }
+            return new Set(set);
+        });
+    }
 </script>
 
 <section class="latest-releases">
@@ -8,18 +24,24 @@
     <!-- Floating Music Particles -->
     <div class="floating-icons">
         {#each Array(50) as _, i}
-            <i class="fas fa-music floating" style="
-                left: {Math.random() * 100}vw; 
-                top: {Math.random() * 100}vh; 
-                animation-duration: {Math.random() * 8 + 5}s;
-                font-size: {Math.random() * 25 + 15}px;">
+            <i class="fas fa-music floating" 
+               style="
+                    left: {Math.random() * 100}vw; 
+                    top: {Math.random() * 100}vh; 
+                    animation-duration: {Math.random() * 8 + 5}s;
+                    font-size: {Math.random() * 25 + 15}px;">
             </i>
         {/each}
     </div>
 
     <div class="release-grid">
-        {#each latestReleases as release}
-            <div class="release-card">
+        {#each latestReleases as release, i}
+            <button class="release-card" 
+                    class:flipped={$flippedCards.has(i)} 
+                    data-index={i} 
+                    on:click={toggleFlip} 
+                    on:keydown={(e) => e.key === 'Enter' && toggleFlip(e)} 
+                    aria-label="Toggle album details">
                 <div class="album">
                     <!-- Front: Album Art -->
                     <div class="front">
@@ -42,7 +64,7 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            </button>
         {/each}
     </div>
 </section>
@@ -120,8 +142,13 @@
     transition: transform 0.5s ease;
 }
 
-/* Flip Effect */
+/* Hover-based flip for laptops */
 .release-card:hover .album {
+    transform: rotateY(180deg);
+}
+
+/* Tap-based flip for touchscreens */
+.release-card.flipped .album {
     transform: rotateY(180deg);
 }
 
