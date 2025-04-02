@@ -120,7 +120,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 40px;
     margin-top: 30px;
     position: relative;
     z-index: 2;
