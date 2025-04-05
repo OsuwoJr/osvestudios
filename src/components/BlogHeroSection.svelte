@@ -29,10 +29,10 @@
 
     <!-- Hero Content -->
     <div class="relative z-10">
-        <h1 class="text-6xl md:text-7xl font-extrabold neon-text tracking-wide drop-shadow-xl">
+        <h1 class="text-2xl md:text-5xl font-extrabold neon-text tracking-wide drop-shadow-xl">
             <span class="glitch" data-text="🎵 TheKenyanTroublers">🎵 TheKenyanTroublers</span>
         </h1>
-        <p class="text-2xl md:text-3xl mt-4 font-light opacity-80 max-w-3xl mx-auto">
+        <p class="text-xl md:text-3xl mt-4 font-light opacity-80 max-w-3xl mx-auto">
             Pioneering <span class="neon-text font-bold">Music, AI, & Blockchain</span> for a new era of artists.
         </p>
 
