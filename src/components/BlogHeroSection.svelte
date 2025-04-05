@@ -33,19 +33,19 @@
             <span class="glitch" data-text="🎵 TheKenyanTroublers">🎵 TheKenyanTroublers</span>
         </h1>
         <p class="text-2xl md:text-3xl mt-4 font-light opacity-80 max-w-3xl mx-auto">
-            Pioneering <span class="neon-text">**Music, AI, & Blockchain**</span> for a new era of artists.
+            Pioneering <span class="neon-text font-bold">Music, AI, & Blockchain</span> for a new era of artists.
         </p>
 
         <!-- Mission & Vision -->
         <div class="mt-10 max-w-4xl mx-auto p-6 bg-black/70 rounded-xl shadow-xl backdrop-blur-md transform hover:scale-105 transition-transform duration-500">
             <h2 class="text-3xl font-semibold text-[#81C14B] glitch" data-text="🌍 Our Mission">🌍 Our Mission</h2>
             <p class="text-lg opacity-90 mt-3">
-                Revolutionizing the **music industry** by merging **AI, blockchain, and authentic talent**, giving artists **full creative & financial control**.
+                Revolutionizing the <span class="neon-text font-bold">music industry</span>  by merging <span class="neon-text font-bold">AI, blockchain, and authentic talent,</span> giving artists <span class="neon-text font-bold">full creative & financial control.</span>
             </p>
 
             <h2 class="text-3xl font-semibold text-[#81C14B] glitch mt-8" data-text="🚀 Our Vision">🚀 Our Vision</h2>
             <p class="text-lg opacity-90 mt-3">
-                Building the **most influential independent music platform**, where **innovation meets pure artistic expression**.
+                Building the <span class="neon-text font-bold">most influential independent music platform, </span>where <span class="neon-text font-bold">innovation meets pure artistic expression</span>.
             </p>
         </div>
     <!-- CTA Buttons -->
