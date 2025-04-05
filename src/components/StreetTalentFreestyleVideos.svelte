@@ -26,7 +26,7 @@
 	onMount(() => {
 		new Swiper('.swiper', {
 			slidesPerView: 1,
-			spaceBetween: 24,
+			spaceBetween: 16,
 			loop: true,
 			centeredSlides: true,
 			pagination: {
@@ -46,23 +46,26 @@
 	});
 </script>
 
-<section class="p-10 text-white">
-	<h2 class="text-4xl font-bold text-center mb-10 tracking-wide">🥑 Freestyle <span class="text-avocadoGreen">Shorts</span> 🥑</h2>
+<section class="px-4 py-10 md:px-10 text-white">
+	<h2 class="text-3xl md:text-4xl font-bold text-center mb-8 tracking-wide">🥑 Freestyle <span class="text-avocadoGreen">Shorts</span></h2>
 
-	<div class="swiper">
+	<div class="swiper max-w-full">
 		<div class="swiper-wrapper">
 			{#each freestyleShorts as short}
 				{#if extractYouTubeID(short.url)}
-					<div class="swiper-slide bg-[#000000cc] backdrop-blur-lg p-5 rounded-2xl shadow-[0_4px_20px_rgba(0,255,100,0.2)] hover:shadow-[0_8px_30px_rgba(0,255,150,0.3)] transition-all duration-300">
-						<h3 class="text-xl font-semibold mb-3 text-center uppercase tracking-wider">{short.name}</h3>
-						<div class="aspect-w-9 aspect-h-16 overflow-hidden rounded-xl shadow-inner">
+					<div class="swiper-slide bg-[#000000cc] backdrop-blur-lg p-4 rounded-xl shadow-[0_4px_20px_rgba(0,255,100,0.2)] hover:shadow-[0_8px_30px_rgba(0,255,150,0.3)] transition-all duration-300">
+						<h3 class="text-base md:text-xl font-semibold mb-3 text-center uppercase tracking-wide">{short.name}</h3>
+						
+						<!-- Aspect Ratio Container -->
+						<div class="relative w-full" style="padding-bottom: 177.78%;">
 							<iframe
 								src={`https://www.youtube.com/embed/${extractYouTubeID(short.url)}?autoplay=0&mute=1`}
 								title={short.name}
 								allowfullscreen
-								class="w-full h-full border-none rounded-md">
+								class="absolute top-0 left-0 w-full h-full border-none rounded-md">
 							</iframe>
 						</div>
+
 						<a
 							href={short.url}
 							target="_blank"
@@ -84,24 +87,9 @@
 </section>
 
 <style>
-	.aspect-w-9.aspect-h-16 {
-		position: relative;
-		width: 100%;
-		padding-bottom: 177.78%;
-	}
-	.aspect-w-9.aspect-h-16 iframe {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		border: none;
-	}
-
 	:global(.text-avocadoGreen) {
 		color: #81C14B;
 	}
-
 	:global(.bg-avocadoGreen) {
 		background-color: #81C14B;
 	}
