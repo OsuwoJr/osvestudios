@@ -95,7 +95,7 @@
                 </ul>
             </div>
             <p class="mt-6 font-bold text-green-400">
-                The future of music is **decentralized, artist-controlled, and NFT-powered**.  
+                The future of music is <span class="font-bold">decentralized, artist-controlled, and NFT-powered</span>.  
                 Are you ready to join the revolution? 🎶🔥
             </p>
         </article>
