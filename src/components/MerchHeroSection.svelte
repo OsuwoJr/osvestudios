@@ -1,53 +1,58 @@
 <script>
-    import { onMount } from "svelte";
-
     let featuredProduct = {
         name: "TheKenyanTroublers Exclusive Hoodie",
-        price: "Ksh.10,000",
+        price: "Ksh.100,000",
         image: "/exclusivehoodie.webp",
     };
 
-    // Make the modal reactive
-    let showModal = false;
+    // Reactive modal logic
+    let showSoldOut = false;
+    let selectedProduct = "";
     let showFeatures = false;
 
-    // Function to show the "Sold Out" popup
+    // Show modal on Buy Now
     function showSoldOutAlert() {
-        showModal = true;
+        selectedProduct = featuredProduct.name;
+        showSoldOut = true;
     }
 
-    // Function to close the modal
-    function closeModal() {
-        showModal = false;
+    // Close modal
+    function closeSoldOutModal() {
+        showSoldOut = false;
     }
 
-    // Function to toggle features section
+    // Toggle feature details
     function toggleFeatures() {
         showFeatures = !showFeatures;
     }
 </script>
 
-<section class="relative text-white text-center py-20">
-    <!-- Background Gradient & Glow -->
-    <div class="absolute inset-0 bg-gradient-to-r from-black via-[#81C14B]/30 to-black opacity-80"></div>
+<!-- MAIN SECTION -->
+<section class="relative text-white text-center py-20 z-10">
+    <!-- Background Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-r from-black via-[#81C14B]/30 to-black opacity-80 z-0"></div>
 
-    <h1 class="text-6xl font-extrabold tracking-wider neon-text z-10">🔥 Exclusive Merch Drop!</h1>
-    <p class="text-xl mt-4 font-light">Limited Stock Available - Get Yours Now</p>
+    <h1 class="text-6xl font-extrabold tracking-wider neon-text relative z-10">🔥 Exclusive Merch Drop!</h1>
+    <p class="text-xl mt-4 font-light relative z-10">Limited Stock Available - Get Yours Now</p>
 
-    <!-- Featured Product with Futuristic Frame -->
-    <div class="mt-8 relative inline-block p-4 rounded-lg border-4 border-[#81C14B] bg-black/40 shadow-[0_0_25px_#81C14B]">
+    <!-- Product Display -->
+    <div class="mt-8 relative inline-block p-4 rounded-lg border-4 border-[#81C14B] bg-black/40 shadow-[0_0_25px_#81C14B] z-10">
         <img src={featuredProduct.image} alt={featuredProduct.name} class="mx-auto w-64 rounded-md">
     </div>
 
-    <p class="text-lg mt-4 font-semibold">{featuredProduct.name} - <b class="text-[#81C14B]">{featuredProduct.price}</b></p>
+    <p class="text-lg mt-4 font-semibold relative z-10">
+        {featuredProduct.name} - <b class="text-[#81C14B]">{featuredProduct.price}</b>
+    </p>
 
     <!-- Buy Button -->
-    <button on:click={showSoldOutAlert} class="mt-6 px-6 py-3 bg-[#81C14B] hover:bg-[#6A9A52] rounded-lg shadow-lg transition-all duration-300 text-lg font-bold active:scale-95">
+    <button
+        on:click={showSoldOutAlert}
+        class="mt-6 px-6 py-3 bg-[#81C14B] hover:bg-[#6A9A52] rounded-lg shadow-lg transition-all duration-300 text-lg font-bold active:scale-95 relative z-10">
         Buy Now
     </button>
 
-    <!-- Expandable Features Section -->
-    <div class="mt-6">
+    <!-- Toggle Features -->
+    <div class="mt-6 relative z-10">
         <button on:click={toggleFeatures} class="text-[#81C14B] text-lg underline hover:text-white transition-all">
             {showFeatures ? "🔼 Hide Features" : "🔽 Why This Hoodie is Special?"}
         </button>
@@ -70,13 +75,15 @@
     </div>
 </section>
 
-<!-- MODAL POP-UP -->
-{#if showModal}
+<!-- MODAL -->
+{#if showSoldOut}
     <div class="fixed inset-0 bg-black/80 flex justify-center items-center z-50 animate-fade-in">
         <div class="bg-[#222] text-white p-6 rounded-lg text-center shadow-[0_0_20px_#81C14B] w-96">
             <h2 class="text-3xl font-bold">🚨 Sold Out!</h2>
-            <p class="mt-2">This exclusive drop is no longer available. Stay tuned for the next release!</p>
-            <button on:click={closeModal} class="mt-4 px-6 py-2 bg-[#81C14B] hover:bg-[#6A9A52] rounded-lg transition-all duration-300 active:scale-95">
+            <p class="mt-2">{selectedProduct} is no longer available. Stay tuned for the next release!</p>
+            <button
+                on:click={closeSoldOutModal}
+                class="mt-4 px-6 py-2 bg-[#81C14B] hover:bg-[#6A9A52] rounded-lg transition-all duration-300 active:scale-95">
                 Close
             </button>
         </div>
