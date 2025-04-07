@@ -21,28 +21,30 @@
 	});
 </script>
 
-<section class="p-10 text-white">
-	<h2 class="text-4xl font-bold text-center mb-10 tracking-wide">📸 Gallery Dump <span class="text-avocadoGreen">/ Instagram</span></h2>
+<section class="px-4 py-10 sm:px-6 md:px-10 text-white">
+	<h2 class="text-3xl sm:text-4xl font-bold text-center mb-10 tracking-wide">
+		📸 Gallery Dump <span class="text-avocadoGreen">/ Instagram</span>
+	</h2>
 
 	<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 		{#each instagramPosts as postUrl}
 			<div
-				class="bg-[#000000cc] backdrop-blur-md rounded-2xl p-4 shadow-[0_4px_20px_rgba(0,255,100,0.2)] transition-transform hover:scale-105 hover:shadow-[0_6px_30px_rgba(0,255,150,0.4)]"
+				class="bg-[#000000cc] backdrop-blur-xl rounded-2xl p-4 shadow-lg transition-all transform hover:scale-[1.03] hover:shadow-[0_0_40px_rgba(127,194,94,0.3)] hover:ring-2 hover:ring-avocadoGreen"
 			>
 				<blockquote
-					class="instagram-media"
+					class="instagram-media w-full"
 					data-instgrm-captioned
 					data-instgrm-permalink={postUrl}
 					data-instgrm-version="14"
 					style="
-						background:#FFF;
-						border:0;
-						border-radius:12px;
-						box-shadow:0 0 3px rgba(0,0,0,0.5), 0 6px 20px rgba(0,0,0,0.15);
-						margin:1px auto;
-						max-width:540px;
-						min-width:326px;
-						width:100%;
+						background: #fff;
+						border: 0;
+						border-radius: 12px;
+						box-shadow: 0 0 3px rgba(0, 0, 0, 0.5), 0 6px 20px rgba(0, 0, 0, 0.15);
+						margin: 0 auto;
+						max-width: 540px;
+						min-width: 100%;
+						width: 100%;
 					"
 				></blockquote>
 			</div>
@@ -52,9 +54,11 @@
 
 <style>
 	:global(.instagram-media) {
-		margin: 0 auto;
 		width: 100%;
+		margin: 0 auto;
+		transition: all 0.3s ease;
 	}
+
 	:global(.text-avocadoGreen) {
 		color: #7fc25e;
 	}
