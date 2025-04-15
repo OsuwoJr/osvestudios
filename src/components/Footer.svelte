@@ -40,7 +40,7 @@
 				<input type="email" placeholder="Your email" class="w-full px-4 py-2 rounded-md bg-[#222] text-white border border-[#81C14B]/40 focus:outline-none focus:ring-2 focus:ring-[#81C14B]" />
 				<button type="submit" class="px-4 py-2 bg-[#81C14B] hover:bg-[#6A9A52] text-black font-bold rounded-md transition">Subscribe</button>
 			</form>
-			<p class="text-sm text-[#81C14B] mt-6 font-light italic">"We are the future of sound – theKenyanTroublers."</p>
+			<p class="text-sm text-[#81C14B] mt-6 font-light italic">"Future of sound – the global hitmakers."</p>
 		</div>
 	</div>
 
