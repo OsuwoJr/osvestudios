@@ -153,9 +153,9 @@
         <h2 class="text-xl font-bold">Listen on Platforms</h2>
         <button on:click={() => showMusicPanel = false} class="text-2xl hover:text-[#81C14B]">✕</button>
       </div>
-      <a href="https://open.spotify.com" target="_blank" class="block text-center py-3 font-semibold rounded-md bg-[#1DB954] hover:shadow-[0_0_15px_#1DB954] transition-all">Spotify</a>
-      <a href="https://music.apple.com" target="_blank" class="block text-center py-3 font-semibold rounded-md bg-white text-black hover:shadow-[0_0_15px_white] transition-all">Apple Music</a>
-      <a href="https://www.boomplay.com" target="_blank" class="block text-center py-3 font-semibold rounded-md bg-[#007BFF] hover:shadow-[0_0_15px_#007BFF] transition-all">Boomplay</a>
+      <a href="https://open.spotify.com/artist/6F05EgCahYw9U2th0SZVtP?si=CpkXfxfsSEGUfRkgfw_T1w" target="_blank" class="block text-center py-3 font-semibold rounded-md bg-[#1DB954] hover:shadow-[0_0_15px_#1DB954] transition-all">Spotify</a>
+      <a href="https://music.apple.com/us/artist/thekenyantroublers/1606960956" target="_blank" class="block text-center py-3 font-semibold rounded-md bg-white text-black hover:shadow-[0_0_15px_white] transition-all">Apple Music</a>
+      <a href="https://www.boomplay.com/artists/39520564?" target="_blank" class="block text-center py-3 font-semibold rounded-md bg-[#007BFF] hover:shadow-[0_0_15px_#007BFF] transition-all">Boomplay</a>
     </div>
   </div>
 {/if}
