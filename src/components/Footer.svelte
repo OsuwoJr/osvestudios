@@ -34,7 +34,7 @@
 		<!-- Logo + Tagline -->
 		<div>
 			<img src="/logo.png" alt="KenyanTroublers Logo" class="h-12 w-12 mb-4" />
-			<p class="text-sm text-gray-400 italic">"The future of sound – the global hitmakers."</p>
+			<p class="text-sm text-gray-400 italic">"the global hitmakers."</p>
 		</div>
 
 		<!-- Navigation -->
