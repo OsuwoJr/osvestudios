@@ -82,7 +82,7 @@
 			{#each legal as item}
 				<a href={item.link} class="hover:text-[#81C14B] transition">{item.name}</a>
 			{/each}
-			<button on:click={() => alert('🥑 Avocado Anyday Everyday')} class="hover:text-[#81C14B] transition animate-pulse">🥑</button>
+			<button on:click={() => alert('🥑 The Global Hitmakers!')} class="hover:text-[#81C14B] transition animate-pulse">🥑</button>
 		</div>
 	</div>
 
