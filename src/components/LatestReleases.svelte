@@ -19,7 +19,7 @@
 </script>
 
 <section class="latest-releases">
-    <h2 class="title">Latest <span class="highlight">Releases</span></h2>
+    <h2 class="section-title">Latest <span class="highlight">Releases</span></h2>
 
     <!-- Floating Music Particles -->
     <div class="floating-icons">
@@ -103,11 +103,30 @@
 }
 
 /* Title */
-.title {
-    font-size: 3rem;
-    font-weight: bold;
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #ffffff 0%, #81C14B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
     position: relative;
-    z-index: 2;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: #81C14B;
+    border-radius: 2px;
 }
 
 /* Highlight Text */
@@ -128,8 +147,8 @@
 
 /* Album Card with 3D Flip */
 .release-card {
-    width: 160px;
-    height: 160px;
+    width: 190px;
+    height: 280px;
     perspective: 1000px;
     cursor: pointer;
 }
@@ -229,12 +248,30 @@
 /* Responsive */
 @media (max-width: 768px) {
     .release-card {
-        width: 140px;
-        height: 140px;
+        width: 170px;
+        height: 250px;
     }
 
-    .title {
+    .section-title {
         font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .section-title {
+        font-size: 3rem;
+    }
+    
+    .release-card {
+        width: 210px;
+        height: 300px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .release-card {
+        width: 250px;
+        height: 340px;
     }
 }
 </style>
