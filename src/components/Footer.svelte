@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { onMount } from "svelte";
+	import { browser } from '$app/environment';
+
 	const year = new Date().getFullYear();
 
 	let email = "";
@@ -47,6 +49,8 @@
 			return;
 		}
 		
+		if (!browser) return; // Skip on server
+		
 		isSubscribing = true;
 		
 		// Direct form submission approach for Formspree
@@ -86,6 +90,7 @@
 	// Current location detection for navigation highlight
 	let currentPath = "";
 	onMount(() => {
+		if (!browser) return; // Skip on server
 		currentPath = window.location.pathname;
 	});
 </script>
@@ -251,13 +256,19 @@
 	</div>
 
 	<!-- Scroll to Top -->
-	<button
-		on:click={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-		class="fixed bottom-6 right-6 bg-[#81C14B] hover:bg-[#6A9A52] text-black p-3 rounded-full shadow-xl z-[100] transition-all duration-300 hover:rotate-12 flex items-center justify-center"
-		aria-label="Scroll to top"
+	<a 
+		href="#top" 
+		class="back-to-top" 
+		on:click={(e) => { 
+			if (browser) {
+				e.preventDefault(); 
+				window.scrollTo({ top: 0, behavior: 'smooth' });
+			}
+		}}
+		aria-label="Back to top"
 	>
-		<i class="fas fa-chevron-up"></i>
-	</button>
+		<i class="fas fa-arrow-up"></i>
+	</a>
 
 	<!-- Background glow effect -->
 	<div class="absolute inset-0 z-0 pointer-events-none">
@@ -275,5 +286,26 @@
 		footer {
 			background: linear-gradient(to top, #000000 90%, #81C14B10);
 		}
+	}
+
+	.back-to-top {
+		position: fixed;
+		bottom: 1.5rem;
+		right: 1.5rem;
+		background-color: #81C14B;
+		color: black;
+		padding: 0.75rem;
+		border-radius: 9999px;
+		box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+		z-index: 100;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.3s ease;
+	}
+
+	.back-to-top:hover {
+		background-color: #6A9A52;
+		transform: rotate(12deg);
 	}
 </style>

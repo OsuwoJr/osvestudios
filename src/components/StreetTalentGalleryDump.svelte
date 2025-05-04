@@ -1,5 +1,13 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
+
+	// Define Instagram interface
+	interface Instagram {
+		Embeds: {
+			process: () => void;
+		};
+	}
 
 	let instagramPosts = [
 		'https://www.instagram.com/p/DHkmadqi1q8/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
@@ -8,16 +16,18 @@
 	];
 
 	onMount(() => {
-		if (typeof window !== 'undefined') {
-			const script = document.createElement('script');
-			script.src = 'https://www.instagram.com/embed.js';
-			script.async = true;
-			document.body.appendChild(script);
+		if (!browser) return; // Skip on server
+		
+		const script = document.createElement('script');
+		script.src = 'https://www.instagram.com/embed.js';
+		script.async = true;
+		document.body.appendChild(script);
 
-			script.onload = () => {
-				if (window.instgrm) window.instgrm.Embeds.process();
-			};
-		}
+		script.onload = () => {
+			// Use type assertion to safely access the Instagram API
+			const instgrmObj = (window as any).instgrm as Instagram | undefined;
+			if (instgrmObj) instgrmObj.Embeds.process();
+		};
 	});
 </script>
 

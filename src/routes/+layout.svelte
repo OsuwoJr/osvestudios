@@ -6,6 +6,7 @@
     import BackgroundSVGs from "../components/BackgroundSVGs.svelte";
     import { readable, type Readable } from "svelte/store";
     import { onMount } from "svelte";
+    import { browser } from '$app/environment';
 
     let { children } = $props();
     let mainElement: HTMLElement;
@@ -59,9 +60,11 @@
     );
     
     // Track scroll position for Header
-    let scrollY = 0;
+    let scrollY = $state(0);
     
     onMount(() => {
+        if (!browser) return; // Skip on server
+        
         const handleScroll = () => {
             scrollY = window.scrollY;
         };

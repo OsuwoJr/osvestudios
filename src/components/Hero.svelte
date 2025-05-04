@@ -17,7 +17,7 @@
     <!-- Hero Content -->
     <div class="relative z-20 text-center bg-black/30 backdrop-blur-sm p-6 sm:p-8 rounded-lg max-w-[95%] sm:max-w-2xl mx-auto">
         <h1 class="font-bold leading-tight tracking-tight break-words">
-            <span class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl block sm:inline">the</span>
+            <span class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl block ">the</span>
             <span class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#81C14B] block sm:inline">Kenyan</span>
             <span class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl block sm:inline">Troublers</span>
         </h1>

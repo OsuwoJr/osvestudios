@@ -1,6 +1,7 @@
 <script lang="ts">
     import { onMount, onDestroy } from "svelte";
     import { writable } from "svelte/store";
+    import { browser } from '$app/environment';
 
     export let featuredArtists;
 
@@ -18,6 +19,8 @@
 
     // Responsive card width calculation
     function updateCardWidth() {
+        if (!browser) return; // Skip on server
+        
         if (window.innerWidth <= 640) {
             cardWidth = 190;
         } else if (window.innerWidth <= 768) {
@@ -33,6 +36,8 @@
 
     // Start Auto Slider
     function startAutoSlider() {
+        if (!browser) return; // Skip on server
+        
         if (isAutoScrolling) {
             interval.set(setInterval(() => {
                 if (currentIndex >= featuredArtists.length - 1) {
@@ -47,6 +52,7 @@
 
     // Go to specific slide
     function goToSlide(index: number, animate = true) {
+        if (!browser) return; // Skip on server
         if (!sliderTrack) return;
         
         // Ensure index is within bounds
@@ -78,6 +84,8 @@
 
     // Touch/mouse events for draggable slider
     function onDragStart(e: MouseEvent | TouchEvent) {
+        if (!browser) return; // Skip on server
+        
         if (isAutoScrolling && $interval) {
             clearInterval($interval);
             interval.set(null);
@@ -92,6 +100,8 @@
     }
 
     function onDragMove(e: MouseEvent | TouchEvent) {
+        if (!browser) return; // Skip on server
+        
         if (isDragging) {
             const currentPosition = getPositionX(e);
             currentTranslateX = prevTranslateX + currentPosition - startPositionX;
@@ -99,6 +109,8 @@
     }
 
     function onDragEnd() {
+        if (!browser) return; // Skip on server
+        
         isDragging = false;
         cancelAnimationFrame(animationId);
         
@@ -121,12 +133,16 @@
     }
 
     function getPositionX(e: MouseEvent | TouchEvent): number {
+        if (!browser) return 0; // Skip on server
+        
         return 'type' in e && e.type.includes('mouse') 
             ? (e as MouseEvent).clientX 
             : (e as TouchEvent).touches[0].clientX;
     }
 
     function animate() {
+        if (!browser) return; // Skip on server
+        
         if (isDragging) {
             sliderTrack.style.transform = `translateX(${currentTranslateX}px)`;
             animationId = requestAnimationFrame(animate);
@@ -135,6 +151,8 @@
 
     // Toggle auto scrolling
     function toggleAutoScroll() {
+        if (!browser) return; // Skip on server
+        
         isAutoScrolling = !isAutoScrolling;
         if (isAutoScrolling) {
             startAutoSlider();
@@ -145,6 +163,7 @@
     }
 
     onMount(() => {
+        // This only runs in the browser
         updateCardWidth();
         window.addEventListener('resize', updateCardWidth);
         
@@ -160,6 +179,9 @@
     });
 
     onDestroy(() => {
+        // This only runs in the browser
+        if (!browser) return;
+        
         if ($interval) {
             clearInterval($interval);
             interval.set(null);

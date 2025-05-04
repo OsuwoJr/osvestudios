@@ -2,10 +2,13 @@
     export let latestReleases;
 
     import { writable } from 'svelte/store';
+    import { browser } from '$app/environment';
     
     const flippedCards = writable(new Set<number>());
 
     function toggleFlip(event: Event) {
+        if (!browser) return; // Skip on server
+        
         const cardIndex = Number((event.currentTarget as HTMLElement).dataset.index);
         flippedCards.update((set) => {
             if (set.has(cardIndex)) {
@@ -148,7 +151,7 @@
 /* Album Card with 3D Flip */
 .release-card {
     width: 190px;
-    height: 280px;
+    height: 190px;
     perspective: 1000px;
     cursor: pointer;
 }
@@ -249,7 +252,7 @@
 @media (max-width: 768px) {
     .release-card {
         width: 170px;
-        height: 250px;
+        height: 170px;
     }
 
     .section-title {
@@ -264,14 +267,14 @@
     
     .release-card {
         width: 210px;
-        height: 300px;
+        height: 210px;
     }
 }
 
 @media (min-width: 1024px) {
     .release-card {
         width: 250px;
-        height: 340px;
+        height: 250px;
     }
 }
 </style>

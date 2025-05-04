@@ -13,11 +13,11 @@
     
     let latestReleases = [
         { 
-            title: "Forbidden Abum-OsuwoJr", 
-            img: "/Forbidden.png",
-            spotify: "https://open.spotify.com/album/4vVWAaR5BKfowUrMCXoXgx?si=r9sij5pQTQarBK4H7ZkgKw",
-            boomplay: "https://www.boomplay.com/albums/105083138?",
-            apple: "https://music.apple.com/us/album/forbidden/1790886614"
+            title: "SAKA", 
+            img: "/saka.png",
+            spotify: "https://open.spotify.com/album/1ENsjj2JWxfqLBGmVnc6G6?si=e2mW_eA1Qg29swqrC3E2hw",
+            boomplay: "https://www.boomplay.com/albums/109814902?",
+            apple: "https://music.apple.com/us/album/saka-single/1810874242"
          },
 
         {

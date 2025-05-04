@@ -1,6 +1,7 @@
 <script lang="ts">
     import Button from "./Button.svelte";
     import { onMount } from "svelte";
+    import { browser } from '$app/environment';
 
     // Sample freestyle video clips
     let freestyles = [
@@ -24,6 +25,8 @@
     let currentTrack: HTMLAudioElement | null = null;
    
     function playPreview(src: string) {
+        if (!browser) return; // Skip on server
+        
         if (currentTrack) {
             currentTrack.pause();
         }
@@ -34,7 +37,7 @@
 
 <section id="street-talent" class="street-talent">
     <h2 class="section-title">The Troublers Street Talent</h2>
-    <p class="mt-4 text-lg">Discover and support the raw talents of Nairobi’s streets.</p>
+    <p class="mt-4 text-lg">Discover and support the raw talents of Nairobi's streets.</p>
     <Button text="Join Us" link="/street-talent" />
 
 
