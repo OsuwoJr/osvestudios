@@ -10,7 +10,8 @@
     { name: "TTST", link: "/street-talent" },
     { name: "Merch", link: "/merch" },
     { name: "Blog", link: "/blog" },
-    { name: "The Troublers", link: "/troublers" }
+    { name: "The Troublers", link: "/troublers" },
+    { name: "Contact", link: "/contact" }
   ];
 
   let menuOpen = false;
