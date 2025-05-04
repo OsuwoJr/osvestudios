@@ -3,6 +3,7 @@
         name: "TheKenyanTroublers Exclusive Hoodie",
         price: "Ksh.100,000",
         image: "/exclusivehoodie.webp",
+        status: "sold-out"
     };
 
     // Reactive modal logic
@@ -38,6 +39,12 @@
     <!-- Product Display -->
     <div class="mt-8 relative inline-block p-4 rounded-lg border-4 border-[#81C14B] bg-black/40 shadow-[0_0_25px_#81C14B] z-10">
         <img src={featuredProduct.image} alt={featuredProduct.name} class="mx-auto w-64 rounded-md">
+        <!-- Sold Out Banner -->
+        {#if featuredProduct.status === "sold-out"}
+            <div class="absolute top-0 right-0 bg-red-600 text-white py-1 px-4 rounded-bl-lg font-bold transform rotate-0 shadow-lg">
+                SOLD OUT
+            </div>
+        {/if}
     </div>
 
     <p class="text-lg mt-4 font-semibold relative z-10">
@@ -48,7 +55,7 @@
     <button
         on:click={showSoldOutAlert}
         class="mt-6 px-6 py-3 bg-[#81C14B] hover:bg-[#6A9A52] rounded-lg shadow-lg transition-all duration-300 text-lg font-bold active:scale-95 relative z-10">
-        Buy Now
+        {featuredProduct.status === "sold-out" ? "Sold Out" : "Buy Now"}
     </button>
 
     <!-- Toggle Features -->
@@ -65,7 +72,7 @@
                     <li><b>📡 QR Code Feature:</b> Scan to unlock exclusive NFT music.</li>
                     <li><b>🎧 Futuristic DJ Mask:</b> Representing the digital music revolution.</li>
                     <li><b>🔗 Chains Breaking into Pixels:</b> Symbolizing breaking limits through Web3.</li>
-                    <li><b>🕶️ Cyberpunk Typography:</b> “We Are The Future of Music” on back.</li>
+                    <li><b>🕶️ Cyberpunk Typography:</b> "We Are The Future of Music" on back.</li>
                     <li><b>💡 Blockchain & Waveform Sleeves:</b> One sleeve has blockchain patterns, the other has a music waveform.</li>
                     <li><b>🔥 Wearable NFT:</b> Comes with an exclusive hidden beat inside pocket QR.</li>
                     <li><b>💎 Avocado-Green Accents:</b> Representing theKenyanTroublers' futuristic brand identity.</li>
