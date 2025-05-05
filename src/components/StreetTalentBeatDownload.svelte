@@ -152,7 +152,7 @@
         {/each}
     </div>
 
-    <!-- Stop All Button (only visible when something is playing) -->
+    <!-- Stop All Button (only visible when something ie vvs playing) -->
     {#if isPlaying}
         <button 
             on:click={stopPreview}
