@@ -11,25 +11,39 @@
     { name: "Merch", link: "/merch" },
     { name: "Blog", link: "/blog" },
     { name: "The Troublers", link: "/troublers" },
-    { name: "Contact", link: "/contact" }
+    { name: "Contact", link: "/contact" },
+    { name: "Events", link: "/events" }
+  ];
+
+  // Additional links for search but not navbar
+  let additionalSearchOptions = [
+    { name: "Terms of Service", link: "/terms" },
+    { name: "Privacy Policy", link: "/privacy" }
   ];
 
   let menuOpen = false;
   let showSearch = false;
   let searchQuery = "";
-  let filteredTabs = tabs;
+  let filteredTabs = [...tabs, ...additionalSearchOptions];
   let showMusicPanel = false;
 
   const toggleSearch = () => {
     showSearch = !showSearch;
     searchQuery = "";
-    filteredTabs = tabs;
+    filteredTabs = [...tabs, ...additionalSearchOptions];
   };
 
   const updateSearch = () => {
-    filteredTabs = tabs.filter(tab =>
+    // Search in both tabs and additionalSearchOptions
+    const mainResults = tabs.filter(tab =>
       tab.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
+    
+    const additionalResults = additionalSearchOptions.filter(option =>
+      option.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    
+    filteredTabs = [...mainResults, ...additionalResults];
   };
 
   onMount(() => {
@@ -159,8 +173,10 @@
         <button on:click={() => showMusicPanel = false} class="text-2xl hover:text-[#81C14B]" aria-label="Close music panel">✕</button>
       </div>
       <a href="https://open.spotify.com/artist/6F05EgCahYw9U2th0SZVtP?si=CpkXfxfsSEGUfRkgfw_T1w" target="_blank" rel="noopener noreferrer" class="block text-center py-3 font-semibold rounded-md bg-[#1DB954] hover:shadow-[0_0_15px_#1DB954] transition-all">Spotify</a>
-      <a href="https://music.apple.com/us/artist/thekenyantroublers/1606960956" target="_blank" rel="noopener noreferrer" class="block text-center py-3 font-semibold rounded-md bg-white text-black hover:shadow-[0_0_15px_white] transition-all">Apple Music</a>
-      <a href="https://www.boomplay.com/artists/39520564?" target="_blank" rel="noopener noreferrer" class="block text-center py-3 font-semibold rounded-md bg-[#007BFF] hover:shadow-[0_0_15px_#007BFF] transition-all">Boomplay</a>
+      <a href="https://music.apple.com/us/artist/thekenyantroublers/1606960956" target="_blank" rel="noopener noreferrer" class="block text-center py-3 font-semibold rounded-md bg-white text-black hover:shadow-[0_0_15px_rgba(251,45,49,0.7)] transition-all">Apple Music</a>
+      <a href="https://www.boomplay.com/artists/39520564?" target="_blank" rel="noopener noreferrer" class="block text-center py-3 font-semibold rounded-md bg-[#0066FF] hover:shadow-[0_0_15px_#0066FF] transition-all">
+        <span class="font-bold italic">B</span>oomplay
+      </a>
     </div>
   </div>
 {/if}
