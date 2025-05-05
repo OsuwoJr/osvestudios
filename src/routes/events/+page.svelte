@@ -78,13 +78,13 @@
             id: "production-masterclass",
             title: "🎚️ Beat Production Masterclass", 
             date: "April 30, 2026", 
-            location: "Troublers Studio, Westlands", 
+            location: "OSVE STUDIOS, Roysambu", 
             price: "KES 1,200",
             description: "Learn the secrets of professional beat production from industry experts. Get hands-on experience with the latest production software and equipment.", 
             image: "/events/production-class.jpg",
             category: "Workshop",
             featured: false,
-            artists: ["Producer Magix", "Sound Engineer Faith"]
+            artists: ["Producer OsuwoJr", "Hilaboi"]
         },
         { 
             id: "virtual-album-launch",
@@ -114,7 +114,7 @@
             id: "blockchain-music-conference",
             title: "⛓️ Blockchain & Music Conference", 
             date: "September 5, 2026", 
-            location: "Radisson Blu Hotel, Nairobi", 
+            location: "OSVE STUDIOS, Roysambu", 
             price: "KES 2,500",
             description: "Explore how blockchain technology is revolutionizing the music industry. Network with tech innovators and music industry professionals.", 
             image: "/events/blockchain-conf.jpg",
@@ -142,7 +142,7 @@
             image: "/events/afrobeat-night.jpg",
             category: "Live",
             featured: false,
-            artists: ["Afro Beat Kings", "Rhythm Queens", "TheKenyanTroublers"]
+            artists: ["OsuwoJr", "Hilaboi", "DJ Zimmsha"]
         },
         { 
             id: "digital-art-music-exhibition",
