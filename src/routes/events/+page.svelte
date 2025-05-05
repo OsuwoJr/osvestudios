@@ -176,7 +176,7 @@
             image: "/events/nye-bash.jpg",
             category: "Live",
             featured: false,
-            artists: ["DJ Spin", "TheKenyanTroublers", "Kenya All-Stars"]
+            artists: ["DJ Zimmsha", "TheKenyanTroublers", "Kenya All-Stars"]
         }
     ];
     
