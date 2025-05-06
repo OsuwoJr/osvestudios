@@ -1,0 +1,13 @@
+# Development files
+.svelte-kit
+node_modules
+
+# Build output
+build
+dist
+
+# Environment and configuration
+.env
+.env.*
+!.env.example
+.cache 
