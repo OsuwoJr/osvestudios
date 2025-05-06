@@ -17,8 +17,8 @@
 </script>
 
 <svelte:head>
-    <title>Privacy Policy | TheKenyanTroublers</title>
-    <meta name="description" content="Privacy Policy for TheKenyanTroublers website - information on how we collect, use, and protect your personal data.">
+    <title>Privacy Policy | OSVE STUDIOS</title>
+    <meta name="description" content="Privacy Policy for OSVE STUDIOS website - information on how we collect, use, and protect your personal data.">
 </svelte:head>
 
 <div class="bg-black text-white min-h-screen">
@@ -27,21 +27,21 @@
         <p class="text-gray-400 text-center mb-12">Last Updated: {lastUpdated}</p>
         
         <!-- Table of Contents -->
-        <div class="bg-black/80 border border-[#81C14B]/30 rounded-lg p-6 mb-10">
+        <div class="bg-black/80 border border-[#00BFFF]/30 rounded-lg p-6 mb-10">
             <h2 class="text-xl font-bold mb-4">Table of Contents</h2>
             <ul class="space-y-2">
-                <li><a href="#introduction" class="text-[#81C14B] hover:underline">1. Introduction</a></li>
-                <li><a href="#info-collected" class="text-[#81C14B] hover:underline">2. Information We Collect</a></li>
-                <li><a href="#use-info" class="text-[#81C14B] hover:underline">3. How We Use Your Information</a></li>
-                <li><a href="#sharing" class="text-[#81C14B] hover:underline">4. Information Sharing and Disclosure</a></li>
-                <li><a href="#cookies" class="text-[#81C14B] hover:underline">5. Cookies and Tracking Technologies</a></li>
-                <li><a href="#data-security" class="text-[#81C14B] hover:underline">6. Data Security</a></li>
-                <li><a href="#data-retention" class="text-[#81C14B] hover:underline">7. Data Retention</a></li>
-                <li><a href="#children" class="text-[#81C14B] hover:underline">8. Children's Privacy</a></li>
-                <li><a href="#international" class="text-[#81C14B] hover:underline">9. International Data Transfers</a></li>
-                <li><a href="#your-rights" class="text-[#81C14B] hover:underline">10. Your Rights and Choices</a></li>
-                <li><a href="#changes" class="text-[#81C14B] hover:underline">11. Changes to This Privacy Policy</a></li>
-                <li><a href="#contact" class="text-[#81C14B] hover:underline">12. Contact Us</a></li>
+                <li><a href="#introduction" class="text-[#00BFFF] hover:underline">1. Introduction</a></li>
+                <li><a href="#info-collected" class="text-[#00BFFF] hover:underline">2. Information We Collect</a></li>
+                <li><a href="#use-info" class="text-[#00BFFF] hover:underline">3. How We Use Your Information</a></li>
+                <li><a href="#sharing" class="text-[#00BFFF] hover:underline">4. Information Sharing and Disclosure</a></li>
+                <li><a href="#cookies" class="text-[#00BFFF] hover:underline">5. Cookies and Tracking Technologies</a></li>
+                <li><a href="#data-security" class="text-[#00BFFF] hover:underline">6. Data Security</a></li>
+                <li><a href="#data-retention" class="text-[#00BFFF] hover:underline">7. Data Retention</a></li>
+                <li><a href="#children" class="text-[#00BFFF] hover:underline">8. Children's Privacy</a></li>
+                <li><a href="#international" class="text-[#00BFFF] hover:underline">9. International Data Transfers</a></li>
+                <li><a href="#your-rights" class="text-[#00BFFF] hover:underline">10. Your Rights and Choices</a></li>
+                <li><a href="#changes" class="text-[#00BFFF] hover:underline">11. Changes to This Privacy Policy</a></li>
+                <li><a href="#contact" class="text-[#00BFFF] hover:underline">12. Contact Us</a></li>
             </ul>
         </div>
         
@@ -50,7 +50,7 @@
             <section id="introduction">
                 <h2 class="text-2xl font-bold mb-4 section-title">1. Introduction</h2>
                 <div class="space-y-4">
-                    <p>TheKenyanTroublers ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website thekenyantroublers.com, use our mobile application, purchase our products or services, attend our events, or otherwise interact with us (collectively, the "Services").</p>
+                    <p>OSVE STUDIOS ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website osvestudios.com, use our mobile application, purchase our products or services, attend our events, or otherwise interact with us (collectively, the "Services").</p>
                     
                     <p>We value your trust and are dedicated to handling your personal information with care and in accordance with applicable data protection laws, including the Data Protection Act of Kenya, 2019.</p>
                     
@@ -229,7 +229,7 @@
             <section id="children">
                 <h2 class="text-2xl font-bold mb-4 section-title">8. Children's Privacy</h2>
                 <div class="space-y-4">
-                    <p>Our Services are not directed to children under the age of 18. We do not knowingly collect personal information from children under 18. If you are a parent or guardian and believe that your child has provided us with personal information, please contact us at privacy@thekenyantroublers.com. If we become aware that we have collected personal information from children without verification of parental consent, we will take steps to remove that information from our servers.</p>
+                    <p>Our Services are not directed to children under the age of 18. We do not knowingly collect personal information from children under 18. If you are a parent or guardian and believe that your child has provided us with personal information, please contact us at privacy@osvestudios.com. If we become aware that we have collected personal information from children without verification of parental consent, we will take steps to remove that information from our servers.</p>
                 </div>
             </section>
             
@@ -285,7 +285,7 @@
                     <p>If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us using the button below:</p>
                     
                     <div class="flex justify-center mt-6">
-                        <a href="/contact" class="px-8 py-3 bg-[#81C14B] hover:bg-[#6A9A52] text-black font-bold rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
+                        <a href="/contact" class="px-8 py-3 bg-[#00BFFF] hover:bg-[#0099FF] text-black font-bold rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
                             <i class="fas fa-envelope mr-2"></i>
                             Contact Our Data Protection Team
                         </a>
@@ -298,18 +298,18 @@
         
         <!-- Footer -->
         <div class="mt-16 text-center text-gray-400 text-sm">
-            <p>&copy; {currentYear} TheKenyanTroublers. All rights reserved.</p>
+            <p>&copy; {currentYear} OSVE STUDIOS. All rights reserved.</p>
         </div>
     </div>
 </div>
 
 <style>
     .neon-text {
-        text-shadow: 0 0 15px #81C14B, 0 0 25px #81C14B, 0 0 40px #81C14B;
+        text-shadow: 0 0 15px #00BFFF, 0 0 25px #00BFFF, 0 0 40px #00BFFF;
     }
     
     .section-title {
-        color: #81C14B;
+        color: #00BFFF;
         position: relative;
         display: inline-block;
     }
@@ -321,7 +321,7 @@
         left: 0;
         width: 100%;
         height: 2px;
-        background: linear-gradient(90deg, #81C14B, transparent);
+        background: linear-gradient(90deg, #00BFFF, transparent);
     }
     
     .legal-content p, .legal-content li {
@@ -332,12 +332,12 @@
     .legal-content section {
         padding: 1.5rem;
         background-color: rgba(0, 0, 0, 0.5);
-        border: 1px solid rgba(129, 193, 75, 0.1);
+        border: 1px solid rgba(0, 191, 255, 0.1);
         border-radius: 0.5rem;
     }
     
     .legal-content section:hover {
-        border-color: rgba(129, 193, 75, 0.3);
-        box-shadow: 0 0 15px rgba(129, 193, 75, 0.1);
+        border-color: rgba(0, 191, 255, 0.3);
+        box-shadow: 0 0 15px rgba(0, 191, 255, 0.1);
     }
 </style>

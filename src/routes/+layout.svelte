@@ -76,6 +76,39 @@
     });
 </script>
 
+<svelte:head>
+	<title>OSVE STUDIOS | Recording Studio | Electrifying Sound. Limitless Creativity</title>
+	<meta name="description" content="Professional recording studio offering music production, mixing, mastering, and audio engineering services. Create your next hit with OSVE STUDIOS." />
+
+	<!-- Favicon -->
+	<link rel="icon" href="/favicon.ico" />
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+	<link rel="manifest" href="/site.webmanifest" />
+	
+	<!-- Open Graph / Social Media -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://osvestudios.com/" />
+	<meta property="og:title" content="OSVE STUDIOS | Professional Recording Studio" />
+	<meta property="og:description" content="Professional recording studio offering music production, mixing, mastering, and audio engineering services." />
+	<meta property="og:image" content="https://osvestudios.com/og-image.jpg" />
+	
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:url" content="https://osvestudios.com/" />
+	<meta name="twitter:title" content="OSVE STUDIOS | Professional Recording Studio" />
+	<meta name="twitter:description" content="Professional recording studio offering music production, mixing, mastering, and audio engineering services." />
+	<meta name="twitter:image" content="https://osvestudios.com/og-image.jpg" />
+	
+	<!-- Canonical URL -->
+	<link rel="canonical" href="https://osvestudios.com/" />
+	
+	<!-- Core Meta Tags -->
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="theme-color" content="#00BFFF" />
+</svelte:head>
+
 <main bind:this={mainElement} class="bg-[#000000] flex flex-col item-center min-h-screen text-white relative" data-sveltekit-preload-data="hover">
     <BackgroundSVGs />
     <Header y={scrollY} />

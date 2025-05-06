@@ -62,18 +62,18 @@
         },
         {
             name: "theKenyanTroublers",
-            role: "Music Group",
+            role: "Music Label",
             quote: "The team at OSVE Studios understood our vision from day one. The recording environment and equipment are top-notch!",
             img: "/10.jpeg"
         }
     ];
-  </script>
+</script>
   
-  <main class="text-white min-h-screen">
-      <Hero />  
-      <StudioOverview />    
-      <StudioServices {services} />
-      <RecentProjects {projects} />
-      <Testimonials {testimonials} />
-  </main>
+<main class="text-white min-h-screen">
+    <Hero />  
+    <StudioOverview />    
+    <StudioServices {services} />
+    <RecentProjects {projects} />
+    <Testimonials {testimonials} />
+</main>
   

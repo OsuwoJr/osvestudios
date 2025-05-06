@@ -116,9 +116,9 @@
                     <p class="text-gray-300 text-sm">With over 10 years of experience in audio production, James leads our engineering team and oversees all technical aspects of OSVE Studios.</p>
                     
                     <div class="flex space-x-3 mt-4">
-                        <a href="#" class="text-gray-400 hover:text-[#00BFFF]" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-[#00BFFF]" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-[#00BFFF]" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com" class="text-gray-400 hover:text-[#00BFFF]" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://instagram.com" class="text-gray-400 hover:text-[#00BFFF]" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com" class="text-gray-400 hover:text-[#00BFFF]" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
             </div>
@@ -139,9 +139,9 @@
                     <p class="text-gray-300 text-sm">Sarah specializes in sound design and music production, bringing creative direction and innovative production techniques to every project.</p>
                     
                     <div class="flex space-x-3 mt-4">
-                        <a href="#" class="text-gray-400 hover:text-[#00BFFF]" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-[#00BFFF]" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-[#00BFFF]" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com" class="text-gray-400 hover:text-[#00BFFF]" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://instagram.com" class="text-gray-400 hover:text-[#00BFFF]" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com" class="text-gray-400 hover:text-[#00BFFF]" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
             </div>
@@ -162,9 +162,9 @@
                     <p class="text-gray-300 text-sm">With a meticulous ear for detail, David handles mixing and mastering to ensure every track reaches its full sonic potential.</p>
                     
                     <div class="flex space-x-3 mt-4">
-                        <a href="#" class="text-gray-400 hover:text-[#00BFFF]" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-[#00BFFF]" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-[#00BFFF]" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com" class="text-gray-400 hover:text-[#00BFFF]" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://instagram.com" class="text-gray-400 hover:text-[#00BFFF]" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com" class="text-gray-400 hover:text-[#00BFFF]" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
             </div>

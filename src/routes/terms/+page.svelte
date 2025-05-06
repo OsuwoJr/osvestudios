@@ -17,8 +17,8 @@
 </script>
 
 <svelte:head>
-    <title>Terms of Service | TheKenyanTroublers</title>
-    <meta name="description" content="Terms of Service and legal information for TheKenyanTroublers website, events, music, and merchandise.">
+    <title>Terms of Service | OSVE STUDIOS</title>
+    <meta name="description" content="Terms of Service and legal information for OSVE STUDIOS website, events, music, and merchandise.">
 </svelte:head>
 
 <div class="bg-black text-white min-h-screen">
@@ -27,24 +27,24 @@
         <p class="text-gray-400 text-center mb-12">Last Updated: {lastUpdated}</p>
         
         <!-- Table of Contents -->
-        <div class="bg-black/80 border border-[#81C14B]/30 rounded-lg p-6 mb-10">
+        <div class="bg-black/80 border border-[#00BFFF]/30 rounded-lg p-6 mb-10">
             <h2 class="text-xl font-bold mb-4">Table of Contents</h2>
             <ul class="space-y-2">
-                <li><a href="#introduction" class="text-[#81C14B] hover:underline">1. Introduction</a></li>
-                <li><a href="#definitions" class="text-[#81C14B] hover:underline">2. Definitions</a></li>
-                <li><a href="#account" class="text-[#81C14B] hover:underline">3. Account Registration and Requirements</a></li>
-                <li><a href="#content" class="text-[#81C14B] hover:underline">4. User Content and Conduct</a></li>
-                <li><a href="#ip" class="text-[#81C14B] hover:underline">5. Intellectual Property Rights</a></li>
-                <li><a href="#payments" class="text-[#81C14B] hover:underline">6. Payments, Subscriptions, and Refunds</a></li>
-                <li><a href="#events" class="text-[#81C14B] hover:underline">7. Events and Ticket Purchases</a></li>
-                <li><a href="#nft" class="text-[#81C14B] hover:underline">8. NFT Memberships and Digital Assets</a></li>
-                <li><a href="#warranties" class="text-[#81C14B] hover:underline">9. Disclaimers and Warranties</a></li>
-                <li><a href="#liability" class="text-[#81C14B] hover:underline">10. Limitation of Liability</a></li>
-                <li><a href="#indemnification" class="text-[#81C14B] hover:underline">11. Indemnification</a></li>
-                <li><a href="#termination" class="text-[#81C14B] hover:underline">12. Term and Termination</a></li>
-                <li><a href="#governing-law" class="text-[#81C14B] hover:underline">13. Governing Law</a></li>
-                <li><a href="#changes" class="text-[#81C14B] hover:underline">14. Changes to Terms</a></li>
-                <li><a href="#contact" class="text-[#81C14B] hover:underline">15. Contact Information</a></li>
+                <li><a href="#introduction" class="text-[#00BFFF] hover:underline">1. Introduction</a></li>
+                <li><a href="#definitions" class="text-[#00BFFF] hover:underline">2. Definitions</a></li>
+                <li><a href="#account" class="text-[#00BFFF] hover:underline">3. Account Registration and Requirements</a></li>
+                <li><a href="#content" class="text-[#00BFFF] hover:underline">4. User Content and Conduct</a></li>
+                <li><a href="#ip" class="text-[#00BFFF] hover:underline">5. Intellectual Property Rights</a></li>
+                <li><a href="#payments" class="text-[#00BFFF] hover:underline">6. Payments, Subscriptions, and Refunds</a></li>
+                <li><a href="#events" class="text-[#00BFFF] hover:underline">7. Events and Ticket Purchases</a></li>
+                <li><a href="#nft" class="text-[#00BFFF] hover:underline">8. NFT Memberships and Digital Assets</a></li>
+                <li><a href="#warranties" class="text-[#00BFFF] hover:underline">9. Disclaimers and Warranties</a></li>
+                <li><a href="#liability" class="text-[#00BFFF] hover:underline">10. Limitation of Liability</a></li>
+                <li><a href="#indemnification" class="text-[#00BFFF] hover:underline">11. Indemnification</a></li>
+                <li><a href="#termination" class="text-[#00BFFF] hover:underline">12. Term and Termination</a></li>
+                <li><a href="#governing-law" class="text-[#00BFFF] hover:underline">13. Governing Law</a></li>
+                <li><a href="#changes" class="text-[#00BFFF] hover:underline">14. Changes to Terms</a></li>
+                <li><a href="#contact" class="text-[#00BFFF] hover:underline">15. Contact Information</a></li>
             </ul>
         </div>
         
@@ -53,9 +53,9 @@
             <section id="introduction">
                 <h2 class="text-2xl font-bold mb-4 section-title">1. Introduction</h2>
                 <div class="space-y-4">
-                    <p>Welcome to TheKenyanTroublers website and platform. These Terms of Service ("Terms") govern your access to and use of thekenyantroublers.com, including any content, functionality, events, and services offered on or through the website (the "Service").</p>
+                    <p>Welcome to OSVE STUDIOS website and platform. These Terms of Service ("Terms") govern your access to and use of osvestudios.com, including any content, functionality, events, and services offered on or through the site (the "Service").</p>
                     
-                    <p>These Terms constitute a legally binding agreement between you and TheKenyanTroublers ("we," "us," or "our"). By accessing or using the Service, you agree to be bound by these Terms. If you do not agree to these Terms, please do not access or use the Service.</p>
+                    <p>These Terms constitute a legally binding agreement between you and OSVE STUDIOS ("we," "us," or "our"). By accessing or using the Service, you agree to be bound by these Terms. If you do not agree to these Terms, please do not access or use the Service.</p>
                     
                     <p>The Service is intended for users who are at least 18 years of age. By using the Service, you represent and warrant that you are at least 18 years old and have the legal capacity to enter into these Terms.</p>
                     
@@ -71,11 +71,11 @@
                     <ul class="list-disc pl-6 space-y-2">
                         <li><strong>"Content"</strong> means any text, graphics, images, music, audio, video, information, or other materials that are displayed, performed, or distributed on or through the Service.</li>
                         <li><strong>"User"</strong> means any individual who accesses or uses the Service, including registered and unregistered visitors.</li>
-                        <li><strong>"User Content"</strong> means any Content that a User posts, uploads, submits, or otherwise shares on or through the Service.</li>
-                        <li><strong>"Subscription"</strong> means the paid service offered by TheKenyanTroublers that provides access to premium features, content, and benefits.</li>
+                        <li><strong>"User Content"</strong> means all content that you submit, post, or display on the Service.</li>
+                        <li><strong>"Subscription"</strong> means the paid service offered by OSVE STUDIOS that provides access to premium features, content, and benefits.</li>
                         <li><strong>"NFT"</strong> means a non-fungible token, which is a unique digital identifier recorded on a blockchain that certifies ownership of a specific digital asset.</li>
-                        <li><strong>"Account"</strong> means a registered user profile created on the Service.</li>
-                        <li><strong>"Event"</strong> means any concert, performance, workshop, or other gathering organized or promoted by TheKenyanTroublers.</li>
+                        <li><strong>"User Account"</strong> means the account you create to access certain features of the Service.</li>
+                        <li><strong>"Event"</strong> means any concert, performance, workshop, or other gathering organized or promoted by OSVE STUDIOS.</li>
                     </ul>
                 </div>
             </section>
@@ -121,12 +121,12 @@
             <section id="ip">
                 <h2 class="text-2xl font-bold mb-4 section-title">5. Intellectual Property Rights</h2>
                 <div class="space-y-4">
-                    <p>The Service and its original content, features, and functionality are owned by TheKenyanTroublers and are protected by copyright, trademark, and other intellectual property laws of Kenya and international conventions. You may not reproduce, distribute, modify, create derivative works of, publicly display, publicly perform, republish, download, store, or transmit any of the material on our Service, except as follows:</p>
+                    <p>The Service and its original content, features, and functionality are owned by OSVE STUDIOS and are protected by copyright, trademark, and other intellectual property laws of Kenya and international conventions. You may not reproduce, distribute, modify, create derivative works of, publicly display, publicly perform, republish, download, store, or transmit any of the material on our Service, except as follows:</p>
                     
                     <ul class="list-disc pl-6 space-y-2">
-                        <li>Your device may temporarily store copies of such materials in RAM incidental to your accessing and viewing those materials</li>
+                        <li>Your computer may temporarily store copies of such materials in RAM incidental to your accessing and viewing those materials</li>
                         <li>You may store files that are automatically cached by your web browser for display enhancement purposes</li>
-                        <li>You may print or download one copy of a reasonable number of pages of the website for your own personal, non-commercial use and not for further reproduction, publication, or distribution</li>
+                        <li>You may print or download one copy of a reasonable number of pages of the Service for your own personal, non-commercial use and not for further reproduction, publication, or distribution</li>
                         <li>If we provide social media features with certain content, you may take such actions as are enabled by such features</li>
                     </ul>
                     
@@ -141,7 +141,7 @@
                     
                     <p>If you print, copy, modify, download, or otherwise use or provide any other person with access to any part of the Service in breach of the Terms, your right to use the Service will stop immediately and you must, at our option, return or destroy any copies of the materials you have made.</p>
                     
-                    <p>TheKenyanTroublers name, logo, and all related names, logos, product and service names, designs, and slogans are trademarks of TheKenyanTroublers or its affiliates or licensors. You may not use such marks without the prior written permission of TheKenyanTroublers. All other names, logos, product and service names, designs, and slogans on the Service are the trademarks of their respective owners.</p>
+                    <p>OSVE STUDIOS name, logo, and all related names, logos, product and service names, designs, and slogans are trademarks of OSVE STUDIOS or its affiliates or licensors. You may not use such marks without the prior written permission of OSVE STUDIOS. All other names, logos, product and service names, designs, and slogans on the Service are the trademarks of their respective owners.</p>
                 </div>
             </section>
             
@@ -165,7 +165,7 @@
             <section id="events">
                 <h2 class="text-2xl font-bold mb-4 section-title">7. Events and Ticket Purchases</h2>
                 <div class="space-y-4">
-                    <p>TheKenyanTroublers organizes and promotes various events, including concerts, workshops, and other gatherings. By purchasing tickets to these events, you agree to the following terms:</p>
+                    <p>OSVE STUDIOS organizes and promotes various events, including concerts, workshops, and other gatherings. By purchasing tickets to these events, you agree to the following terms:</p>
                     
                     <p><strong>Ticket Purchase:</strong> Tickets are sold subject to availability and are non-transferable unless explicitly stated otherwise. Tickets may be limited to a specified number per person or per credit card. We reserve the right to cancel tickets purchased in excess of these limits.</p>
                     
@@ -173,7 +173,7 @@
                     
                     <p><strong>Entry and Conduct:</strong> Admission to an event is subject to the venue's terms and conditions. We reserve the right to refuse admission or to eject you from the event without refund if, in our reasonable opinion, you represent a security risk, nuisance, or annoyance to the staging of the event, or if you fail to comply with reasonable instructions from event staff.</p>
                     
-                    <p><strong>Recording and Photography:</strong> By attending an event, you consent to being filmed, photographed, and recorded as part of the audience. You grant us the right to use your likeness in any media, worldwide, in perpetuity, for promotional purposes related to TheKenyanTroublers.</p>
+                    <p><strong>Recording and Photography:</strong> By attending an event, you consent to being photographed, filmed, or recorded, and grant us the right to use such materials, which may include your likeness or voice, for promotional purposes related to OSVE STUDIOS.</p>
                     
                     <p><strong>Liability:</strong> We are not responsible for any loss, injury, or damage to any person or property at an event, unless caused by our negligence. You attend events at your own risk.</p>
                     
@@ -184,9 +184,9 @@
             <section id="nft">
                 <h2 class="text-2xl font-bold mb-4 section-title">8. NFT Memberships and Digital Assets</h2>
                 <div class="space-y-4">
-                    <p>TheKenyanTroublers offers NFT (Non-Fungible Token) memberships and other digital assets. By purchasing, acquiring, or using NFTs, you agree to the following terms:</p>
+                    <p>OSVE STUDIOS offers NFT (Non-Fungible Token) memberships and other digital assets. By purchasing, acquiring, or using NFTs, you agree to the following terms:</p>
                     
-                    <p><strong>NFT Ownership:</strong> When you purchase an NFT, you own the NFT (the unique token) but not the underlying content or intellectual property rights to the content, which remain with TheKenyanTroublers or the original creator. Your purchase of an NFT grants you a limited, non-exclusive, non-transferable license to use, display, and resell the NFT.</p>
+                    <p><strong>NFT Ownership:</strong> When you purchase an NFT, you own the NFT (the unique token) but not the underlying content or intellectual property rights to the content, which remain with OSVE STUDIOS or the original creator. Your purchase of an NFT grants you a limited, non-exclusive, non-transferable license to use, display, and resell the NFT.</p>
                     
                     <p><strong>Blockchain Transactions:</strong> NFT transactions occur on third-party blockchains that we do not control. You are responsible for understanding how blockchain transactions work, including gas fees, transaction delays, and the risks associated with blockchain technology.</p>
                     
@@ -220,7 +220,7 @@
             <section id="liability">
                 <h2 class="text-2xl font-bold mb-4 section-title">10. Limitation of Liability</h2>
                 <div class="space-y-4">
-                    <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT WILL THEKENYANTROUBLERS, ITS DIRECTORS, EMPLOYEES, PARTNERS, AGENTS, SUPPLIERS, OR AFFILIATES BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING WITHOUT LIMITATION, LOSS OF PROFITS, DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, RESULTING FROM:</p>
+                    <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT WILL OSVE STUDIOS, ITS DIRECTORS, EMPLOYEES, PARTNERS, AGENTS, SUPPLIERS, OR AFFILIATES BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING WITHOUT LIMITATION, LOSS OF PROFITS, DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, RESULTING FROM:</p>
                     
                     <ul class="list-disc pl-6 space-y-2">
                         <li>YOUR ACCESS TO OR USE OF OR INABILITY TO ACCESS OR USE THE SERVICE</li>
@@ -240,13 +240,13 @@
             <section id="indemnification">
                 <h2 class="text-2xl font-bold mb-4 section-title">11. Indemnification</h2>
                 <div class="space-y-4">
-                    <p>You agree to defend, indemnify, and hold harmless TheKenyanTroublers, its parent company, affiliates, subsidiaries, officers, directors, employees, and agents, from and against any and all claims, damages, obligations, losses, liabilities, costs or debt, and expenses (including but not limited to attorney's fees) arising from:</p>
+                    <p>You agree to defend, indemnify, and hold harmless OSVE STUDIOS, its parent company, affiliates, subsidiaries, officers, directors, employees, and agents, from and against any and all claims, damages, obligations, losses, liabilities, costs or debt, and expenses (including but not limited to attorney's fees) arising from:</p>
                     
                     <ul class="list-disc pl-6 space-y-2">
-                        <li>Your use of and access to the Service</li>
-                        <li>Your violation of any term of these Terms</li>
-                        <li>Your violation of any third-party right, including without limitation any copyright, property, or privacy right</li>
-                        <li>Any claim that your User Content caused damage to a third party</li>
+                        <li>Your use of and access to the Service;</li>
+                        <li>Your violation of any term of these Terms;</li>
+                        <li>Your violation of any third-party right, including without limitation any copyright, property, or privacy right;</li>
+                        <li>Any claim that your User Content caused damage to a third party.</li>
                     </ul>
                     
                     <p>This defense and indemnification obligation will survive these Terms and your use of the Service.</p>
@@ -296,7 +296,7 @@
                     <p>If you have any questions about these Terms, please contact us using the button below:</p>
                     
                     <div class="flex justify-center mt-6">
-                        <a href="/contact" class="px-8 py-3 bg-[#81C14B] hover:bg-[#6A9A52] text-black font-bold rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
+                        <a href="/contact" class="px-8 py-3 bg-[#00BFFF] hover:bg-[#0099FF] text-black font-bold rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
                             <i class="fas fa-envelope mr-2"></i>
                             Contact Us
                         </a>
@@ -307,18 +307,18 @@
         
         <!-- Footer -->
         <div class="mt-16 text-center text-gray-400 text-sm">
-            <p>&copy; {currentYear} TheKenyanTroublers. All rights reserved.</p>
+            <p>&copy; {currentYear} OSVE STUDIOS. All rights reserved.</p>
         </div>
     </div>
 </div>
 
 <style>
     .neon-text {
-        text-shadow: 0 0 15px #81C14B, 0 0 25px #81C14B, 0 0 40px #81C14B;
+        text-shadow: 0 0 15px #00BFFF, 0 0 25px #00BFFF, 0 0 40px #00BFFF;
     }
     
     .section-title {
-        color: #81C14B;
+        color: #00BFFF;
         position: relative;
         display: inline-block;
     }
@@ -330,7 +330,7 @@
         left: 0;
         width: 100%;
         height: 2px;
-        background: linear-gradient(90deg, #81C14B, transparent);
+        background: linear-gradient(90deg, #00BFFF, transparent);
     }
     
     .legal-content p, .legal-content li {
@@ -341,12 +341,12 @@
     .legal-content section {
         padding: 1.5rem;
         background-color: rgba(0, 0, 0, 0.5);
-        border: 1px solid rgba(129, 193, 75, 0.1);
+        border: 1px solid rgba(0, 191, 255, 0.1);
         border-radius: 0.5rem;
     }
     
     .legal-content section:hover {
-        border-color: rgba(129, 193, 75, 0.3);
-        box-shadow: 0 0 15px rgba(129, 193, 75, 0.1);
+        border-color: rgba(0, 191, 255, 0.3);
+        box-shadow: 0 0 15px rgba(0, 191, 255, 0.1);
     }
 </style> 

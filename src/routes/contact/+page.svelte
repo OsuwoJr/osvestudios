@@ -225,16 +225,16 @@
                 <div class="mt-8">
                     <h3 class="font-semibold mb-3">Connect With Us</h3>
                     <div class="flex space-x-3">
-                        <a href="https://www.instagram.com/osvestudios/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-black/50 flex items-center justify-center text-gray-300 hover:text-[#E1306C] hover:bg-black/70 transition-all">
+                        <a href="https://www.instagram.com/osvestudios/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-black/50 flex items-center justify-center text-gray-300 hover:text-[#E1306C] hover:bg-black/70 transition-all" aria-label="Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://www.facebook.com/osvestudios" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-black/50 flex items-center justify-center text-gray-300 hover:text-[#4267B2] hover:bg-black/70 transition-all">
+                        <a href="https://www.facebook.com/osvestudios" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-black/50 flex items-center justify-center text-gray-300 hover:text-[#4267B2] hover:bg-black/70 transition-all" aria-label="Facebook">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="https://twitter.com/osvestudios" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-black/50 flex items-center justify-center text-gray-300 hover:text-[#1DA1F2] hover:bg-black/70 transition-all">
+                        <a href="https://twitter.com/osvestudios" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-black/50 flex items-center justify-center text-gray-300 hover:text-[#1DA1F2] hover:bg-black/70 transition-all" aria-label="Twitter">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="https://wa.me/254790932575" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-black/50 flex items-center justify-center text-gray-300 hover:text-[#25D366] hover:bg-black/70 transition-all">
+                        <a href="https://wa.me/254790932575" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-black/50 flex items-center justify-center text-gray-300 hover:text-[#25D366] hover:bg-black/70 transition-all" aria-label="WhatsApp">
                             <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>
@@ -276,28 +276,10 @@
 </div>
 
 <style>
-    .highlight {
-        color: #81C14B;
-        background: linear-gradient(90deg, #81C14B, #6A9A52);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        text-shadow: 0px 0px 10px rgba(129, 193, 75, 0.9);
-    }
-    
     /* Form focus effects */
     input:focus, textarea:focus {
         outline: none;
-        box-shadow: 0 0 0 2px rgba(129, 193, 75, 0.5);
-    }
-    
-    /* Animation for form fields */
-    .form-group {
-        transition: transform 0.3s ease;
-    }
-    
-    .form-group:focus-within {
-        transform: translateY(-2px);
+        box-shadow: 0 0 0 2px rgba(0, 191, 255, 0.5);
     }
     
     /* Smooth scrolling for the entire page */

@@ -292,7 +292,7 @@
                                     src={event.image || "/events/placeholder.jpg"} 
                                     alt={event.title} 
                                     class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
-                                    onerror="this.src='/events/placeholder.jpg'"
+                                    on:error={() => { event.image = "/events/placeholder.jpg" }}
                                 />
                                 <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80"></div>
                                 
