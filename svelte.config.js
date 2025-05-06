@@ -9,8 +9,8 @@ const config = {
 
 	kit: {
 		adapter: adapter({
-			// Node.js runtime
-			runtime: 'nodejs',
+			// Node.js runtime - must use 'nodejs18.x' for Vercel
+			runtime: 'nodejs18.x',
 			
 			// Split functions for better cold starts
 			split: false,
