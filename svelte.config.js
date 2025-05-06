@@ -8,20 +8,7 @@ const config = {
 	preprocess: vitePreprocess(),
 
 	kit: {
-		adapter: adapter({
-			// Node.js runtime - must use 'nodejs18.x' for Vercel
-			runtime: 'nodejs18.x',
-			
-			// Split functions for better cold starts
-			split: false,
-			
-			// Configure Vercel image optimization
-			images: {
-				sizes: [640, 828, 1200, 1920, 3840],
-				formats: ['image/avif', 'image/webp'],
-				minimumCacheTTL: 300
-			}
-		})
+		adapter: adapter()
 	}
 };
 
