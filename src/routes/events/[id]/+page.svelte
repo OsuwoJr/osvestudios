@@ -381,23 +381,23 @@
         
         <!-- Event Details -->
         <div class="container mx-auto px-6 relative z-20 -mt-32">
-            <div class="bg-black/80 border border-[#81C14B] rounded-xl p-8 backdrop-blur-sm shadow-lg">
+            <div class="bg-black/80 border border-[#00BFFF] rounded-xl p-8 backdrop-blur-sm shadow-lg">
                 <div class="flex flex-col md:flex-row gap-6">
                     <div class="md:w-2/3">
-                        <span class="inline-block bg-[#81C14B] text-black px-3 py-1 rounded-full text-sm font-medium mb-4">
+                        <span class="inline-block bg-[#00BFFF] text-black px-3 py-1 rounded-full text-sm font-medium mb-4">
                             {event.category}
                         </span>
                         <h1 class="text-4xl md:text-5xl font-bold">{event.title}</h1>
                         
                         <div class="mt-4 flex flex-wrap gap-4">
                             <div class="flex items-center text-gray-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-[#81C14B]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-[#00BFFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                 </svg>
                                 <span>{event.date}</span>
                             </div>
                             <div class="flex items-center text-gray-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-[#81C14B]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-[#00BFFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                 </svg>
@@ -416,7 +416,7 @@
                                 <h3 class="text-lg font-semibold mb-2">Featuring:</h3>
                                 <div class="flex flex-wrap gap-2">
                                     {#each event.artists as artist}
-                                        <span class="inline-block bg-[#81C14B]/20 border border-[#81C14B]/50 text-white px-3 py-1 rounded-full text-sm">
+                                        <span class="inline-block bg-[#00BFFF]/20 border border-[#00BFFF]/50 text-white px-3 py-1 rounded-full text-sm">
                                             {artist}
                                         </span>
                                     {/each}
@@ -426,13 +426,13 @@
                     </div>
                     
                     <div class="md:w-1/3 mt-6 md:mt-0">
-                        <div class="bg-black/50 border border-[#81C14B]/30 rounded-lg p-6">
+                        <div class="bg-black/50 border border-[#00BFFF]/30 rounded-lg p-6">
                             <h2 class="text-xl font-bold mb-4 text-center">Book Your Spot</h2>
                             <p class="text-gray-300 mb-6 text-center">Secure your tickets now for this exclusive event!</p>
                             
                             <button 
                                 on:click={() => bookEventViaWhatsApp(event)}
-                                class="w-full px-4 py-3 text-lg font-bold bg-[#81C14B] hover:bg-[#6A9A52] text-black rounded-lg shadow-lg transition-all transform hover:scale-105 flex items-center justify-center mb-4"
+                                class="w-full px-4 py-3 text-lg font-bold bg-[#00BFFF] hover:bg-[#0099CC] text-black rounded-lg shadow-lg transition-all transform hover:scale-105 flex items-center justify-center mb-4"
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
@@ -462,11 +462,11 @@
                 {#if event.schedule && event.schedule.length > 0}
                     <div class="mt-10">
                         <h2 class="text-2xl font-bold mb-6 neon-text">Event Schedule</h2>
-                        <div class="bg-black/50 border border-[#81C14B]/30 rounded-lg p-4">
+                        <div class="bg-black/50 border border-[#00BFFF]/30 rounded-lg p-4">
                             <ul class="space-y-4">
                                 {#each event.schedule as item}
                                     <li class="flex items-start">
-                                        <div class="flex-shrink-0 bg-[#81C14B] text-black font-bold p-2 rounded w-24 text-center">
+                                        <div class="flex-shrink-0 bg-[#00BFFF] text-black font-bold p-2 rounded w-24 text-center">
                                             {item.time}
                                         </div>
                                         <div class="ml-4 pt-1">
@@ -483,13 +483,13 @@
             <div>
                 <h2 class="text-2xl font-bold mb-6 neon-text">Venue Details</h2>
                 {#if event.venue}
-                    <div class="bg-black/50 border border-[#81C14B]/30 rounded-lg p-6">
+                    <div class="bg-black/50 border border-[#00BFFF]/30 rounded-lg p-6">
                         <h3 class="text-xl font-bold">{event.venue.name}</h3>
                         <p class="text-gray-300 mt-2">{event.venue.address}</p>
                         
                         {#if event.venue.mapUrl}
                             <div class="mt-4">
-                                <a href={event.venue.mapUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-[#81C14B] hover:underline">
+                                <a href={event.venue.mapUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-[#00BFFF] hover:underline">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
                                     </svg>
@@ -530,7 +530,7 @@
             <h2 class="text-3xl font-bold mb-8 neon-text">Related Events</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {#each relatedEvents as relatedEvent}
-                    <a href={`/events/${relatedEvent.id}`} class="bg-black/80 border border-[#81C14B]/50 rounded-lg overflow-hidden hover:border-[#81C14B] transition-all">
+                    <a href={`/events/${relatedEvent.id}`} class="bg-black/80 border border-[#00BFFF]/50 rounded-lg overflow-hidden hover:border-[#00BFFF] transition-all">
                         <div class="h-40 relative">
                             <img src={relatedEvent.image || "/events/placeholder.jpg"} alt={relatedEvent.title} class="w-full h-full object-cover">
                             <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
@@ -543,7 +543,7 @@
                         <div class="p-4">
                             <h3 class="text-lg font-bold">{relatedEvent.title}</h3>
                             <p class="text-sm text-gray-300 mt-1">{relatedEvent.date}</p>
-                            <p class="text-sm font-semibold text-[#81C14B] mt-1">{relatedEvent.price}</p>
+                            <p class="text-sm font-semibold text-[#00BFFF] mt-1">{relatedEvent.price}</p>
                         </div>
                     </a>
                 {/each}
@@ -553,13 +553,13 @@
     
     <!-- Back Links -->
     <div class="container mx-auto px-6 py-8 flex justify-between items-center border-t border-gray-800">
-        <a href="/events" class="text-[#81C14B] hover:underline flex items-center">
+        <a href="/events" class="text-[#00BFFF] hover:underline flex items-center">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
             Back to All Events
         </a>
-        <a href="/" class="text-[#81C14B] hover:underline flex items-center">
+        <a href="/" class="text-[#00BFFF] hover:underline flex items-center">
             Back to Home
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h2a1 1 0 001-1v-4a1 1 0 00-1-1h-4a1 1 0 00-1 1v4a1 1 0 01-1 1H7a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h2"/>
@@ -571,7 +571,7 @@
 <style>
     /* Neon text */
     .neon-text {
-        text-shadow: 0 0 15px #81C14B, 0 0 30px #81C14B, 0 0 50px #81C14B;
+        text-shadow: 0 0 15px #00BFFF, 0 0 30px #00BFFF, 0 0 50px #00BFFF;
     }
     
     /* Social icons */
@@ -589,7 +589,7 @@
     }
     
     .social-icon:hover {
-        background-color: #81C14B;
+        background-color: #00BFFF;
         color: black;
         transform: translateY(-2px);
     }

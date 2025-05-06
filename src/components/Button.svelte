@@ -14,7 +14,7 @@
 </script>
 
 <a 
-    class="relative overflow-hidden px-4 md:px-6 py-2 text-lg font-medium rounded-full bg-white hover:bg-[#81C14B] text-slate-950 hover:text-white border border-transparent transition-all duration-300 ease-in-out focus:outline-none hover:border-[#6A9A52] active:scale-95"
+    class="relative overflow-hidden px-4 md:px-6 py-2 text-lg font-medium rounded-full bg-white hover:bg-[#00BFFF] text-slate-950 hover:text-white border border-transparent transition-all duration-300 ease-in-out focus:outline-none hover:border-[#0099CC] active:scale-95"
     href={href}
     target={link && !download ? "_blank" : undefined}
     rel={link && !download ? "noopener noreferrer" : undefined}

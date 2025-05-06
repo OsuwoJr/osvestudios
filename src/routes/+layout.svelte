@@ -124,8 +124,8 @@
 
 .floating, .floating-svg {
     position: fixed;
-    color: rgba(129, 193, 75, 0.7);
-    text-shadow: 0 0 15px rgba(129, 193, 75, 0.8);
+    color: rgba(0, 191, 255, 0.7);
+    text-shadow: 0 0 15px rgba(0, 191, 255, 0.8);
     opacity: 0.6;
     z-index: 0; /* Below content */
     pointer-events: none; /* Allow clicks to pass through */

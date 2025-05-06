@@ -17,36 +17,35 @@
     <!-- Hero Content -->
     <div class="relative z-20 text-center bg-black/30 backdrop-blur-sm p-6 sm:p-8 rounded-lg max-w-[95%] sm:max-w-2xl mx-auto">
         <h1 class="font-bold leading-tight tracking-tight break-words">
-            <span class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl block ">the</span>
-            <span class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#81C14B] block sm:inline">Kenyan</span>
-            <span class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl block sm:inline">Troublers</span>
+            <span class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#00BFFF] block">OSVE</span>
+            <span class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl block">STUDIOS</span>
         </h1>
-        <p class="text-lg md:text-2xl mt-4 text-gray-200">The Global Hitmakers.</p>
+        <p class="text-lg md:text-2xl mt-4 text-gray-200">Electrifying Sound. Limitless Creativity.</p>
         
         <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/music" 
-               class="inline-block bg-[#81C14B] px-6 py-3 text-lg font-semibold rounded-lg shadow-lg transition-all hover:bg-[#6A9A52] hover:scale-105 flex items-center justify-center"          
+            <a href="/services" 
+               class="inline-block bg-[#00BFFF] px-6 py-3 text-lg font-semibold rounded-lg shadow-lg transition-all hover:bg-[#0099CC] hover:scale-105 flex items-center justify-center"          
                rel="noopener noreferrer"
-               aria-label="Listen to TheKenyanTroublers on Spotify">
-                <i class="fas fa-music mr-2"></i> Explore Music
+               aria-label="Book a session at OSVE Studios">
+                <i class="fas fa-calendar-alt mr-2"></i> Book a Session
             </a>
-            <a href="/artists" 
-               class="inline-block bg-black/60 border border-[#81C14B] backdrop-blur-md px-6 py-3 text-lg font-semibold rounded-lg shadow-lg transition-all hover:bg-[#81C14B]/20 hover:scale-105 flex items-center justify-center"          
+            <a href="/projects" 
+               class="inline-block bg-black/60 border border-[#00BFFF] backdrop-blur-md px-6 py-3 text-lg font-semibold rounded-lg shadow-lg transition-all hover:bg-[#00BFFF]/20 hover:scale-105 flex items-center justify-center"          
                rel="noopener noreferrer"
-               aria-label="Discover our artists">
-                <i class="fas fa-users mr-2"></i> Our Artists
+               aria-label="Explore our portfolio">
+                <i class="fas fa-music mr-2"></i> Our Work
             </a>
         </div>
         
         <!-- Social Media Quick Links -->
         <div class="mt-8 flex justify-center space-x-4">
-            <a href="https://www.instagram.com/thekenyantroublers/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-2xl hover:text-[#E1306C] transition-all hover:scale-110">
+            <a href="https://www.instagram.com/osvestudios/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-2xl hover:text-[#E1306C] transition-all hover:scale-110">
                 <i class="fab fa-instagram"></i>
             </a>
-            <a href="https://open.spotify.com/artist/6F05EgCahYw9U2th0SZVtP" target="_blank" rel="noopener noreferrer" aria-label="Spotify" class="text-2xl hover:text-[#1ED760] transition-all hover:scale-110">
+            <a href="https://open.spotify.com/user/osvestudios" target="_blank" rel="noopener noreferrer" aria-label="Spotify" class="text-2xl hover:text-[#1ED760] transition-all hover:scale-110">
                 <i class="fab fa-spotify"></i>
             </a>
-            <a href="https://www.youtube.com/channel/UCs7hbuqCcYbPFUZKPiG0ufw" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="text-2xl hover:text-[#FF0000] transition-all hover:scale-110">
+            <a href="https://www.youtube.com/channel/osvestudios" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="text-2xl hover:text-[#FF0000] transition-all hover:scale-110">
                 <i class="fab fa-youtube"></i>
             </a>
         </div>

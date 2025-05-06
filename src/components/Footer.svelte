@@ -7,39 +7,36 @@
 	let email = "";
 	let subscribeStatus = "";
 	let isSubscribing = false;
-	const contactEmail = "infothekenyantroublers@gmail.com";
+	const contactEmail = "info@osvestudios.com";
 
 	const tabs = [
 		{ name: "Home", link: "/", icon: "fa-home" },
-		{ name: "Music", link: "/music", icon: "fa-music" },
-		{ name: "Artists", link: "/artists", icon: "fa-users" },
-		{ name: "TTST", link: "/street-talent", icon: "fa-street-view" },
-		{ name: "Merch", link: "/merch", icon: "fa-tshirt" },
-		{ name: "Blog", link: "/blog", icon: "fa-newspaper" },
-		{ name: "The Troublers", link: "/troublers", icon: "fa-fan" }
+		{ name: "About", link: "/about", icon: "fa-info-circle" },
+		{ name: "Services", link: "/services", icon: "fa-concierge-bell" },
+		{ name: "Projects", link: "/projects", icon: "fa-project-diagram" },
+		{ name: "Contact", link: "/contact", icon: "fa-envelope" }
 	];
 
 	const legal = [
 		{ name: "Terms", link: "/terms", icon: "fa-file-contract" },
 		{ name: "Privacy", link: "/privacy", icon: "fa-shield-alt" },
-		{ name: "Contact", link: "/contact", icon: "fa-envelope" }
+		{ name: "Booking", link: "/contact", icon: "fa-calendar-alt" }
 	];
 
 	const socials = [
-		{ name: "Instagram", icon: "fab fa-instagram", link: "https://www.instagram.com/thekenyantroublers/", color: "#E1306C" },
-		{ name: "X", icon: "fab fa-x-twitter", link: "https://x.com/KenyanTroublers", color: "#1DA1F2" },
-		{ name: "Facebook", icon: "fab fa-facebook", link: "https://www.facebook.com/thekenyantroublerskt", color: "#4267B2" },
-		{ name: "TikTok", icon: "fab fa-tiktok", link: "https://www.tiktok.com/@thekenyantroublers", color: "#000000" },
-		{ name: "YouTube", icon: "fab fa-youtube", link: "https://www.youtube.com/channel/UCs7hbuqCcYbPFUZKPiG0ufw", color: "#FF0000" },
-		{ name: "Spotify", icon: "fab fa-spotify", link: "https://open.spotify.com/artist/6F05EgCahYw9U2th0SZVtP", color: "#1ED760" },
-		{ name: "Boomplay", icon: "custom-boomplay", link: "https://www.boomplay.com/artists/39520564?", color: "#0066FF" },
-		{ name: "Apple Music", icon: "fab fa-apple", link: "https://music.apple.com/us/artist/thekenyantroublers/1606960956", color: "#FB2D31" }
+		{ name: "Instagram", icon: "fab fa-instagram", link: "https://www.instagram.com/osvestudios/", color: "#E1306C" },
+		{ name: "X", icon: "fab fa-x-twitter", link: "https://x.com/osvestudios", color: "#1DA1F2" },
+		{ name: "Facebook", icon: "fab fa-facebook", link: "https://www.facebook.com/osvestudios", color: "#4267B2" },
+		{ name: "TikTok", icon: "fab fa-tiktok", link: "https://www.tiktok.com/@osvestudios", color: "#000000" },
+		{ name: "YouTube", icon: "fab fa-youtube", link: "https://www.youtube.com/channel/osvestudios", color: "#FF0000" },
+		{ name: "Spotify", icon: "fab fa-spotify", link: "https://open.spotify.com/user/osvestudios", color: "#1ED760" }
 	];
 
 	// Contact information for development services
-	const devContacts = [
-		{ name: "GitHub", icon: "fab fa-github", link: "https://github.com/osuwojr", color: "#333333" },
-		{ name: "WhatsApp", icon: "fab fa-whatsapp", link: "https://wa.me/254790932575", color: "#25D366" }
+	const studioContacts = [
+		{ name: "Email", icon: "fas fa-envelope", link: "mailto:info@osvestudios.com", color: "#00BFFF" },
+		{ name: "WhatsApp", icon: "fab fa-whatsapp", link: "https://wa.me/254790932575", color: "#25D366" },
+		{ name: "Phone", icon: "fas fa-phone", link: "tel:+254790932575", color: "#00BFFF" }
 	];
 
 	const handleSubscribe = (e: SubmitEvent) => {
@@ -87,35 +84,6 @@
 		});
 	};
 
-	// Avocado easter egg functionality
-	let isAvocadoShaking = false;
-	let avocadoClickCount = 0;
-	
-	function handleAvocadoClick() {
-		avocadoClickCount++;
-		
-		// Show different messages based on click count
-		if (avocadoClickCount === 1) {
-			alert("🥑 The Global Hitmakers!");
-		} else if (avocadoClickCount === 3) {
-			alert("🥑🥑🥑 Triple avocado! You're a true fan!");
-		} else if (avocadoClickCount === 5) {
-			alert("🥑✨ You've unlocked the secret avocado level! Just kidding, keep clicking though...");
-		} else if (avocadoClickCount === 10) {
-			alert("🥑👑 Avocado Royalty Status Achieved! You really love clicking, don't you?");
-		} else if (avocadoClickCount >= 15) {
-			// Reset counter after 15 clicks
-			avocadoClickCount = 0;
-			alert("🥑💥 Avocado explosion! Counter reset - let's start again!");
-		} else {
-			alert("🥑 The Global Hitmakers!");
-		}
-		
-		// Trigger extra shake animation on click
-		isAvocadoShaking = true;
-		setTimeout(() => { isAvocadoShaking = false; }, 1000);
-	}
-
 	// Current location detection for navigation highlight
 	let currentPath = "";
 	onMount(() => {
@@ -124,15 +92,15 @@
 	});
 </script>
 
-<footer class="relative bg-black text-white mt-20 border-t border-[#81C14B]/40 overflow-hidden">
+<footer class="relative bg-black text-white mt-20 border-t border-[#00BFFF]/40 overflow-hidden">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 relative z-10">
 
 		<!-- Logo + Tagline -->
 		<div class="flex flex-col items-start">
 			<a href="/" class="block mb-4 transition-transform hover:scale-105 duration-300">
-				<img src="/logo.png" alt="KenyanTroublers Logo" class="h-14 w-14" />
+				<img src="/logo.png" alt="OSVE STUDIOS Logo" class="h-14 w-14" />
 			</a>
-			<p class="text-sm text-gray-400 italic mb-4">"the global hitmakers."</p>
+			<p class="text-sm text-gray-400 italic mb-4">"Electrifying Sound. Limitless Creativity."</p>
 			<div class="flex space-x-4 mt-2">
 				{#each socials.slice(0, 4) as soc}
 					<a 
@@ -150,7 +118,7 @@
 
 		<!-- Navigation -->
 		<div>
-			<h3 class="text-xl font-bold text-[#81C14B] mb-4 flex items-center">
+			<h3 class="text-xl font-bold text-[#00BFFF] mb-4 flex items-center">
 				<i class="fas fa-compass mr-2"></i> Explore
 			</h3>
 			<ul class="space-y-2">
@@ -158,10 +126,10 @@
 					<li>
 						<a 
 							href={tab.link} 
-							class={"flex items-center hover:text-[#81C14B] hover:pl-2 transition-all duration-300 " + 
-								(currentPath === tab.link ? "text-[#81C14B]" : "")}
+							class={"flex items-center hover:text-[#00BFFF] hover:pl-2 transition-all duration-300 " + 
+								(currentPath === tab.link ? "text-[#00BFFF]" : "")}
 						>
-							<i class={"fas " + tab.icon + " w-5 mr-2 text-[#81C14B]/70"}></i>
+							<i class={"fas " + tab.icon + " w-5 mr-2 text-[#00BFFF]/70"}></i>
 							{tab.name}
 						</a>
 					</li>
@@ -169,85 +137,27 @@
 			</ul>
 		</div>
 
-		<!-- Socials/Music Platforms -->
+		<!-- Subscribe / Contact -->
 		<div>
-			<h3 class="text-xl font-bold text-[#81C14B] mb-4 flex items-center">
-				<i class="fas fa-headphones-alt mr-2"></i> Listen On
+			<h3 class="text-xl font-bold text-[#00BFFF] mb-4 flex items-center">
+				<i class="fas fa-envelope mr-2"></i> Stay Updated
 			</h3>
-			<div class="grid grid-cols-2 gap-3">
-				{#each socials.slice(4) as soc}
-					<a 
-						href={soc.link} 
-						target="_blank" 
-						rel="noopener noreferrer" 
-						class="flex items-center gap-2 text-white hover:text-[{soc.color}] transition-all duration-300 hover:translate-x-1 {soc.name === 'Boomplay' ? 'boomplay-link' : ''} {soc.name === 'Apple Music' ? 'apple-music-link' : ''}"
-					>
-						{#if soc.icon === "custom-boomplay"}
-							<span class="boomplay-icon">
-								<i class="text-lg font-bold italic">B</i>
-							</span>
-						{:else}
-							<i class="{soc.icon} text-lg"></i>
-						{/if}
-						<span class="text-sm">{soc.name}</span>
-					</a>
-				{/each}
-			</div>
-
-			<!-- Development Services -->
-			<h3 class="text-xl font-bold text-[#81C14B] mt-8 mb-3 flex items-center">
-				<i class="fas fa-code mr-2"></i> Need a Website?
-			</h3>
-			<p class="text-sm text-gray-400 mb-2">Contact the developer:</p>
-			<div class="space-y-2">
-				{#each devContacts as contact}
-					<a 
-						href={contact.link} 
-						target="_blank" 
-						rel="noopener noreferrer" 
-						class="flex items-center text-white hover:text-[{contact.color}] transition-all duration-300 hover:translate-x-1 group"
-					>
-						<span class="flex items-center justify-center w-8 h-8 rounded-full bg-gray-800 mr-2 group-hover:bg-[{contact.color}] transition-colors duration-300">
-							<i class="{contact.icon} text-lg"></i>
-						</span>
-						<span class="text-sm">
-							{contact.name === "GitHub" ? "osuwojr" : "+254 790 932 575"}
-						</span>
-					</a>
-				{/each}
-			</div>
-		</div>
-
-		<!-- Newsletter -->
-		<div>
-			<h3 class="text-xl font-bold text-[#81C14B] mb-4 flex items-center">
-				<i class="fas fa-envelope-open-text mr-2"></i> News Letter
-			</h3>
-			<p class="text-gray-400 mb-4 text-sm">Subscribe for exclusive drops and updates.</p>
+			<p class="text-sm text-gray-400 mb-3">Get updates on our latest studio sessions, projects and special offers.</p>
 			
-			<!-- Simplified Formspree Integration -->
-			<form class="flex flex-col gap-3" on:submit={handleSubscribe}>
-				<div class="relative">
-					<i class="fas fa-envelope absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+			<form on:submit={handleSubscribe} class="mb-4">
+				<div class="relative mb-3">
 					<input 
 						type="email" 
 						bind:value={email}
 						placeholder="Your email"
-						class="w-full pl-10 pr-4 py-2 rounded-md bg-[#1a1a1a] border border-[#81C14B]/40 text-white focus:outline-none focus:ring-2 focus:ring-[#81C14B]" 
+						class="w-full py-2 px-4 bg-black border border-[#00BFFF]/50 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#00BFFF] focus:ring-1 focus:ring-[#00BFFF]"
 						required
 					/>
 				</div>
-				
-				{#if subscribeStatus}
-					<p class={subscribeStatus.includes("Thank you") ? "text-[#81C14B] text-sm" : "text-red-400 text-sm"}>
-						{subscribeStatus}
-					</p>
-				{/if}
-				
 				<button 
-					type="submit" 
-					class="px-4 py-2 bg-[#81C14B] hover:bg-[#6A9A52] text-black font-bold rounded-md transition-all duration-300 flex items-center justify-center"
+					type="submit"
 					disabled={isSubscribing}
+					class="w-full py-2 bg-[#00BFFF] hover:bg-[#0099CC] text-white rounded-lg transition-all flex items-center justify-center"
 				>
 					{#if isSubscribing}
 						<i class="fas fa-circle-notch fa-spin mr-2"></i> Subscribing...
@@ -255,167 +165,95 @@
 						<i class="fas fa-paper-plane mr-2"></i> Subscribe
 					{/if}
 				</button>
-				
-				<div class="text-xs text-gray-500 mt-1">
-					<a href={"mailto:" + contactEmail} class="hover:text-[#81C14B] underline transition-colors">
-						{contactEmail}
-					</a>
-				</div>
+				{#if subscribeStatus}
+					<p class="mt-2 text-sm {subscribeStatus.includes('Thank you') ? 'text-green-500' : 'text-red-500'}">
+						{subscribeStatus}
+					</p>
+				{/if}
 			</form>
+			
+			<h4 class="text-lg font-semibold text-[#00BFFF] mt-6 mb-2">Contact Us</h4>
+			<div class="grid grid-cols-1 gap-2">
+				{#each studioContacts as contact}
+					<a 
+						href={contact.link} 
+						target="_blank" 
+						rel="noopener noreferrer" 
+						class="flex items-center gap-2 text-white hover:text-[{contact.color}] transition-all duration-300 hover:translate-x-1"
+					>
+						<i class="{contact.icon} text-lg"></i>
+						<span class="text-sm">{contact.name}</span>
+					</a>
+				{/each}
+			</div>
+		</div>
+
+		<!-- Hours & Legal -->
+		<div>
+			<h3 class="text-xl font-bold text-[#00BFFF] mb-4 flex items-center">
+				<i class="fas fa-clock mr-2"></i> Studio Hours
+			</h3>
+			<ul class="text-sm text-gray-300 space-y-2 mb-6">
+				<li class="flex justify-between">
+					<span>Monday - Friday</span>
+					<span>10 AM - 10 PM</span>
+				</li>
+				<li class="flex justify-between">
+					<span>Saturday</span>
+					<span>12 PM - 8 PM</span>
+				</li>
+				<li class="flex justify-between">
+					<span>Sunday</span>
+					<span>By Appointment</span>
+				</li>
+			</ul>
+			
+			<h4 class="text-lg font-semibold text-[#00BFFF] mt-6 mb-2">Legal</h4>
+			<ul class="space-y-2">
+				{#each legal as item}
+					<li>
+						<a 
+							href={item.link} 
+							class="flex items-center hover:text-[#00BFFF] transition-all duration-300"
+						>
+							<i class={"fas " + item.icon + " w-5 mr-2 text-[#00BFFF]/70"}></i>
+							{item.name}
+						</a>
+					</li>
+				{/each}
+			</ul>
 		</div>
 	</div>
-
-	<!-- Footer Bottom Strip -->
-	<div class="border-t border-[#81C14B]/30 px-4 sm:px-6 py-4 sm:py-6 flex flex-col sm:flex-row items-center justify-between text-sm text-gray-500 relative z-10">
-		<p class="flex items-center flex-wrap justify-center sm:justify-start">
-			<i class="far fa-copyright mr-1"></i> {year}
-			<span class="text-[#81C14B] font-semibold mx-1">theKenyanTroublers</span>
-			All rights reserved.
-			<span class="hidden sm:inline mx-2">|</span>
-			<span class="mt-1 sm:mt-0">Developed by <a href="https://github.com/osuwojr" target="_blank" rel="noopener noreferrer" class="text-[#81C14B] hover:underline">osuwojr</a></span>
-		</p>
-
-		<!-- Heartbeat Avocado -->
-		<div class="avocado-container my-4 sm:my-0">
-			<button 
-				on:click={handleAvocadoClick} 
-				class="avocado-button focus:outline-none"
-				aria-label="Easter egg"
-			>
-				<div class={"avocado " + (isAvocadoShaking ? "shake" : "")}>
-					🥑
-				</div>
-			</button>
+	
+	<!-- Copyright -->
+	<div class="py-4 border-t border-[#00BFFF]/20">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-500">
+			<p>© {year} OSVE STUDIOS. All rights reserved.</p>
+			<div class="mt-2 sm:mt-0">
+				<p>Designed with <i class="fas fa-heart text-[#00BFFF]"></i> in Kenya</p>
+			</div>
 		</div>
-		
-		<div class="flex gap-4 mt-4 sm:mt-0 items-center">
-			{#each legal as item}
-				<a href={item.link} class="hover:text-[#81C14B] transition flex items-center">
-					<i class={"fas " + item.icon + " mr-1"}></i> {item.name}
-				</a>
-			{/each}
-		</div>
-	</div>
-
-	<!-- Scroll to Top -->
-	<a 
-		href="#top" 
-		class="back-to-top" 
-		on:click={(e) => { 
-			if (browser) {
-				e.preventDefault(); 
-				window.scrollTo({ top: 0, behavior: 'smooth' });
-			}
-		}}
-		aria-label="Back to top"
-	>
-		<i class="fas fa-arrow-up"></i>
-	</a>
-
-	<!-- Background glow effect -->
-	<div class="absolute inset-0 z-0 pointer-events-none">
-		<div class="w-64 h-64 sm:w-96 sm:h-96 bg-[#81C14B]/10 rounded-full blur-3xl absolute -top-20 -left-20"></div>
-		<div class="w-64 h-64 sm:w-96 sm:h-96 bg-[#81C14B]/10 rounded-full blur-3xl absolute bottom-0 right-0"></div>
 	</div>
 </footer>
 
 <style>
-	footer {
-		background: linear-gradient(to top, #000000 80%, #81C14B10);
+	/* Social icons hover effects */
+	a:hover i.fab.fa-instagram {
+		background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
 	}
 	
-	@media (max-width: 640px) {
-		footer {
-			background: linear-gradient(to top, #000000 90%, #81C14B10);
-		}
-	}
-
-	.back-to-top {
-		position: fixed;
-		bottom: 1.5rem;
-		right: 1.5rem;
-		background-color: #81C14B;
-		color: black;
-		padding: 0.75rem;
-		border-radius: 9999px;
-		box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
-		z-index: 100;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		transition: all 0.3s ease;
-	}
-
-	.back-to-top:hover {
-		background-color: #6A9A52;
-		transform: rotate(12deg);
-	}
-
-	/* Avocado heartbeat and shake animations */
-	.avocado-container {
-		position: absolute;
-		left: 50%;
-		transform: translateX(-50%);
-		display: flex;
-		justify-content: center;
-		align-items: center;
+	a:hover i.fab.fa-youtube {
+		color: #FF0000;
 	}
 	
-	.avocado {
-		font-size: 1.8rem;
-		cursor: pointer;
-		animation: heartbeat 1.5s ease-in-out infinite;
-		display: inline-block;
-		filter: drop-shadow(0 0 5px #81C14B);
-		transition: all 0.3s;
-		user-select: none;
+	a:hover i.fab.fa-spotify {
+		color: #1ED760;
 	}
 	
-	.avocado:hover {
-		font-size: 2.2rem;
-		filter: drop-shadow(0 0 10px #81C14B);
-	}
-	
-	@keyframes heartbeat {
-		0% { transform: scale(1); }
-		15% { transform: scale(1.15); }
-		30% { transform: scale(1); }
-		45% { transform: scale(1.15); }
-		60% { transform: scale(1); }
-		100% { transform: scale(1); }
-	}
-	
-	.shake {
-		animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
-	}
-	
-	@keyframes shake {
-		0%, 100% { transform: translateX(0) rotate(0); }
-		10%, 30%, 50%, 70%, 90% { transform: translateX(-5px) rotate(-5deg); }
-		20%, 40%, 60%, 80% { transform: translateX(5px) rotate(5deg); }
-	}
-	
-	/* Make sure the container is centered on mobile */
-	@media (max-width: 640px) {
-		.avocado-container {
-			position: relative;
-			left: auto;
-			transform: none;
-			margin: 1rem 0;
-		}
-	}
-
-	/* Custom music platform styles */
-	.boomplay-link:hover {
-		text-shadow: 0 0 10px #0066FF, 0 0 20px #0066FF;
-	}
-	
-	.apple-music-link:hover {
-		text-shadow: 0 0 10px rgba(251,45,49,0.7), 0 0 15px rgba(251,45,49,0.5);
-	}
-	
-	.boomplay-icon {
-		min-width: 1rem;
-		display: inline-block;
+	/* Smooth transitions */
+	.transition-all {
+		transition: all 0.3s ease-in-out;
 	}
 </style>

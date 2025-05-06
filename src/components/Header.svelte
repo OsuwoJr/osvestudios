@@ -5,14 +5,11 @@
   export let y;
 
   let tabs = [
-    { name: "Artists", link: "/artists" },
-    { name: "Music", link: "/music" },
-    { name: "TTST", link: "/street-talent" },
-    { name: "Merch", link: "/merch" },
-    { name: "Blog", link: "/blog" },
-    { name: "The Troublers", link: "/troublers" },
-    { name: "Contact", link: "/contact" },
-    { name: "Events", link: "/events" }
+    { name: "Home", link: "/" },
+    { name: "About", link: "/about" },
+    { name: "Services", link: "/services" },
+    { name: "Projects", link: "/projects" },
+    { name: "Contact", link: "/contact" }
   ];
 
   // Additional links for search but not navbar
@@ -57,16 +54,15 @@
 </script>
 
 <header class={"sticky z-[50] top-0 w-full flex items-center justify-between transition-all duration-300 backdrop-blur-md " + (
-  y > 0 ? "py-2 md:py-3 bg-black/80 border-b border-[#6A9A52] shadow-lg" : "py-3 md:py-4 bg-transparent"
+  y > 0 ? "py-2 md:py-3 bg-black/80 border-b border-[#00BFFF] shadow-lg" : "py-3 md:py-4 bg-transparent"
 )}>
   <div class="container mx-auto px-4 flex items-center justify-between">
     <!-- Logo -->
     <a href="/" class="text-white font-medium flex items-center">
-      <img src="/logo.png" alt="KenyanTroublers Logo" class="h-8 w-8 md:h-10 md:w-10 mr-2" />
+      <img src="/logo.png" alt="OSVE STUDIOS Logo" class="h-8 w-8 md:h-10 md:w-10 mr-2" />
       <div class="hidden sm:flex font-bold text-xl md:text-2xl tracking-tighter">
-        <span class="text-white">the</span>
-        <span class="text-[#81C14B] ml-1">Kenyan</span>
-        <span class="text-white">Troublers</span>
+        <span class="text-[#00BFFF]">OSVE</span>
+        <span class="text-white ml-1">STUDIOS</span>
       </div>
     </a>
 
@@ -74,9 +70,9 @@
     <nav class="hidden md:flex items-center gap-4 lg:gap-6">
       {#each tabs as tab}
         <a href={tab.link}
-          class="text-white text-base lg:text-lg transition-all duration-300 hover:text-[#81C14B] relative group whitespace-nowrap">
+          class="text-white text-base lg:text-lg transition-all duration-300 hover:text-[#00BFFF] relative group whitespace-nowrap">
           {tab.name}
-          <span class="absolute left-0 bottom-[-4px] w-0 h-[2px] bg-[#81C14B] transition-all duration-300 group-hover:w-full"></span>
+          <span class="absolute left-0 bottom-[-4px] w-0 h-[2px] bg-[#00BFFF] transition-all duration-300 group-hover:w-full"></span>
         </a>
       {/each}
     </nav>
@@ -84,18 +80,18 @@
     <!-- Right Section -->
     <div class="flex items-center gap-2 sm:gap-3">
       <!-- Music Panel Trigger -->
-      <button class="relative w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full glow-green" on:click={() => showMusicPanel = !showMusicPanel} aria-label="Music platforms">
+      <button class="relative w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full glow-blue" on:click={() => showMusicPanel = !showMusicPanel} aria-label="Music platforms">
         🎵
       </button>
 
       <!-- Search Button -->
-      <button class="relative w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full glow-green" on:click={toggleSearch} aria-label="Search">
+      <button class="relative w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full glow-blue" on:click={toggleSearch} aria-label="Search">
         🔍
       </button>
 
       <!-- Studio CTA -->
       <div class="hidden sm:block">
-        <Button text="OSVE STUDIOS" phone="+254790932575" />
+        <Button text="BOOK SESSION" phone="+254790932575" />
       </div>
 
       <!-- Mobile Toggle -->
@@ -118,16 +114,16 @@
         <a
           href={tab.link}
           on:click={() => menuOpen = false}
-          class="block hover:text-[#81C14B] transition-transform hover:scale-105 duration-300 py-2"
+          class="block hover:text-[#00BFFF] transition-transform hover:scale-105 duration-300 py-2"
         >
           {tab.name}
         </a>
       {/each}
       <div class="mt-8 py-4">
-        <Button text="OSVE STUDIOS" phone="+254790932575" />
+        <Button text="BOOK SESSION" phone="+254790932575" />
       </div>
       <div class="mt-8 text-sm text-gray-400 opacity-70">
-        Powered by <span class="text-[#81C14B] font-bold">theKenyanTroublers</span>
+        Powered by <span class="text-[#00BFFF] font-bold">OSVE STUDIOS</span>
       </div>
     </div>
   </div>
@@ -136,22 +132,22 @@
 <!-- Super Search -->
 {#if showSearch}
   <div class="fixed inset-0 bg-black/80 z-[9999] flex items-center justify-center backdrop-blur-md p-4">
-    <div class="bg-[#111] rounded-xl w-full max-w-[500px] p-6 border border-[#81C14B]/40 shadow-lg">
+    <div class="bg-[#111] rounded-xl w-full max-w-[500px] p-6 border border-[#00BFFF]/40 shadow-lg">
       <div class="flex justify-between items-center mb-4">
         <h2 class="text-white text-lg font-semibold">Search</h2>
-        <button on:click={toggleSearch} class="text-white text-xl hover:text-[#81C14B]" aria-label="Close search">✕</button>
+        <button on:click={toggleSearch} class="text-white text-xl hover:text-[#00BFFF]" aria-label="Close search">✕</button>
       </div>
       <input
         type="text"
         placeholder="Search anything... (Ctrl+K)"
         bind:value={searchQuery}
         on:input={updateSearch}
-        class="w-full px-4 py-3 rounded-md bg-[#222] text-white border border-[#81C14B]/40 focus:outline-none focus:ring-2 focus:ring-[#81C14B] mb-4"
+        class="w-full px-4 py-3 rounded-md bg-[#222] text-white border border-[#00BFFF]/40 focus:outline-none focus:ring-2 focus:ring-[#00BFFF] mb-4"
       />
       <ul class="space-y-2 max-h-[300px] overflow-y-auto">
         {#each filteredTabs as tab}
           <li>
-            <a href={tab.link} on:click={toggleSearch} class="block px-4 py-2 bg-[#1a1a1a] hover:bg-[#81C14B] hover:text-black text-white rounded-md transition-all">
+            <a href={tab.link} on:click={toggleSearch} class="block px-4 py-2 bg-[#1a1a1a] hover:bg-[#00BFFF] hover:text-black text-white rounded-md transition-all">
               {tab.name}
             </a>
           </li>
@@ -167,15 +163,15 @@
 <!-- Music Panel Modal -->
 {#if showMusicPanel}
   <div class="fixed inset-0 bg-black/80 z-[9999] flex items-center justify-center backdrop-blur-md p-4">
-    <div class="bg-[#111] rounded-xl w-full max-w-[500px] p-6 border border-[#81C14B]/40 shadow-lg text-white space-y-4">
+    <div class="bg-[#111] rounded-xl w-full max-w-[500px] p-6 border border-[#00BFFF]/40 shadow-lg text-white space-y-4">
       <div class="flex justify-between items-center">
-        <h2 class="text-xl font-bold">Listen on Platforms</h2>
-        <button on:click={() => showMusicPanel = false} class="text-2xl hover:text-[#81C14B]" aria-label="Close music panel">✕</button>
+        <h2 class="text-xl font-bold">Listen To Our Work</h2>
+        <button on:click={() => showMusicPanel = false} class="text-2xl hover:text-[#00BFFF]" aria-label="Close music panel">✕</button>
       </div>
-      <a href="https://open.spotify.com/artist/6F05EgCahYw9U2th0SZVtP?si=CpkXfxfsSEGUfRkgfw_T1w" target="_blank" rel="noopener noreferrer" class="block text-center py-3 font-semibold rounded-md bg-[#1DB954] hover:shadow-[0_0_15px_#1DB954] transition-all">Spotify</a>
-      <a href="https://music.apple.com/us/artist/thekenyantroublers/1606960956" target="_blank" rel="noopener noreferrer" class="block text-center py-3 font-semibold rounded-md bg-white text-black hover:shadow-[0_0_15px_rgba(251,45,49,0.7)] transition-all">Apple Music</a>
-      <a href="https://www.boomplay.com/artists/39520564?" target="_blank" rel="noopener noreferrer" class="block text-center py-3 font-semibold rounded-md bg-[#0066FF] hover:shadow-[0_0_15px_#0066FF] transition-all">
-        <span class="font-bold italic">B</span>oomplay
+      <a href="https://open.spotify.com/playlist/5JmJyHNJiBh1lujBQFRxTx" target="_blank" rel="noopener noreferrer" class="block text-center py-3 font-semibold rounded-md bg-[#1DB954] hover:shadow-[0_0_15px_#1DB954] transition-all">Spotify</a>
+      <a href="https://music.apple.com/us/playlist/osve-studios-showcase/pl.u-LdbqE10CK93Da" target="_blank" rel="noopener noreferrer" class="block text-center py-3 font-semibold rounded-md bg-white text-black hover:shadow-[0_0_15px_rgba(251,45,49,0.7)] transition-all">Apple Music</a>
+      <a href="https://www.youtube.com/playlist?list=PLnQX-jgAF5pTWm1_-gYpNbJsE7jZ0dBXb" target="_blank" rel="noopener noreferrer" class="block text-center py-3 font-semibold rounded-md bg-[#FF0000] hover:shadow-[0_0_15px_#FF0000] transition-all">
+        YouTube
       </a>
     </div>
   </div>
@@ -189,13 +185,13 @@
   .animate-fade-slide-in {
     animation: fade-slide-in 0.4s ease-out;
   }
-  .glow-green {
-    background-color: #81C14B;
+  .glow-blue {
+    background-color: #00BFFF;
     transition: all 0.3s ease;
-    box-shadow: 0 0 10px #81C14B88;
+    box-shadow: 0 0 10px #00BFFF88;
   }
-  .glow-green:hover {
-    background-color: #6A9A52;
-    box-shadow: 0 0 18px #81C14B;
+  .glow-blue:hover {
+    background-color: #0099CC;
+    box-shadow: 0 0 18px #00BFFF;
   }
 </style>

@@ -1,65 +1,46 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import { fade, fly } from "svelte/transition";
+    import "@fortawesome/fontawesome-free/css/all.min.css";
     
-    // Form state
-    let formData = {
-        name: "",
-        email: "",
-        subject: "",
-        message: ""
-    };
-    let isSubmitting = false;
-    let submitSuccess = false;
-    let submitError = false;
+    let name = "";
+    let email = "";
+    let phone = "";
+    let service = "";
+    let message = "";
+    let submitting = false;
+    let submitStatus = "";
     
-    // Formspree endpoint - same as other forms
-    const formspreeEndpoint = "https://formspree.io/f/xyzweeav";
-    
-    // Handle form submission
-    async function handleSubmit(event: Event) {
-        event.preventDefault();
-        if (isSubmitting) return;
-        
-        isSubmitting = true;
-        submitSuccess = false;
-        submitError = false;
-        
-        try {
-            const response = await fetch(formspreeEndpoint, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    name: formData.name,
-                    email: formData.email,
-                    subject: formData.subject,
-                    message: formData.message
-                }),
-            });
-            
-            if (response.ok) {
-                // Reset form on success
-                formData = {
-                    name: "",
-                    email: "",
-                    subject: "",
-                    message: ""
-                };
-                submitSuccess = true;
-            } else {
-                submitError = true;
-            }
-        } catch (error) {
-            console.error("Error submitting form:", error);
-            submitError = true;
-        } finally {
-            isSubmitting = false;
-            
-            // Scroll to top of page on completion
-            window.scrollTo({ top: 0, behavior: "smooth" });
+    // Get the service from URL params if available
+    onMount(() => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const serviceParam = urlParams.get('service');
+        if (serviceParam) {
+            service = serviceParam;
         }
+    });
+    
+    function handleSubmit(e: SubmitEvent) {
+        e.preventDefault();
+        
+        // Basic validation
+        if (!name || !email || !message) {
+            submitStatus = "Please fill in all required fields.";
+            return;
+        }
+        
+        submitting = true;
+        submitStatus = "";
+        
+        // Simulate form submission (replace with actual form handling)
+        setTimeout(() => {
+            submitting = false;
+            submitStatus = "Thanks for your message! We'll get back to you soon.";
+            name = "";
+            email = "";
+            phone = "";
+            message = "";
+            service = "";
+        }, 1500);
     }
     
     // Scroll to form when "contact us" anchor is used
@@ -78,210 +59,219 @@
 </script>
 
 <svelte:head>
-    <title>Contact Us - theKenyanTroublers</title>
-    <meta name="description" content="Get in touch with theKenyanTroublers. Contact us for bookings, collaborations, or any inquiries.">
+    <title>Contact Us - OSVE STUDIOS</title>
+    <meta name="description" content="Get in touch with OSVE STUDIOS. Book a recording session, music production, or any audio services you need.">
 </svelte:head>
 
-<div class="py-16 px-4" in:fade={{ duration: 300, delay: 200 }}>
-    <div class="max-w-6xl mx-auto">
-        <!-- Hero Section -->
-        <section class="text-center mb-16" in:fly={{ y: 20, duration: 800 }}>
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
-                Get in <span class="highlight">Touch</span>
-            </h1>
-            <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                Have questions, want to collaborate, or book us for an event? We'd love to hear from you!
-            </p>
-            
-            <!-- Success Message -->
-            {#if submitSuccess}
-                <div class="mt-8 p-4 bg-[#81C14B]/20 border border-[#81C14B] rounded-lg max-w-lg mx-auto" transition:fade>
-                    <p class="text-[#81C14B] font-semibold text-lg flex items-center justify-center">
-                        <i class="fas fa-check-circle mr-2"></i> 
-                        Thanks for reaching out! We'll get back to you soon.
-                    </p>
-                </div>
-            {/if}
-            
-            <!-- Error Message -->
-            {#if submitError}
-                <div class="mt-8 p-4 bg-red-900/20 border border-red-700 rounded-lg max-w-lg mx-auto" transition:fade>
-                    <p class="text-red-500 font-semibold text-lg flex items-center justify-center">
-                        <i class="fas fa-exclamation-circle mr-2"></i>
-                        Sorry, there was an error sending your message. Please try again.
-                    </p>
-                </div>
-            {/if}
-        </section>
-        
-        <!-- Main Content Area -->
-        <div class="flex flex-col lg:flex-row gap-12 items-stretch">
-            <!-- Contact Info Section -->
-            <section class="lg:w-1/3" in:fly={{ x: -20, duration: 600, delay: 300 }}>
-                <div class="bg-black/50 backdrop-blur-sm rounded-xl p-8 h-full border border-gray-800 shadow-xl">
-                    <h2 class="text-2xl font-bold mb-6 text-[#81C14B]">Contact Information</h2>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-start space-x-4">
-                            <div class="bg-[#81C14B] rounded-full p-3 mt-1">
-                                <i class="fas fa-map-marker-alt text-black"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold">Location</h3>
-                                <p class="text-gray-300">Nairobi, Kenya</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start space-x-4">
-                            <div class="bg-[#81C14B] rounded-full p-3 mt-1">
-                                <i class="fas fa-envelope text-black"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold">Email</h3>
-                                <a href="mailto:info@thekenyantroublers.com" class="text-gray-300 hover:text-[#81C14B] transition-colors">
-                                    info@thekenyantroublers.com
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start space-x-4">
-                            <div class="bg-[#81C14B] rounded-full p-3 mt-1">
-                                <i class="fas fa-phone text-black"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold">Phone</h3>
-                                <a href="tel:+254790932575" class="text-gray-300 hover:text-[#81C14B] transition-colors">
-                                    +254 790 932 575
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Social Media Links -->
-                    <div class="mt-10">
-                        <h3 class="font-semibold mb-4">Connect With Us</h3>
-                        <div class="flex space-x-4">
-                            <a href="https://www.instagram.com/thekenyantroublers/" target="_blank" rel="noopener noreferrer" class="bg-black/40 p-3 rounded-full hover:bg-[#E1306C]/20 hover:text-[#E1306C] transition-all" aria-label="Instagram">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="https://www.youtube.com/channel/UCs7hbuqCcYbPFUZKPiG0ufw" target="_blank" rel="noopener noreferrer" class="bg-black/40 p-3 rounded-full hover:bg-[#FF0000]/20 hover:text-[#FF0000] transition-all" aria-label="YouTube">
-                                <i class="fab fa-youtube"></i>
-                            </a>
-                            <a href="https://open.spotify.com/artist/6F05EgCahYw9U2th0SZVtP" target="_blank" rel="noopener noreferrer" class="bg-black/40 p-3 rounded-full hover:bg-[#1DB954]/20 hover:text-[#1DB954] transition-all" aria-label="Spotify">
-                                <i class="fab fa-spotify"></i>
-                            </a>
-                            <a href="https://twitter.com/KenyanTroublers" target="_blank" rel="noopener noreferrer" class="bg-black/40 p-3 rounded-full hover:bg-[#1DA1F2]/20 hover:text-[#1DA1F2] transition-all" aria-label="Twitter">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Contact Form Section -->
-            <section id="contact-form" class="lg:w-2/3" in:fly={{ x: 20, duration: 600, delay: 400 }}>
-                <div class="bg-black/50 backdrop-blur-sm rounded-xl p-8 border border-gray-800 shadow-xl">
-                    <h2 class="text-2xl font-bold mb-6">Send Us a Message</h2>
-                    
-                    <form on:submit={handleSubmit} action={formspreeEndpoint} method="POST" class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="form-group">
-                                <label for="name" class="block mb-2 font-medium">Your Name</label>
-                                <input 
-                                    type="text" 
-                                    id="name" 
-                                    name="name" 
-                                    bind:value={formData.name} 
-                                    required 
-                                    class="w-full bg-black/70 border border-gray-700 focus:border-[#81C14B] rounded-lg px-4 py-3 text-white"
-                                    placeholder="John Doe"
-                                />
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="email" class="block mb-2 font-medium">Your Email</label>
-                                <input 
-                                    type="email" 
-                                    id="email" 
-                                    name="email" 
-                                    bind:value={formData.email} 
-                                    required 
-                                    class="w-full bg-black/70 border border-gray-700 focus:border-[#81C14B] rounded-lg px-4 py-3 text-white"
-                                    placeholder="john@example.com"
-                                />
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="subject" class="block mb-2 font-medium">Subject</label>
+<div class="max-w-6xl mx-auto px-4 py-16 md:py-24">
+    <!-- Page Title -->
+    <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Contact Us</h1>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto">Book a session or get in touch with our team</p>
+    </div>
+    
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+        <!-- Contact Form Section -->
+        <div class="lg:col-span-3">
+            <div class="bg-black/30 backdrop-blur-sm border border-[#00BFFF]/20 rounded-xl p-6 md:p-8">
+                <h2 class="text-2xl md:text-3xl font-bold mb-6">Book a Session</h2>
+                
+                <form on:submit={handleSubmit} class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Name *</label>
                             <input 
                                 type="text" 
-                                id="subject" 
-                                name="subject" 
-                                bind:value={formData.subject} 
-                                required 
-                                class="w-full bg-black/70 border border-gray-700 focus:border-[#81C14B] rounded-lg px-4 py-3 text-white"
-                                placeholder="How can we help you?"
+                                id="name" 
+                                bind:value={name} 
+                                class="w-full px-4 py-2 bg-black/60 border border-[#00BFFF]/40 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#00BFFF] focus:ring-1 focus:ring-[#00BFFF]"
+                                placeholder="Your name"
+                                required
                             />
                         </div>
                         
-                        <div class="form-group">
-                            <label for="message" class="block mb-2 font-medium">Your Message</label>
-                            <textarea 
-                                id="message" 
-                                name="message" 
-                                bind:value={formData.message} 
-                                required 
-                                rows="6" 
-                                class="w-full bg-black/70 border border-gray-700 focus:border-[#81C14B] rounded-lg px-4 py-3 text-white resize-none"
-                                placeholder="Write your message here..."
-                            ></textarea>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email *</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                bind:value={email} 
+                                class="w-full px-4 py-2 bg-black/60 border border-[#00BFFF]/40 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#00BFFF] focus:ring-1 focus:ring-[#00BFFF]"
+                                placeholder="Your email"
+                                required
+                            />
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-300 mb-1">Phone</label>
+                            <input 
+                                type="tel" 
+                                id="phone" 
+                                bind:value={phone} 
+                                class="w-full px-4 py-2 bg-black/60 border border-[#00BFFF]/40 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#00BFFF] focus:ring-1 focus:ring-[#00BFFF]"
+                                placeholder="Your phone number"
+                            />
                         </div>
                         
-                        <div class="form-group">
-                            <button 
-                                type="submit"
-                                class="w-full md:w-auto bg-[#81C14B] hover:bg-[#6A9A52] text-black font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center disabled:opacity-70 disabled:cursor-not-allowed"
-                                disabled={isSubmitting}
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-gray-300 mb-1">Service</label>
+                            <select 
+                                id="service" 
+                                bind:value={service} 
+                                class="w-full px-4 py-2 bg-black/60 border border-[#00BFFF]/40 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#00BFFF] focus:ring-1 focus:ring-[#00BFFF]"
                             >
-                                {#if isSubmitting}
-                                    <i class="fas fa-spinner fa-spin mr-2"></i> Sending...
-                                {:else}
-                                    <i class="fas fa-paper-plane mr-2"></i> Send Message
-                                {/if}
-                            </button>
+                                <option value="">Select a service</option>
+                                <option value="recording">Recording</option>
+                                <option value="production">Music Production</option>
+                                <option value="mixing">Mixing & Mastering</option>
+                                <option value="sounddesign">Sound Design</option>
+                                <option value="rental">Studio Rental</option>
+                                <option value="distribution">Music Distribution</option>
+                                <option value="other">Other</option>
+                            </select>
                         </div>
-                    </form>
-                </div>
-            </section>
+                    </div>
+                    
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message *</label>
+                        <textarea 
+                            id="message" 
+                            bind:value={message} 
+                            rows="5" 
+                            class="w-full px-4 py-2 bg-black/60 border border-[#00BFFF]/40 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#00BFFF] focus:ring-1 focus:ring-[#00BFFF]"
+                            placeholder="Tell us about your project and what you're looking for..."
+                            required
+                        ></textarea>
+                    </div>
+                    
+                    <div>
+                        <button 
+                            type="submit"
+                            disabled={submitting}
+                            class="w-full px-6 py-3 bg-[#00BFFF] hover:bg-[#0099CC] text-white font-semibold rounded-lg transition-all flex items-center justify-center"
+                        >
+                            {#if submitting}
+                                <i class="fas fa-circle-notch fa-spin mr-2"></i> Sending...
+                            {:else}
+                                <i class="fas fa-paper-plane mr-2"></i> Send Message
+                            {/if}
+                        </button>
+                        
+                        {#if submitStatus}
+                            <p class="mt-4 text-center text-green-400">{submitStatus}</p>
+                        {/if}
+                    </div>
+                </form>
+            </div>
         </div>
         
-        <!-- FAQ Section -->
-        <section class="mt-20" in:fly={{ y: 20, duration: 600, delay: 600 }}>
-            <h2 class="text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
-            
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="bg-black/30 rounded-lg p-6 backdrop-blur-sm border border-gray-800">
-                    <h3 class="text-xl font-semibold mb-3 text-[#81C14B]">How can I book theKenyanTroublers?</h3>
-                    <p class="text-gray-300">To book us for performances or events, please use the contact form above or email us directly with details about your event including date, location, and requirements.</p>
+        <!-- Contact Info Section -->
+        <div class="lg:col-span-2">
+            <div class="bg-black/30 backdrop-blur-sm border border-[#00BFFF]/20 rounded-xl p-6 md:p-8 mb-8">
+                <h2 class="text-2xl font-bold mb-6">Contact Information</h2>
+                
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="mt-1 mr-4 w-10 h-10 rounded-full bg-[#00BFFF]/10 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-map-marker-alt text-[#00BFFF]"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold mb-1">Address</h3>
+                            <p class="text-gray-300">123 Music Avenue<br>Nairobi, Kenya</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="mt-1 mr-4 w-10 h-10 rounded-full bg-[#00BFFF]/10 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-phone-alt text-[#00BFFF]"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold mb-1">Phone</h3>
+                            <p class="text-gray-300">
+                                <a href="tel:+254790932575" class="hover:text-[#00BFFF] transition-colors">+254 790 932 575</a>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="mt-1 mr-4 w-10 h-10 rounded-full bg-[#00BFFF]/10 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-envelope text-[#00BFFF]"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold mb-1">Email</h3>
+                            <p class="text-gray-300">
+                                <a href="mailto:info@osvestudios.com" class="hover:text-[#00BFFF] transition-colors">info@osvestudios.com</a>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="mt-1 mr-4 w-10 h-10 rounded-full bg-[#00BFFF]/10 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-clock text-[#00BFFF]"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold mb-1">Studio Hours</h3>
+                            <p class="text-gray-300">
+                                Monday - Friday: 10 AM - 10 PM<br>
+                                Saturday: 12 PM - 8 PM<br>
+                                Sunday: By Appointment
+                            </p>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="bg-black/30 rounded-lg p-6 backdrop-blur-sm border border-gray-800">
-                    <h3 class="text-xl font-semibold mb-3 text-[#81C14B]">Do you offer music production services?</h3>
-                    <p class="text-gray-300">Yes! We offer professional music production, mixing, and mastering services through OSVE Studios. Contact us with your project details for more information.</p>
-                </div>
-                
-                <div class="bg-black/30 rounded-lg p-6 backdrop-blur-sm border border-gray-800">
-                    <h3 class="text-xl font-semibold mb-3 text-[#81C14B]">Can I license your music for my project?</h3>
-                    <p class="text-gray-300">Absolutely! We offer music licensing for films, commercials, games, and other media. Please reach out with specific details about your project for licensing options.</p>
-                </div>
-                
-                <div class="bg-black/30 rounded-lg p-6 backdrop-blur-sm border border-gray-800">
-                    <h3 class="text-xl font-semibold mb-3 text-[#81C14B]">How can I join as an artist?</h3>
-                    <p class="text-gray-300">We're always looking for talented artists to join our collective. Visit our <a href="/artists" class="text-[#81C14B] hover:underline">Artists page</a> and fill out the artist application form to be considered.</p>
+                <div class="mt-8">
+                    <h3 class="font-semibold mb-3">Connect With Us</h3>
+                    <div class="flex space-x-3">
+                        <a href="https://www.instagram.com/osvestudios/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-black/50 flex items-center justify-center text-gray-300 hover:text-[#E1306C] hover:bg-black/70 transition-all">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/osvestudios" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-black/50 flex items-center justify-center text-gray-300 hover:text-[#4267B2] hover:bg-black/70 transition-all">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://twitter.com/osvestudios" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-black/50 flex items-center justify-center text-gray-300 hover:text-[#1DA1F2] hover:bg-black/70 transition-all">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://wa.me/254790932575" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-black/50 flex items-center justify-center text-gray-300 hover:text-[#25D366] hover:bg-black/70 transition-all">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </section>
+            
+            <!-- Quick Booking -->
+            <div class="bg-black/30 backdrop-blur-sm border border-[#00BFFF]/20 rounded-xl p-6 md:p-8">
+                <h2 class="text-2xl font-bold mb-6">Quick Booking</h2>
+                <p class="text-gray-300 mb-4">Need a session ASAP? Call us directly for immediate booking:</p>
+                <a href="tel:+254790932575" class="inline-flex items-center justify-center w-full px-6 py-3 bg-[#00BFFF] hover:bg-[#0099CC] text-white font-semibold rounded-lg transition-all">
+                    <i class="fas fa-phone-alt mr-2"></i> +254 790 932 575
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Map Section -->
+    <div class="mt-16">
+        <div class="bg-black/30 backdrop-blur-sm border border-[#00BFFF]/20 rounded-xl p-6 md:p-8">
+            <h2 class="text-2xl font-bold mb-6">Find Us</h2>
+            <div class="w-full h-80 rounded-lg overflow-hidden">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255282.35853716954!2d36.68258727326107!3d-1.3028617615113068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1172d84d49a7%3A0xf7cf0254b297924c!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2sus!4v1653915234821!5m2!1sen!2sus" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="OSVE Studios location map"
+                ></iframe>
+            </div>
+            <p class="mt-4 text-gray-300 text-center">
+                Located in the heart of Nairobi, just minutes from the city center.
+            </p>
+        </div>
     </div>
 </div>
 
