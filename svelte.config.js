@@ -9,8 +9,8 @@ const config = {
 
 	kit: {
 		adapter: adapter({
-			// Node.js runtime ('edge' or 'nodejs18.x')
-			runtime: 'nodejs18.x',
+			// Node.js runtime
+			runtime: 'nodejs',
 			
 			// Split functions for better cold starts
 			split: false,
