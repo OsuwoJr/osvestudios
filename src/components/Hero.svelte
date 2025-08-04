@@ -21,6 +21,13 @@
             <span class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl block">STUDIOS</span>
         </h1>
         <p class="text-lg md:text-2xl mt-4 text-gray-200">Electrifying Sound. Limitless Creativity.</p>
+        <p class="text-sm md:text-base mt-3 text-gray-300">
+            Official & Personal Production Partner to 
+            <a href="https://thekenyantroublers.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-[#00BFFF] hover:text-[#0099CC] transition-colors font-semibold">
+                "theKenyanTroublers"
+            </a> 
+            Music Label
+        </p>
         
         <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/services" 
@@ -39,14 +46,23 @@
         
         <!-- Social Media Quick Links -->
         <div class="mt-8 flex justify-center space-x-4">
-            <a href="https://www.instagram.com/osvestudios/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-2xl hover:text-[#E1306C] transition-all hover:scale-110">
+            <a href="https://www.instagram.com/thekenyantroublers/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-2xl hover:text-[#E1306C] transition-all hover:scale-110">
                 <i class="fab fa-instagram"></i>
             </a>
-            <a href="https://open.spotify.com/user/osvestudios" target="_blank" rel="noopener noreferrer" aria-label="Spotify" class="text-2xl hover:text-[#1ED760] transition-all hover:scale-110">
+            <a href="https://open.spotify.com/artist/6F05EgCahYw9U2th0SZVtP" target="_blank" rel="noopener noreferrer" aria-label="Spotify" class="text-2xl hover:text-[#1ED760] transition-all hover:scale-110">
                 <i class="fab fa-spotify"></i>
             </a>
-            <a href="https://www.youtube.com/channel/osvestudios" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="text-2xl hover:text-[#FF0000] transition-all hover:scale-110">
+            <a href="https://www.youtube.com/channel/UCs7hbuqCcYbPFUZKPiG0ufw" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="text-2xl hover:text-[#FF0000] transition-all hover:scale-110">
                 <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://x.com/KenyanTroublers" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" class="text-2xl hover:text-[#1DA1F2] transition-all hover:scale-110">
+                <i class="fab fa-x-twitter"></i>
+            </a>
+            <a href="https://www.facebook.com/thekenyantroublerskt" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="text-2xl hover:text-[#000000] transition-all hover:scale-110">
+                <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://www.facebook.com/osvestudios" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="text-2xl hover:text-[#1877F2] transition-all hover:scale-110">
+                <i class="fab fa-facebook"></i>
             </a>
         </div>
     </div>
