@@ -1,5 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
+    import InvitationForm from "./InvitationForm.svelte";
     
     // Clean and simple scroll handling function
     function scrollToContent() {
@@ -30,12 +31,7 @@
         </p>
         
         <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/services" 
-               class="inline-block bg-[#00BFFF] px-6 py-3 text-lg font-semibold rounded-lg shadow-lg transition-all hover:bg-[#0099CC] hover:scale-105 flex items-center justify-center"          
-               rel="noopener noreferrer"
-               aria-label="Book a session at OSVE Studios">
-                <i class="fas fa-calendar-alt mr-2"></i> Book a Session
-            </a>
+            <InvitationForm />
             <a href="/projects" 
                class="inline-block bg-black/60 border border-[#00BFFF] backdrop-blur-md px-6 py-3 text-lg font-semibold rounded-lg shadow-lg transition-all hover:bg-[#00BFFF]/20 hover:scale-105 flex items-center justify-center"          
                rel="noopener noreferrer"

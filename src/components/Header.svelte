@@ -1,5 +1,6 @@
 <script lang="ts">
   import Button from "./Button.svelte";
+  import InvitationForm from "./InvitationForm.svelte";
   import { onMount } from "svelte";
 
   export let y;
@@ -91,7 +92,7 @@
 
       <!-- Studio CTA -->
       <div class="hidden sm:block">
-        <Button text="BOOK SESSION" phone="+254790932575" />
+        <InvitationForm />
       </div>
 
       <!-- Mobile Toggle -->
@@ -120,7 +121,7 @@
         </a>
       {/each}
       <div class="mt-8 py-4">
-        <Button text="BOOK SESSION" phone="+254790932575" />
+        <InvitationForm />
       </div>
       <div class="mt-8 text-sm text-gray-400 opacity-70">
         Powered by <span class="text-[#00BFFF] font-bold">OSVE STUDIOS</span>
