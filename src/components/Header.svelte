@@ -168,9 +168,9 @@
         <h2 class="text-xl font-bold">Listen To Our Work</h2>
         <button on:click={() => showMusicPanel = false} class="text-2xl hover:text-[#00BFFF]" aria-label="Close music panel">✕</button>
       </div>
-      <a href="https://open.spotify.com/playlist/5JmJyHNJiBh1lujBQFRxTx" target="_blank" rel="noopener noreferrer" class="block text-center py-3 font-semibold rounded-md bg-[#1DB954] hover:shadow-[0_0_15px_#1DB954] transition-all">Spotify</a>
-      <a href="https://music.apple.com/us/playlist/osve-studios-showcase/pl.u-LdbqE10CK93Da" target="_blank" rel="noopener noreferrer" class="block text-center py-3 font-semibold rounded-md bg-white text-black hover:shadow-[0_0_15px_rgba(251,45,49,0.7)] transition-all">Apple Music</a>
-      <a href="https://www.youtube.com/playlist?list=PLnQX-jgAF5pTWm1_-gYpNbJsE7jZ0dBXb" target="_blank" rel="noopener noreferrer" class="block text-center py-3 font-semibold rounded-md bg-[#FF0000] hover:shadow-[0_0_15px_#FF0000] transition-all">
+      <a href="https://open.spotify.com/album/64psWwFU4cJQnIELFXqRX2?si=CXAnMhNMQUGkNkF5po8xUw" target="_blank" rel="noopener noreferrer" class="block text-center py-3 font-semibold rounded-md bg-[#1DB954] hover:shadow-[0_0_15px_#1DB954] transition-all">Spotify</a>
+      <a href="https://music.apple.com/us/album/forbidden/1811812044" target="_blank" rel="noopener noreferrer" class="block text-center py-3 font-semibold rounded-md bg-white text-black hover:shadow-[0_0_15px_rgba(251,45,49,0.7)] transition-all">Apple Music</a>
+      <a href="https://www.youtube.com/watch?v=lYSyUbsXnbs&list=OLAK5uy_meG0HC0-PqxT_d9TrNlhCi-2dJP2WcFKk" target="_blank" rel="noopener noreferrer" class="block text-center py-3 font-semibold rounded-md bg-[#FF0000] hover:shadow-[0_0_15px_#FF0000] transition-all">
         YouTube
       </a>
     </div>
