@@ -46,6 +46,132 @@
             priceRange: "Mixing from $150/track, Mastering from $75/track"
         },
         {
+            id: "songwriting",
+            title: "Songwriting",
+            icon: "fa-pen-fancy",
+            description: "Professional songwriting and lyric development services to create compelling, memorable songs that connect with your audience.",
+            features: [
+                "Lyric writing and development",
+                "Melody composition and arrangement",
+                "Hook and chorus creation",
+                "Song structure and flow",
+                "Collaborative songwriting sessions"
+            ],
+            priceRange: "Starting at $200 per song, packages available"
+        },
+        {
+            id: "musicvideo",
+            title: "Music Video Production",
+            icon: "fa-video",
+            description: "Professional music video production services from concept development to final delivery, helping artists create compelling visual content.",
+            features: [
+                "Concept development and storyboarding",
+                "Professional filming and cinematography",
+                "Video editing and post-production",
+                "Color grading and visual effects",
+                "Multi-format delivery (YouTube, VEVO, etc.)"
+            ],
+            priceRange: "Starting at $800 per video, packages available"
+        },
+        {
+            id: "artistdevelopment",
+            title: "Artist Development",
+            icon: "fa-user-graduate",
+            description: "Comprehensive artist development and coaching services to help you grow as a performer and build a sustainable music career.",
+            features: [
+                "Vocal coaching and technique training",
+                "Performance and stage presence coaching",
+                "Career strategy and brand development",
+                "Industry networking and connections",
+                "Marketing and promotion guidance"
+            ],
+            priceRange: "Monthly coaching from $300, intensive programs available"
+        },
+        {
+            id: "beatlicensing",
+            title: "Beat Licensing",
+            icon: "fa-music",
+            description: "High-quality, professionally produced beats available for licensing with flexible rights options for artists and producers.",
+            features: [
+                "Exclusive and non-exclusive licensing",
+                "Custom beat production on demand",
+                "Multiple genre options available",
+                "Clear rights and usage agreements",
+                "Royalty-free and royalty-share options"
+            ],
+            priceRange: "Non-exclusive from $50, Exclusive from $200"
+        },
+        {
+            id: "podcastproduction",
+            title: "Podcast Production",
+            icon: "fa-podcast",
+            description: "Complete podcast production services for content creators, from recording to distribution and promotion.",
+            features: [
+                "Professional podcast recording setup",
+                "Audio editing and post-production",
+                "Intro/outro music and sound design",
+                "Distribution to major platforms",
+                "Show notes and episode optimization"
+            ],
+            priceRange: "Per episode from $150, monthly packages available"
+        },
+        {
+            id: "livesound",
+            title: "Live Sound & Events",
+            icon: "fa-volume-up",
+            description: "Professional live sound services for events, concerts, and performances with state-of-the-art equipment.",
+            features: [
+                "Live sound mixing and engineering",
+                "PA system setup and operation",
+                "Event sound management",
+                "Wireless microphone systems",
+                "Multi-venue event support"
+            ],
+            priceRange: "Starting at $200 per event, equipment rental extra"
+        },
+        {
+            id: "audiorestoration",
+            title: "Audio Restoration",
+            icon: "fa-tools",
+            description: "Professional audio restoration and archiving services to preserve and enhance old recordings and audio content.",
+            features: [
+                "Vinyl and tape digitization",
+                "Noise reduction and audio cleanup",
+                "Old recording restoration",
+                "Audio enhancement and mastering",
+                "Digital archiving and backup"
+            ],
+            priceRange: "Per track from $75, bulk discounts available"
+        },
+        {
+            id: "businessconsulting",
+            title: "Music Business Consulting",
+            icon: "fa-chart-line",
+            description: "Expert music business consulting to help artists navigate contracts, royalties, and industry opportunities.",
+            features: [
+                "Contract review and negotiation",
+                "Royalty collection and management",
+                "Business strategy development",
+                "Industry networking assistance",
+                "Financial planning and budgeting"
+            ],
+            priceRange: "Hourly consultation from $100, retainer packages available"
+        },
+        {
+            id: "equipmentrental",
+            title: "Equipment Rental",
+            icon: "fa-microphone",
+            description: "Professional audio equipment and instrument rental services for recording sessions and live performances.",
+            features: [
+                "Professional microphones and preamps",
+                "Musical instruments and amplifiers",
+                "Recording equipment and interfaces",
+                "Live sound equipment and PA systems",
+                "Delivery and setup services"
+            ],
+            priceRange: "Daily rates from $50, weekly/monthly discounts"
+        },
+        {
             id: "sounddesign",
             title: "Sound Design",
             icon: "fa-waveform",
@@ -179,9 +305,25 @@
                         {:else if index === 2}
                             <img src="https://images.unsplash.com/photo-1589903308904-1010c2294adc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
                         {:else if index === 3}
-                            <img src="https://images.unsplash.com/photo-1563330232-57114bb0823c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
+                            <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
                         {:else if index === 4}
+                            <img src="https://images.unsplash.com/photo-1563330232-57114bb0823c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
+                        {:else if index === 5}
                             <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
+                        {:else if index === 6}
+                            <img src="https://images.unsplash.com/photo-1593697821252-0c9137d9fc45?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
+                        {:else if index === 7}
+                            <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
+                        {:else if index === 8}
+                            <img src="https://images.unsplash.com/photo-1563330232-57114bb0823c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
+                        {:else if index === 9}
+                            <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
+                        {:else if index === 10}
+                            <img src="https://images.unsplash.com/photo-1593697821252-0c9137d9fc45?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
+                        {:else if index === 11}
+                            <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
+                        {:else if index === 12}
+                            <img src="https://images.unsplash.com/photo-1563330232-57114bb0823c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
                         {:else}
                             <img src="https://images.unsplash.com/photo-1593697821252-0c9137d9fc45?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
                         {/if}

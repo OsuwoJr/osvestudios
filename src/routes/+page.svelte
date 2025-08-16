@@ -19,13 +19,33 @@
         },
         { 
             name: "Mixing & Mastering", 
-            icon: "fa-solid fa-waveform", 
+            icon: "fa-solid fa-volume-up", 
             description: "Professional audio mixing and mastering to give your tracks that polished, industry-standard sound."
         },
         { 
-            name: "Sound Design", 
-            icon: "fa-solid fa-wave-square", 
-            description: "Custom sound design for film, games, and media projects."
+            name: "Songwriting", 
+            icon: "fa-solid fa-pen-fancy", 
+            description: "Professional songwriting and lyric development to create compelling, memorable songs."
+        },
+        { 
+            name: "Music Video Production", 
+            icon: "fa-solid fa-video", 
+            description: "Professional music video production from concept to final edit."
+        },
+        { 
+            name: "Artist Development", 
+            icon: "fa-solid fa-user-graduate", 
+            description: "Comprehensive artist development and coaching to elevate your career."
+        },
+        { 
+            name: "Beat Licensing", 
+            icon: "fa-solid fa-music", 
+            description: "High-quality beats for licensing with flexible rights options."
+        },
+        { 
+            name: "Podcast Production", 
+            icon: "fa-solid fa-podcast", 
+            description: "Complete podcast production services for content creators."
         }
     ];
     

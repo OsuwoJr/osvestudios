@@ -111,15 +111,11 @@
                     />
                 </div>
                 <div class="p-6">
-                    <h3 class="text-xl font-bold mb-1">James Osuwo</h3>
+                    <h3 class="text-xl font-bold mb-1">John Frederickoh</h3>
                     <p class="text-[#00BFFF] mb-4">Studio Director / Lead Engineer</p>
                     <p class="text-gray-300 text-sm">With over 10 years of experience in audio production, James leads our engineering team and oversees all technical aspects of OSVE Studios.</p>
                     
-                    <div class="flex space-x-3 mt-4">
-                        <a href="https://linkedin.com" class="text-gray-400 hover:text-[#00BFFF]" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://instagram.com" class="text-gray-400 hover:text-[#00BFFF]" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://twitter.com" class="text-gray-400 hover:text-[#00BFFF]" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    </div>
+                  
                 </div>
             </div>
             
@@ -134,15 +130,10 @@
                     />
                 </div>
                 <div class="p-6">
-                    <h3 class="text-xl font-bold mb-1">Sarah Mwende</h3>
+                    <h3 class="text-xl font-bold mb-1">Odongo Makele</h3>
                     <p class="text-[#00BFFF] mb-4">Sound Designer / Producer</p>
                     <p class="text-gray-300 text-sm">Sarah specializes in sound design and music production, bringing creative direction and innovative production techniques to every project.</p>
-                    
-                    <div class="flex space-x-3 mt-4">
-                        <a href="https://linkedin.com" class="text-gray-400 hover:text-[#00BFFF]" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://instagram.com" class="text-gray-400 hover:text-[#00BFFF]" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://twitter.com" class="text-gray-400 hover:text-[#00BFFF]" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    </div>
+                   
                 </div>
             </div>
             
@@ -160,12 +151,8 @@
                     <h3 class="text-xl font-bold mb-1">David Kimani</h3>
                     <p class="text-[#00BFFF] mb-4">Mixing & Mastering Engineer</p>
                     <p class="text-gray-300 text-sm">With a meticulous ear for detail, David handles mixing and mastering to ensure every track reaches its full sonic potential.</p>
+                  
                     
-                    <div class="flex space-x-3 mt-4">
-                        <a href="https://linkedin.com" class="text-gray-400 hover:text-[#00BFFF]" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://instagram.com" class="text-gray-400 hover:text-[#00BFFF]" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://twitter.com" class="text-gray-400 hover:text-[#00BFFF]" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    </div>
                 </div>
             </div>
         </div>
