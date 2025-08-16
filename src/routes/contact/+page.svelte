@@ -1,6 +1,7 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import "@fortawesome/fontawesome-free/css/all.min.css";
+    import { submitToFormspree } from '$lib/formspree.js';
     
     let name = "";
     let email = "";
@@ -19,7 +20,7 @@
         }
     });
     
-    function handleSubmit(e: SubmitEvent) {
+    async function handleSubmit(e: SubmitEvent) {
         e.preventDefault();
         
         // Basic validation
@@ -31,16 +32,39 @@
         submitting = true;
         submitStatus = "";
         
-        // Simulate form submission (replace with actual form handling)
-        setTimeout(() => {
+        try {
+            // Create FormData object for proper Formspree submission
+            const formDataToSend = new FormData();
+            formDataToSend.append('name', name);
+            formDataToSend.append('email', email);
+            formDataToSend.append('phone', phone);
+            formDataToSend.append('service', service);
+            formDataToSend.append('message', message);
+            
+            console.log('Submitting contact form to Formspree...');
+            
+            // Try the robust submission method
+            const result = await submitToFormspree('mnnzbyzb', formDataToSend);
+            
+            if (result.success) {
+                console.log('Contact form submitted successfully using method:', result.method);
+                submitStatus = "Thanks for your message! We'll get back to you soon.";
+                // Clear form data
+                name = "";
+                email = "";
+                phone = "";
+                message = "";
+                service = "";
+            } else {
+                console.error('Form submission failed with method:', result.method);
+                submitStatus = "Something went wrong. Please check the browser console for details and try again.";
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            submitStatus = "Something went wrong. Please check the browser console for details and try again.";
+        } finally {
             submitting = false;
-            submitStatus = "Thanks for your message! We'll get back to you soon.";
-            name = "";
-            email = "";
-            phone = "";
-            message = "";
-            service = "";
-        }, 1500);
+        }
     }
     
     // Scroll to form when "contact us" anchor is used
@@ -76,7 +100,7 @@
             <div class="bg-black/30 backdrop-blur-sm border border-[#00BFFF]/20 rounded-xl p-6 md:p-8">
                 <h2 class="text-2xl md:text-3xl font-bold mb-6">Book a Session</h2>
                 
-                <form on:submit={handleSubmit} class="space-y-6">
+                <form id="contact-form" on:submit={handleSubmit} class="space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Name *</label>
@@ -160,7 +184,13 @@
                         </button>
                         
                         {#if submitStatus}
-                            <p class="mt-4 text-center text-green-400">{submitStatus}</p>
+                            <div class="mt-4 p-4 rounded-md {submitStatus.includes('Thanks') ? 'bg-green-50 border border-green-200 text-green-800' : 'bg-red-50 border border-red-200 text-red-800'}">
+                                <i class="fas {submitStatus.includes('Thanks') ? 'fa-check-circle' : 'fa-exclamation-circle'} mr-2"></i>
+                                {submitStatus}
+                                {#if submitStatus && !submitStatus.includes('Thanks')}
+                                    <br><small class="text-red-600">If the issue persists, please contact us directly at info@osvestudios.com</small>
+                                {/if}
+                            </div>
                         {/if}
                     </div>
                 </form>

@@ -1,5 +1,6 @@
 <script lang="ts">
     import { createEventDispatcher } from 'svelte';
+    import { submitToFormspree, submitFormViaForm } from '$lib/formspree.js';
     
     const dispatch = createEventDispatcher();
     
@@ -20,10 +21,49 @@
     let isSubmitting = false;
     let showForm = false;
     let submitStatus = '';
+    let lastSubmissionTime = 0;
     
     async function handleSubmit() {
         isSubmitting = true;
         submitStatus = '';
+        
+        // Rate limiting - prevent submissions within 30 seconds
+        const now = Date.now();
+        if (now - lastSubmissionTime < 30000) {
+            submitStatus = 'error';
+            isSubmitting = false;
+            return;
+        }
+        
+        // Basic validation
+        if (!formData.name.trim() || formData.name.trim().length < 2) {
+            submitStatus = 'error';
+            console.error('Validation failed: Name too short');
+            isSubmitting = false;
+            return;
+        }
+        
+        if (!formData.email.trim() || !formData.email.includes('@')) {
+            submitStatus = 'error';
+            console.error('Validation failed: Invalid email');
+            isSubmitting = false;
+            return;
+        }
+        
+        if (!formData.artistName.trim() || formData.artistName.trim().length < 2) {
+            submitStatus = 'error';
+            console.error('Validation failed: Artist name too short');
+            isSubmitting = false;
+            return;
+        }
+        
+        // Optional: Check for obvious test messages
+        if (formData.message && formData.message.toLowerCase().includes('test message')) {
+            submitStatus = 'error';
+            console.error('Validation failed: Test message detected');
+            isSubmitting = false;
+            return;
+        }
         
         try {
             // Create FormData object for proper Formspree submission
@@ -40,13 +80,59 @@
             formDataToSend.append('smartLink', formData.smartLink);
             formDataToSend.append('message', formData.message);
             
-            const response = await fetch('https://formspree.io/f/mnnzbyzb', {
-                method: 'POST',
-                body: formDataToSend
-            });
+            console.log('Submitting form data to Formspree...');
+            console.log('Form data:', Object.fromEntries(formDataToSend.entries()));
             
-            if (response.ok) {
+            // Try direct submission first (simpler approach)
+            try {
+                console.log('Attempting direct Formspree submission...');
+                const response = await fetch('https://formspree.io/f/mnnzbyzb', {
+                    method: 'POST',
+                    body: formDataToSend,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                console.log('Direct response status:', response.status);
+                console.log('Direct response ok:', response.ok);
+                
+                if (response.ok || response.status === 302) {
+                    console.log('Direct submission successful!');
+                    submitStatus = 'success';
+                    lastSubmissionTime = Date.now();
+                    formData = {
+                        name: '',
+                        artistName: '',
+                        email: '',
+                        phone: '',
+                        instagram: '',
+                        tiktok: '',
+                        twitter: '',
+                        facebook: '',
+                        youtube: '',
+                        smartLink: '',
+                        message: ''
+                    };
+                    setTimeout(() => {
+                        showForm = false;
+                        submitStatus = '';
+                    }, 3000);
+                    return;
+                }
+            } catch (directError) {
+                console.error('Direct submission failed:', directError);
+            }
+            
+            // Fallback to robust method
+            console.log('Trying robust submission method...');
+            const result = await submitToFormspree('mnnzbyzb', formDataToSend);
+            console.log('Formspree result:', result);
+            
+            if (result.success) {
+                console.log('Form submitted successfully using method:', result.method);
                 submitStatus = 'success';
+                lastSubmissionTime = Date.now(); // Update last submission time
                 formData = {
                     name: '',
                     artistName: '',
@@ -65,6 +151,7 @@
                     submitStatus = '';
                 }, 3000);
             } else {
+                console.error('Form submission failed with method:', result.method);
                 submitStatus = 'error';
             }
         } catch (error) {
@@ -295,7 +382,8 @@
                         {#if submitStatus === 'error'}
                             <div class="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-md">
                                 <i class="fas fa-exclamation-circle mr-2"></i>
-                                Something went wrong. Please try again or contact us directly.
+                                Something went wrong. Please check the browser console for details and try again.
+                                <br><small class="text-red-600">If the issue persists, please contact us directly at info@osvestudios.com</small>
                             </div>
                         {/if}
                     </form>

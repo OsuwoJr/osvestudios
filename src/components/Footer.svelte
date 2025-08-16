@@ -39,7 +39,7 @@
 		{ name: "Phone", icon: "fas fa-phone", link: "tel:+254790932575", color: "#00BFFF" }
 	];
 
-	const handleSubscribe = (e: SubmitEvent) => {
+	const handleSubscribe = async (e: SubmitEvent) => {
 		e.preventDefault();
 		if (!email || !email.includes('@')) {
 			subscribeStatus = "Please enter a valid email";
@@ -50,20 +50,29 @@
 		
 		isSubscribing = true;
 		
-		// Direct form submission approach for Formspree
-		const formData = new FormData();
-		formData.append("email", email);
-		formData.append("message", "Newsletter subscription request");
-		
-		fetch("https://formspree.io/f/xyzweeav", {
-			method: "POST",
-			body: formData,
-			headers: {
-				"Accept": "application/json"
-			}
-		})
-		.then(response => {
-			if (response.ok) {
+		try {
+			// Create FormData object for proper Formspree submission
+			const formData = new FormData();
+			formData.append("email", email);
+			formData.append("message", "Newsletter subscription request");
+			
+			            console.log('Submitting newsletter subscription to Formspree...');
+            
+            // Submit to Formspree with better error handling
+            const response = await fetch("https://formspree.io/f/xyzweeav", {
+                method: "POST",
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            console.log('Response status:', response.status);
+            console.log('Response ok:', response.ok);
+            
+            // Check if the response is successful (200 or 302)
+            if (response.ok || response.status === 302) {
+				console.log('Newsletter subscription successful!');
 				subscribeStatus = "Thank you for subscribing!";
 				email = "";
 				
@@ -72,16 +81,15 @@
 					subscribeStatus = "";
 				}, 3000);
 			} else {
-				throw new Error("Subscription failed");
+				console.error('Subscription failed:', response.status, response.statusText);
+				subscribeStatus = "Something went wrong. Please try again.";
 			}
-		})
-		.catch((error) => {
+		} catch (error) {
 			console.error("Form submission error:", error);
 			subscribeStatus = "Something went wrong. Please try again.";
-		})
-		.finally(() => {
+		} finally {
 			isSubscribing = false;
-		});
+		}
 	};
 
 	// Current location detection for navigation highlight
