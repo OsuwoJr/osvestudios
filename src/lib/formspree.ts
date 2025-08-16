@@ -2,13 +2,7 @@
  * Formspree submission utility with multiple fallback methods
  */
 
-/**
- * Submit form data to Formspree using multiple fallback methods
- * @param {string} formId - The Formspree form ID
- * @param {FormData} formData - The form data to submit
- * @returns {Promise<{success: boolean, method: string, status?: number, error?: string}>}
- */
-export async function submitToFormspree(formId, formData) {
+export async function submitToFormspree(formId: string, formData: FormData): Promise<{success: boolean, method: string, status?: number, error?: string}> {
     // Method 1: Standard fetch with JSON headers
     try {
         const response = await fetch(`https://formspree.io/f/${formId}`, {
@@ -71,11 +65,8 @@ export async function submitToFormspree(formId, formData) {
 
 /**
  * Alternative method using form submission (most reliable)
- * @param {string} formId - The Formspree form ID
- * @param {FormData} formData - The form data to submit
- * @returns {Promise<{success: boolean, method: string}>}
  */
-export function submitFormViaForm(formId, formData) {
+export function submitFormViaForm(formId: string, formData: FormData): Promise<{success: boolean, method: string}> {
     return new Promise((resolve) => {
         // Create a temporary form
         const form = document.createElement('form');

@@ -41,11 +41,8 @@
             formDataToSend.append('service', service);
             formDataToSend.append('message', message);
             
-            console.log('Submitting contact form to Formspree...');
-            
             // Try direct submission first (simpler approach)
             try {
-                console.log('Attempting direct Formspree submission...');
                 const response = await fetch('https://formspree.io/f/myzpagaa', {
                     method: 'POST',
                     body: formDataToSend,
@@ -54,11 +51,7 @@
                     }
                 });
                 
-                console.log('Direct response status:', response.status);
-                console.log('Direct response ok:', response.ok);
-                
                 if (response.ok || response.status === 302) {
-                    console.log('Direct submission successful!');
                     submitStatus = "Thanks for your message! We'll get back to you soon.";
                     // Clear form data
                     name = "";
@@ -69,15 +62,13 @@
                     return;
                 }
             } catch (directError) {
-                console.error('Direct submission failed:', directError);
+                // Direct submission failed, continue to fallback
             }
             
             // Fallback to robust method
-            console.log('Trying robust submission method...');
             const result = await submitToFormspree('myzpagaa', formDataToSend);
             
             if (result.success) {
-                console.log('Contact form submitted successfully using method:', result.method);
                 submitStatus = "Thanks for your message! We'll get back to you soon.";
                 // Clear form data
                 name = "";
@@ -86,12 +77,10 @@
                 message = "";
                 service = "";
             } else {
-                console.error('Form submission failed with method:', result.method);
-                submitStatus = "Something went wrong. Please check the browser console for details and try again.";
+                submitStatus = "Something went wrong. Please try again.";
             }
         } catch (error) {
-            console.error('Form submission error:', error);
-            submitStatus = "Something went wrong. Please check the browser console for details and try again.";
+            submitStatus = "Something went wrong. Please try again.";
         } finally {
             submitting = false;
         }

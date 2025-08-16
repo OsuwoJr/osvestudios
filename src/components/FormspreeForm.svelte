@@ -28,8 +28,6 @@
                 }
             });
             
-            console.log('Submitting form data to Formspree...');
-            
             // Submit to Formspree
             const response = await fetch(`https://formspree.io/f/${formId}`, {
                 method: 'POST',
@@ -37,20 +35,15 @@
                 redirect: 'manual'
             });
             
-            console.log('Response status:', response.status);
-            
             // Formspree returns 302 redirect on success
             if (response.status === 302) {
-                console.log('Form submitted successfully!');
                 submitStatus = 'success';
                 dispatch('success', { fields });
             } else {
-                console.error('Form submission failed:', response.status, response.statusText);
                 submitStatus = 'error';
                 dispatch('error', { status: response.status, statusText: response.statusText });
             }
         } catch (error) {
-            console.error('Form submission error:', error);
             submitStatus = 'error';
             dispatch('error', { error });
         } finally {

@@ -36,7 +36,8 @@
 	const studioContacts = [
 		{ name: "Email", icon: "fas fa-envelope", link: "mailto:info@osvestudios.com", color: "#00BFFF" },
 		{ name: "WhatsApp", icon: "fab fa-whatsapp", link: "https://wa.me/254790932575", color: "#25D366" },
-		{ name: "Phone", icon: "fas fa-phone", link: "tel:+254790932575", color: "#00BFFF" }
+		{ name: "Phone", icon: "fas fa-phone", link: "tel:+254790932575", color: "#00BFFF" },
+		
 	];
 
 	const handleSubscribe = async (e: SubmitEvent) => {
@@ -56,23 +57,17 @@
 			formData.append("email", email);
 			formData.append("message", "Newsletter subscription request");
 			
-			            console.log('Submitting newsletter subscription to Formspree...');
-            
-            // Submit to Formspree with better error handling
-            const response = await fetch("https://formspree.io/f/mwpqjkev", {
-                method: "POST",
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-            
-            console.log('Response status:', response.status);
-            console.log('Response ok:', response.ok);
-            
-            // Check if the response is successful (200 or 302)
-            if (response.ok || response.status === 302) {
-				console.log('Newsletter subscription successful!');
+			// Submit to Formspree with better error handling
+			const response = await fetch("https://formspree.io/f/mwpqjkev", {
+				method: "POST",
+				body: formData,
+				headers: {
+					'Accept': 'application/json'
+				}
+			});
+			
+			// Check if the response is successful (200 or 302)
+			if (response.ok || response.status === 302) {
 				subscribeStatus = "Thank you for subscribing!";
 				email = "";
 				
@@ -81,11 +76,9 @@
 					subscribeStatus = "";
 				}, 3000);
 			} else {
-				console.error('Subscription failed:', response.status, response.statusText);
 				subscribeStatus = "Something went wrong. Please try again.";
 			}
 		} catch (error) {
-			console.error("Form submission error:", error);
 			subscribeStatus = "Something went wrong. Please try again.";
 		} finally {
 			isSubscribing = false;
@@ -237,9 +230,11 @@
 	<div class="py-4 border-t border-[#00BFFF]/20">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-500">
 			<p>© {year} OSVE STUDIOS. All rights reserved.</p>
-			<div class="mt-2 sm:mt-0">
-				<p>Designed with <i class="fas fa-heart text-[#00BFFF]"></i> in Kenya</p>
-			</div>
+					<div class="mt-2 sm:mt-0">
+			<a href="https://github.com/OsuwoJr" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-[#333333] transition-colors duration-300">
+				<p>Designed by <i class="fab fa-github text-[#333333]"></i> OsuwoJr</p>
+			</a>
+		</div>
 		</div>
 	</div>
 </footer>

@@ -38,21 +38,18 @@
         // Basic validation
         if (!formData.name.trim() || formData.name.trim().length < 2) {
             submitStatus = 'error';
-            console.error('Validation failed: Name too short');
             isSubmitting = false;
             return;
         }
         
         if (!formData.email.trim() || !formData.email.includes('@')) {
             submitStatus = 'error';
-            console.error('Validation failed: Invalid email');
             isSubmitting = false;
             return;
         }
         
         if (!formData.artistName.trim() || formData.artistName.trim().length < 2) {
             submitStatus = 'error';
-            console.error('Validation failed: Artist name too short');
             isSubmitting = false;
             return;
         }
@@ -60,7 +57,6 @@
         // Optional: Check for obvious test messages
         if (formData.message && formData.message.toLowerCase().includes('test message')) {
             submitStatus = 'error';
-            console.error('Validation failed: Test message detected');
             isSubmitting = false;
             return;
         }
@@ -80,12 +76,8 @@
             formDataToSend.append('smartLink', formData.smartLink);
             formDataToSend.append('message', formData.message);
             
-            console.log('Submitting form data to Formspree...');
-            console.log('Form data:', Object.fromEntries(formDataToSend.entries()));
-            
             // Try direct submission first (simpler approach)
             try {
-                console.log('Attempting direct Formspree submission...');
                 const response = await fetch('https://formspree.io/f/mnnzbyzb', {
                     method: 'POST',
                     body: formDataToSend,
@@ -94,11 +86,7 @@
                     }
                 });
                 
-                console.log('Direct response status:', response.status);
-                console.log('Direct response ok:', response.ok);
-                
                 if (response.ok || response.status === 302) {
-                    console.log('Direct submission successful!');
                     submitStatus = 'success';
                     lastSubmissionTime = Date.now();
                     formData = {
@@ -121,16 +109,13 @@
                     return;
                 }
             } catch (directError) {
-                console.error('Direct submission failed:', directError);
+                // Direct submission failed, continue to fallback
             }
             
             // Fallback to robust method
-            console.log('Trying robust submission method...');
             const result = await submitToFormspree('mnnzbyzb', formDataToSend);
-            console.log('Formspree result:', result);
             
             if (result.success) {
-                console.log('Form submitted successfully using method:', result.method);
                 submitStatus = 'success';
                 lastSubmissionTime = Date.now(); // Update last submission time
                 formData = {
@@ -151,11 +136,9 @@
                     submitStatus = '';
                 }, 3000);
             } else {
-                console.error('Form submission failed with method:', result.method);
                 submitStatus = 'error';
             }
         } catch (error) {
-            console.error('Form submission error:', error);
             submitStatus = 'error';
         } finally {
             isSubmitting = false;
@@ -165,7 +148,7 @@
     function toggleForm() {
         showForm = !showForm;
         if (showForm) {
-            // Ensure modal opens at the top and is properly positioned
+            // Reset scroll position when modal opens
             setTimeout(() => {
                 const modalContent = document.querySelector('.modal-content');
                 if (modalContent) {
@@ -190,8 +173,8 @@
     
     <!-- Modal Form -->
     {#if showForm}
-        <div class="fixed inset-0 z-[99999] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0;">
-            <div class="bg-white rounded-lg shadow-2xl max-w-md w-full max-h-[90vh] flex flex-col" style="max-height: 90vh;">
+        <div class="fixed inset-0 z-[99999] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; display: flex; align-items: center; justify-content: center;">
+            <div class="bg-white rounded-lg shadow-2xl max-w-md w-full max-h-[90vh] flex flex-col" style="max-height: 90vh; margin: auto;">
                 <!-- Header - Always visible -->
                 <div class="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 rounded-t-lg z-10">
                     <div class="flex justify-between items-center">
@@ -414,9 +397,21 @@
         scroll-behavior: smooth;
     }
     
-    /* Force modal to be above everything */
+    /* Force modal to be above everything and always centered */
     :global([style*="z-[99999]"]) {
         position: fixed !important;
         z-index: 99999 !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    /* Ensure modal content is always centered */
+    :global(.modal-content) {
+        margin: auto !important;
     }
 </style>
