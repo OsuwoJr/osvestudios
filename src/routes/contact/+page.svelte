@@ -3,13 +3,13 @@
     import "@fortawesome/fontawesome-free/css/all.min.css";
     import { submitToFormspree } from '$lib/formspree.js';
     
-    let name = "";
-    let email = "";
-    let phone = "";
-    let service = "";
-    let message = "";
-    let submitting = false;
-    let submitStatus = "";
+    let name: string = "";
+    let email: string = "";
+    let phone: string = "";
+    let service: string = "";
+    let message: string = "";
+    let submitting: boolean = false;
+    let submitStatus: string = "";
     
     // Get the service from URL params if available
     onMount(() => {
@@ -43,8 +43,38 @@
             
             console.log('Submitting contact form to Formspree...');
             
-            // Try the robust submission method
-            const result = await submitToFormspree('mnnzbyzb', formDataToSend);
+            // Try direct submission first (simpler approach)
+            try {
+                console.log('Attempting direct Formspree submission...');
+                const response = await fetch('https://formspree.io/f/myzpagaa', {
+                    method: 'POST',
+                    body: formDataToSend,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                console.log('Direct response status:', response.status);
+                console.log('Direct response ok:', response.ok);
+                
+                if (response.ok || response.status === 302) {
+                    console.log('Direct submission successful!');
+                    submitStatus = "Thanks for your message! We'll get back to you soon.";
+                    // Clear form data
+                    name = "";
+                    email = "";
+                    phone = "";
+                    message = "";
+                    service = "";
+                    return;
+                }
+            } catch (directError) {
+                console.error('Direct submission failed:', directError);
+            }
+            
+            // Fallback to robust method
+            console.log('Trying robust submission method...');
+            const result = await submitToFormspree('myzpagaa', formDataToSend);
             
             if (result.success) {
                 console.log('Contact form submitted successfully using method:', result.method);
@@ -209,7 +239,7 @@
                         </div>
                         <div>
                             <h3 class="font-semibold mb-1">Address</h3>
-                            <p class="text-gray-300">123 Music Avenue<br>Nairobi, Kenya</p>
+                            <p class="text-gray-300">Zebra,Roysambu<br>Nairobi, Kenya</p>
                         </div>
                     </div>
                     
@@ -232,7 +262,7 @@
                         <div>
                             <h3 class="font-semibold mb-1">Email</h3>
                             <p class="text-gray-300">
-                                <a href="mailto:info@osvestudios.com" class="hover:text-[#00BFFF] transition-colors">info@osvestudios.com</a>
+                                <a href="mailto:osvemusic@gmail.com" class="hover:text-[#00BFFF] transition-colors">osvemusic@gmail.com</a>
                             </p>
                         </div>
                     </div>
@@ -261,8 +291,11 @@
                         <a href="https://www.facebook.com/osvestudios" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-black/50 flex items-center justify-center text-gray-300 hover:text-[#4267B2] hover:bg-black/70 transition-all" aria-label="Facebook">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="https://twitter.com/osvestudios" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-black/50 flex items-center justify-center text-gray-300 hover:text-[#1DA1F2] hover:bg-black/70 transition-all" aria-label="Twitter">
-                            <i class="fab fa-twitter"></i>
+                        <a href="https://twitter.com/osvestudios" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-black/50 flex items-center justify-center text-gray-300 hover:text-[#1DA1F2] hover:bg-black/70 transition-all" aria-label="X (Twitter)">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@osvestudios" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-black/50 flex items-center justify-center text-gray-300 hover:text-[#000000] hover:bg-black/70 transition-all" aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
                         </a>
                         <a href="https://wa.me/254790932575" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-black/50 flex items-center justify-center text-gray-300 hover:text-[#25D366] hover:bg-black/70 transition-all" aria-label="WhatsApp">
                             <i class="fab fa-whatsapp"></i>
@@ -292,7 +325,7 @@
                     width="100%" 
                     height="100%" 
                     style="border:0;" 
-                    allowfullscreen="" 
+                    allowfullscreen={true}
                     loading="lazy" 
                     referrerpolicy="no-referrer-when-downgrade"
                     title="OSVE Studios location map"

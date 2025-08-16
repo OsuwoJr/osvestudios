@@ -4,8 +4,9 @@
 This project uses Formspree for handling form submissions. All forms are now properly configured to work with Svelte.
 
 ## Form IDs
-- **Main Contact Form**: `mnnzbyzb` (used in contact page and invitation form)
-- **Newsletter Subscription**: `xyzweeav` (used in footer)
+- **Artist Invitation Form**: `mnnzbyzb` (used in invitation form)
+- **Contact Form**: `myzpagaa` (used in contact page)
+- **Newsletter Subscription**: `mwpqjkev` (used in footer)
 
 ## Implementation Pattern
 All forms follow this pattern for successful submission:
@@ -32,9 +33,9 @@ if (response.status === 302) {
 4. **Error handling** - Always include try/catch blocks for network errors
 
 ## Components
-- `InvitationForm.svelte` - Artist invitation form (working)
-- `Footer.svelte` - Newsletter subscription (updated)
-- `src/routes/contact/+page.svelte` - Contact form (updated)
+- `InvitationForm.svelte` - Artist invitation form (endpoint: mnnzbyzb)
+- `src/routes/contact/+page.svelte` - Contact form (endpoint: myzpagaa)
+- `Footer.svelte` - Newsletter subscription (endpoint: mwpqjkev)
 - `FormspreeForm.svelte` - Reusable component for future forms
 
 ## Testing

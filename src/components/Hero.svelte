@@ -54,7 +54,7 @@
             <a href="https://x.com/KenyanTroublers" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" class="text-2xl hover:text-[#1DA1F2] transition-all hover:scale-110">
                 <i class="fab fa-x-twitter"></i>
             </a>
-            <a href="https://www.facebook.com/thekenyantroublerskt" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="text-2xl hover:text-[#000000] transition-all hover:scale-110">
+            <a href="https://www.tiktok.com/@thekenyantroublers" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="text-2xl hover:text-[#000000] transition-all hover:scale-110">
                 <i class="fab fa-tiktok"></i>
             </a>
             <a href="https://www.facebook.com/osvestudios" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="text-2xl hover:text-[#1877F2] transition-all hover:scale-110">

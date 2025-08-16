@@ -59,7 +59,7 @@
 			            console.log('Submitting newsletter subscription to Formspree...');
             
             // Submit to Formspree with better error handling
-            const response = await fetch("https://formspree.io/f/xyzweeav", {
+            const response = await fetch("https://formspree.io/f/mwpqjkev", {
                 method: "POST",
                 body: formData,
                 headers: {
@@ -249,6 +249,7 @@
 	a:hover i.fab.fa-instagram {
 		background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
 		-webkit-background-clip: text;
+		background-clip: text;
 		-webkit-text-fill-color: transparent;
 	}
 	

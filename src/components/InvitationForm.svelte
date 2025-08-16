@@ -164,7 +164,15 @@
     
     function toggleForm() {
         showForm = !showForm;
-        if (!showForm) {
+        if (showForm) {
+            // Ensure modal opens at the top and is properly positioned
+            setTimeout(() => {
+                const modalContent = document.querySelector('.modal-content');
+                if (modalContent) {
+                    modalContent.scrollTop = 0;
+                }
+            }, 100);
+        } else {
             submitStatus = '';
         }
     }
@@ -182,9 +190,10 @@
     
     <!-- Modal Form -->
     {#if showForm}
-        <div class="fixed inset-0 z-[9999] bg-black/80 backdrop-blur-sm flex items-start justify-center p-4 pt-8 sm:pt-16">
-            <div class="bg-white rounded-lg shadow-2xl max-w-md w-full max-h-[85vh] overflow-y-auto my-8">
-                <div class="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 rounded-t-lg">
+        <div class="fixed inset-0 z-[99999] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0;">
+            <div class="bg-white rounded-lg shadow-2xl max-w-md w-full max-h-[90vh] flex flex-col" style="max-height: 90vh;">
+                <!-- Header - Always visible -->
+                <div class="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 rounded-t-lg z-10">
                     <div class="flex justify-between items-center">
                         <h3 class="text-xl font-bold text-gray-900">Artist Invitation</h3>
                         <button 
@@ -196,9 +205,11 @@
                         </button>
                     </div>
                 </div>
-                <div class="p-6">
+                
+                <!-- Scrollable Content -->
+                <div class="modal-content flex-1 overflow-y-auto p-6">
                     
-                    <form on:submit|preventDefault={handleSubmit} class="space-y-4">
+                    <form id="invitation-form" on:submit|preventDefault={handleSubmit} class="space-y-4">
                         <!-- Basic Info -->
                         <div>
                             <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
@@ -356,20 +367,8 @@
                             ></textarea>
                         </div>
                         
-                        <!-- Submit Button -->
-                        <div class="pt-4">
-                            <button
-                                type="submit"
-                                disabled={isSubmitting}
-                                class="w-full bg-[#00BFFF] hover:bg-[#0099CC] disabled:bg-gray-400 text-white font-semibold py-3 px-4 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#00BFFF] focus:ring-offset-2"
-                            >
-                                {#if isSubmitting}
-                                    <i class="fas fa-spinner fa-spin mr-2"></i>Sending...
-                                {:else}
-                                    Send Invitation
-                                {/if}
-                            </button>
-                        </div>
+                        <!-- Spacer for fixed button -->
+                        <div class="h-20"></div>
                         
                         <!-- Status Messages -->
                         {#if submitStatus === 'success'}
@@ -388,7 +387,36 @@
                         {/if}
                     </form>
                 </div>
+                
+                <!-- Fixed Bottom Section for Submit Button -->
+                <div class="sticky bottom-0 bg-white border-t border-gray-200 px-6 py-4 rounded-b-lg">
+                    <button
+                        type="submit"
+                        form="invitation-form"
+                        disabled={isSubmitting}
+                        class="w-full bg-[#00BFFF] hover:bg-[#0099CC] disabled:bg-gray-400 text-white font-semibold py-3 px-4 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#00BFFF] focus:ring-offset-2"
+                    >
+                        {#if isSubmitting}
+                            <i class="fas fa-spinner fa-spin mr-2"></i>Sending...
+                        {:else}
+                            Send Invitation
+                        {/if}
+                    </button>
+                </div>
             </div>
         </div>
     {/if}
-</div> 
+</div>
+
+<style>
+    /* Ensure modal is always on top and properly positioned */
+    :global(.modal-content) {
+        scroll-behavior: smooth;
+    }
+    
+    /* Force modal to be above everything */
+    :global([style*="z-[99999]"]) {
+        position: fixed !important;
+        z-index: 99999 !important;
+    }
+</style>
