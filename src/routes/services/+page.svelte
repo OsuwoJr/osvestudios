@@ -249,10 +249,10 @@
                 </div>
                 <div class="grid grid-cols-2 gap-4">
                     <div class="rounded-lg overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="Recording studio equipment" class="w-full h-full object-cover" />
+                        <img src="/services/recording.jpg" alt="Recording studio equipment" class="w-full h-full object-cover" />
                     </div>
                     <div class="rounded-lg overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="Recording console" class="w-full h-full object-cover" />
+                        <img src="/services/mixingmastering.jpg" alt="Recording console" class="w-full h-full object-cover" />
                     </div>
                 </div>
             </div>
@@ -299,33 +299,33 @@
                     </div>
                     <div class="order-1 {index % 2 === 1 ? 'lg:order-2' : 'lg:order-1'} h-64 md:h-80">
                         {#if index === 0}
-                            <img src="https://images.unsplash.com/photo-1598653222000-6b7b7a552625?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
+                            <img src="/services/recording.jpg" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
                         {:else if index === 1}
-                            <img src="https://images.unsplash.com/photo-1631013921619-34c4ab13fcde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
+                            <img src="/services/music.jpg" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
                         {:else if index === 2}
-                            <img src="https://images.unsplash.com/photo-1589903308904-1010c2294adc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
+                            <img src="/services/mixingmastering.jpg" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
                         {:else if index === 3}
-                            <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
+                            <img src="/services/songwriting.jpg" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
                         {:else if index === 4}
-                            <img src="https://images.unsplash.com/photo-1563330232-57114bb0823c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
+                            <img src="/services/videoproduction.jpg" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
                         {:else if index === 5}
-                            <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
+                            <img src="/services/artistdevelopment.jpg" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
                         {:else if index === 6}
-                            <img src="https://images.unsplash.com/photo-1593697821252-0c9137d9fc45?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
+                            <img src="/services/beatlicensing.jpg" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
                         {:else if index === 7}
-                            <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
+                            <img src="/services/podcastproduction.jpg" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
                         {:else if index === 8}
-                            <img src="https://images.unsplash.com/photo-1563330232-57114bb0823c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
+                            <img src="/services/livesound.jpg" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
                         {:else if index === 9}
-                            <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
+                            <img src="/services/audiorestoration.jpg" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
                         {:else if index === 10}
-                            <img src="https://images.unsplash.com/photo-1593697821252-0c9137d9fc45?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
+                            <img src="/services/musicbusiness.jpg" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
                         {:else if index === 11}
-                            <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
+                            <img src="/services/musicequipment.jpg" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
                         {:else if index === 12}
-                            <img src="https://images.unsplash.com/photo-1563330232-57114bb0823c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
+                            <img src="/services/sounddesign.jpg" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
                         {:else}
-                            <img src="https://images.unsplash.com/photo-1593697821252-0c9137d9fc45?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
+                            <img src="/services/studiorental.jpg" alt="{service.title}" class="w-full h-full object-cover rounded-xl" />
                         {/if}
                     </div>
                 </div>
