@@ -1,18 +1,7 @@
 <script lang="ts">
     // Component for displaying studio overview
     
-    function handleImageError(event: Event) {
-        const target = event.target as HTMLImageElement;
-        if (target.alt === "Studio Control Room") {
-            target.src = '/services/recording.jpg';
-        } else if (target.alt === "Recording Booth") {
-            target.src = '/services/musicequipment.jpg';
-        } else if (target.alt === "Mixing Console") {
-            target.src = '/services/mixingmastering.jpg';
-        } else if (target.alt === "Recording Session") {
-            target.src = '/services/livesound.jpg';
-        }
-    }
+
 </script>
 
 <section id="about" class="py-16 md:py-24 px-4">
@@ -60,23 +49,19 @@
             <!-- Studio Images -->
             <div class="order-1 lg:order-2 grid grid-cols-2 gap-4">
                 <div class="relative h-full w-full overflow-hidden rounded-lg shadow-lg transform translate-y-4">
-                    <img src="/studio1.jpg" alt="Studio Control Room" class="h-full w-full object-cover" 
-                         on:error={handleImageError} />
+                    <img src="/services/recording.jpg" alt="Studio Control Room" class="h-full w-full object-cover" />
                     <div class="absolute inset-0 border-2 border-[#00BFFF]/50 rounded-lg pointer-events-none"></div>
                 </div>
                 <div class="relative h-full w-full overflow-hidden rounded-lg shadow-lg">
-                    <img src="/studio2.jpg" alt="Recording Booth" class="h-full w-full object-cover" 
-                         on:error={handleImageError} />
+                    <img src="/services/musicequipment.jpg" alt="Recording Booth" class="h-full w-full object-cover" />
                     <div class="absolute inset-0 border-2 border-[#00BFFF]/50 rounded-lg pointer-events-none"></div>
                 </div>
                 <div class="relative h-full w-full overflow-hidden rounded-lg shadow-lg">
-                    <img src="/studio3.jpg" alt="Mixing Console" class="h-full w-full object-cover" 
-                         on:error={handleImageError} />
+                    <img src="/services/mixingmastering.jpg" alt="Mixing Console" class="h-full w-full object-cover" />
                     <div class="absolute inset-0 border-2 border-[#00BFFF]/50 rounded-lg pointer-events-none"></div>
                 </div>
                 <div class="relative h-full w-full overflow-hidden rounded-lg shadow-lg transform translate-y-4">
-                    <img src="/studio4.jpg" alt="Recording Session" class="h-full w-full object-cover" 
-                         on:error={handleImageError} />
+                    <img src="/services/livesound.jpg" alt="Recording Session" class="h-full w-full object-cover" />
                     <div class="absolute inset-0 border-2 border-[#00BFFF]/50 rounded-lg pointer-events-none"></div>
                 </div>
             </div>

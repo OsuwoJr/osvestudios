@@ -16,75 +16,54 @@
     
     let projects: Project[] = [
         {
-            id: "saka",
-            title: "SAKA",
-            artist: "OsuwoJr",
-            type: "Album Production",
-            description: "Full production and mastering for OsuwoJr's debut album. This project included live instrument recording, vocal production, mixing, and mastering across 10 tracks.",
-            image: "/saka.png",
-            date: "2023",
-            featured: true,
-            link: "https://open.spotify.com/album/1ENsjj2JWxfqLBGmVnc6G6"
-        },
-        {
-            id: "plan",
-            title: "Plan",
-            artist: "OsuwoJr",
-            type: "Single",
-            description: "Recording and production work for the hit single 'Plan'. Our team provided vocal recording, mixing, and production services to create this club anthem.",
-            image: "/plan.jpg",
-            date: "2022",
-            featured: true,
-            link: "https://open.spotify.com/track/33BiJ3hVO7Ggea5NDQBMtJ"
-        },
-        {
-            id: "troublers-arise",
-            title: "Troublers Arise",
+            id: "boom-bap",
+            title: "BOOM BAP",
             artist: "OSVE STUDIOS",
-            type: "Album Production",
-            description: "A full album production showcasing the versatility of our studio. This project demonstrates our capability to handle projects from concept to final master.",
-            image: "/OsuwoJr.png",
-            date: "2023",
+            type: "Beat",
+            description: "Classic boom bap beat with hard-hitting drums and soulful samples. Perfect for conscious rap and lyrical content.",
+            image: "/services/beatlicensing.jpg",
+            date: "2024",
             featured: true,
-            link: "https://open.spotify.com/album/3s7ra6pxhU6qF8fYw8sr5l"
+            link: "/beats/1.BOOM BAP.mp3"
         },
         {
-            id: "sound-design-game",
-            title: "Nairobi Dreams",
-            artist: "Wakanda Studios",
-            type: "Game Sound Design",
-            description: "Complete sound design package for an indie video game set in futuristic Nairobi. Our team created immersive audio environments, character sounds, and music.",
-            image: "/events/studio-tour.jpg",
-            date: "2023",
-            featured: false,
-            link: "#"
+            id: "drill",
+            title: "DRILL",
+            artist: "OSVE STUDIOS",
+            type: "Beat",
+            description: "High-energy drill beat with aggressive 808s and trap-style hi-hats. Ideal for drill and trap artists.",
+            image: "/services/beatlicensing.jpg",
+            date: "2024",
+            featured: true,
+            link: "/beats/2.DRILL.mp3"
         },
         {
-            id: "podcast-series",
-            title: "African Voices",
-            artist: "KBC Media",
-            type: "Podcast Production",
-            description: "Studio recording, editing, and production for a 12-episode podcast series highlighting African entrepreneurs and their journeys.",
-            image: "/events/production-class.jpg",
-            date: "2022",
-            featured: false,
-            link: "#"
+            id: "trap",
+            title: "TRAP",
+            artist: "OSVE STUDIOS",
+            type: "Beat",
+            description: "Modern trap beat featuring heavy bass, crisp snares, and atmospheric melodies. Perfect for contemporary trap music.",
+            image: "/services/beatlicensing.jpg",
+            date: "2024",
+            featured: true,
+            link: "/beats/3.TRAP.mp3"
         },
         {
-            id: "commercial-jingle",
-            title: "Fresh Start",
-            artist: "Safaricom",
-            type: "Commercial Audio",
-            description: "Created and produced a memorable jingle for a national advertising campaign, including music composition and sound design.",
-            image: "/events/digital-art.jpg",
-            date: "2022",
-            featured: false,
-            link: "#"
+            id: "dancehall",
+            title: "DANCEHALL",
+            artist: "OSVE STUDIOS",
+            type: "Beat",
+            description: "Vibrant dancehall beat with Caribbean rhythms and infectious grooves. Great for dancehall and reggae artists.",
+            image: "/services/beatlicensing.jpg",
+            date: "2024",
+            featured: true,
+            link: "/beats/4.DANCEHALL.mp3"
         }
     ];
     
     let activeFilter = "all";
     let searchQuery = "";
+    let currentlyPlaying: string | null = null;
     
     $: filteredProjects = projects.filter(project => {
         // Apply category filter
@@ -111,6 +90,34 @@
         const target = event.target as HTMLImageElement;
         // Default fallback image from the existing events folder
         target.src = "/events/album-launch.jpg";
+    }
+    
+    function togglePlay(projectId: string) {
+        const audio = document.getElementById(`audio-${projectId}`) as HTMLAudioElement;
+        
+        if (currentlyPlaying === projectId) {
+            // Pause current track
+            audio.pause();
+            currentlyPlaying = null;
+        } else {
+            // Stop any currently playing track
+            if (currentlyPlaying) {
+                const currentAudio = document.getElementById(`audio-${currentlyPlaying}`) as HTMLAudioElement;
+                if (currentAudio) {
+                    currentAudio.pause();
+                    currentAudio.currentTime = 0;
+                }
+            }
+            
+            // Play new track
+            audio.play();
+            currentlyPlaying = projectId;
+        }
+    }
+    
+    function updateProgress(projectId: string, event: Event) {
+        // This function can be used to update progress bars if needed
+        // For now, it's just a placeholder
     }
     
     onMount(() => {
@@ -225,60 +232,130 @@
             </div>
         </div>
         
-        <!-- Projects Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {#each filteredProjects as project (project.id)}
-                <article class="project-card group bg-black/30 backdrop-blur-md border border-[#00BFFF]/30 rounded-xl overflow-hidden hover:border-[#00BFFF]/70 transition-all duration-300 flex flex-col h-full">
-                    <!-- Project Image -->
-                    <div class="relative w-full h-64 overflow-hidden">
-                        <img 
-                            src={project.image} 
-                            alt={project.title} 
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                            on:error={(e) => handleImageError(e)}
-                        />
-                        <div class="absolute top-0 right-0 m-3">
-                            <span class="category-badge text-xs font-bold py-1 px-2 rounded text-black">
-                                {project.type}
-                            </span>
-                        </div>
-                        {#if project.featured}
-                            <div class="absolute top-0 left-0 m-3">
-                                <span class="bg-[#00BFFF] text-black text-xs font-bold py-1 px-2 rounded">
-                                    Featured
-                                </span>
-                            </div>
-                        {/if}
+        <!-- Projects Display -->
+        {#if activeFilter === "Beat" || activeFilter === "all"}
+            <!-- Beat List (Spotify-style) -->
+            <div class="w-full max-w-4xl mx-auto">
+                <div class="bg-black/20 backdrop-blur-sm border border-[#00BFFF]/20 rounded-xl overflow-hidden">
+                    <!-- Header -->
+                    <div class="bg-[#00BFFF]/10 px-6 py-4 border-b border-[#00BFFF]/20">
+                        <h3 class="text-xl font-bold text-white">Beats</h3>
+                        <p class="text-gray-300 text-sm">Stream our latest beats</p>
                     </div>
                     
-                    <!-- Project Info -->
-                    <div class="p-6 flex-grow flex flex-col">
-                        <h3 class="text-2xl font-bold mb-2 text-white">{project.title}</h3>
-                        <p class="text-[#00BFFF] mb-3">{project.artist} • {project.date}</p>
-                        <p class="text-gray-300 mb-4 flex-grow">{project.description}</p>
-                        
-                        <a 
-                            href={project.link} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            class="inline-flex items-center justify-center bg-[#00BFFF]/10 hover:bg-[#00BFFF]/20 text-[#00BFFF] py-2 px-4 rounded-lg transition-all duration-300 border border-[#00BFFF]/30 hover:border-[#00BFFF]/70 mt-auto"
-                        >
-                            <span>Listen/View Project</span>
-                            <svg class="w-4 h-4 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                            </svg>
-                        </a>
+                    <!-- Beat List -->
+                    <div class="divide-y divide-[#00BFFF]/10">
+                        {#each filteredProjects.filter(p => p.type === "Beat") as project, index (project.id)}
+                            <div class="flex items-center p-4 hover:bg-[#00BFFF]/5 transition-colors">
+                                <!-- Track Number -->
+                                <div class="w-8 h-8 flex items-center justify-center text-gray-400 font-mono text-sm mr-4">
+                                    {index + 1}
+                                </div>
+                                
+                                <!-- Album Art -->
+                                <div class="w-12 h-12 rounded-lg overflow-hidden mr-4 flex-shrink-0">
+                                    <img 
+                                        src={project.image} 
+                                        alt={project.title} 
+                                        class="w-full h-full object-cover"
+                                    />
+                                </div>
+                                
+                                <!-- Track Info -->
+                                <div class="flex-grow min-w-0 mr-4">
+                                    <h4 class="text-white font-semibold truncate">{project.title}</h4>
+                                    <p class="text-[#00BFFF] text-sm truncate">{project.artist}</p>
+                                </div>
+                                
+                                <!-- Duration (placeholder) -->
+                                <div class="text-gray-400 text-sm mr-4 w-16 text-right">
+                                    --:--
+                                </div>
+                                
+                                <!-- Play Button -->
+                                <button 
+                                    class="w-10 h-10 rounded-full bg-[#00BFFF] hover:bg-[#00BFFF]/80 text-black flex items-center justify-center transition-colors mr-4"
+                                    on:click={() => togglePlay(project.id)}
+                                >
+                                    {#if currentlyPlaying === project.id}
+                                        <i class="fas fa-pause"></i>
+                                    {:else}
+                                        <i class="fas fa-play"></i>
+                                    {/if}
+                                </button>
+                                
+                                <!-- Audio Player (Hidden) -->
+                                <audio 
+                                    id="audio-{project.id}"
+                                    src={project.link} 
+                                    preload="none"
+                                    on:ended={() => currentlyPlaying = null}
+                                    on:timeupdate={(e) => updateProgress(project.id, e)}
+                                ></audio>
+                            </div>
+                        {/each}
                     </div>
-                </article>
-            {/each}
+                </div>
+            </div>
+        {/if}
+        
+        <!-- Other Projects Grid -->
+        {#if filteredProjects.filter(p => p.type !== "Beat").length > 0}
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+                {#each filteredProjects.filter(p => p.type !== "Beat") as project (project.id)}
+                    <article class="project-card group bg-black/30 backdrop-blur-md border border-[#00BFFF]/30 rounded-xl overflow-hidden hover:border-[#00BFFF]/70 transition-all duration-300 flex flex-col h-full">
+                        <!-- Project Image -->
+                        <div class="relative w-full h-64 overflow-hidden">
+                            <img 
+                                src={project.image} 
+                                alt={project.title} 
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                on:error={(e) => handleImageError(e)}
+                            />
+                            <div class="absolute top-0 right-0 m-3">
+                                <span class="category-badge text-xs font-bold py-1 px-2 rounded text-black">
+                                    {project.type}
+                                </span>
+                            </div>
+                            {#if project.featured}
+                                <div class="absolute top-0 left-0 m-3">
+                                    <span class="bg-[#00BFFF] text-black text-xs font-bold py-1 px-2 rounded">
+                                        Featured
+                                    </span>
+                                </div>
+                            {/if}
+                        </div>
+                        
+                        <!-- Project Info -->
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="text-2xl font-bold mb-2 text-white">{project.title}</h3>
+                            <p class="text-[#00BFFF] mb-3">{project.artist} • {project.date}</p>
+                            <p class="text-gray-300 mb-4 flex-grow">{project.description}</p>
+                            
+                            <a 
+                                href={project.link} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                class="inline-flex items-center justify-center bg-[#00BFFF]/10 hover:bg-[#00BFFF]/20 text-[#00BFFF] py-2 px-4 rounded-lg transition-all duration-300 border border-[#00BFFF]/30 hover:border-[#00BFFF]/70 mt-auto"
+                            >
+                                <span>Listen/View Project</span>
+                                <svg class="w-4 h-4 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                {/each}
+            </div>
+        {/if}
             
             {#if filteredProjects.length === 0}
                 <div class="col-span-full text-center py-16">
                     <svg class="w-16 h-16 mx-auto text-gray-600 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M12 0a12 12 0 100 24 12 12 0 000-24z" />
                     </svg>
-                    <h3 class="text-xl font-medium text-gray-400">No projects found</h3>
-                    <p class="text-gray-500 mt-2">Try adjusting your search or filter criteria</p>
+                    <h3 class="text-xl font-medium text-gray-400">Project Not Added Yet</h3>
+                    <p class="text-gray-500 mt-2">We're working on adding amazing projects to showcase our work</p>
                     <button 
                         class="mt-4 px-4 py-2 bg-[#00BFFF]/10 text-[#00BFFF] rounded-lg hover:bg-[#00BFFF]/20 transition-colors"
                         on:click={() => { searchQuery = ""; activeFilter = "all"; }}
@@ -287,7 +364,6 @@
                     </button>
                 </div>
             {/if}
-        </div>
         
         <!-- CTA Section -->
         <div class="mt-20 bg-gradient-to-r from-black to-[#00BFFF]/30 backdrop-blur-lg border border-[#00BFFF]/20 rounded-2xl p-8 md:p-12 text-center">

@@ -1,16 +1,7 @@
 <script lang="ts">
     import "@fortawesome/fontawesome-free/css/all.min.css";
     
-    function handleImageError(event: Event) {
-        const target = event.target as HTMLImageElement;
-        if (target.alt === "James Osuwo") {
-            target.src = 'https://images.unsplash.com/photo-1567596388756-f6d710c8fc07?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80';
-        } else if (target.alt === "Sarah Mwende") {
-            target.src = 'https://images.unsplash.com/photo-1605722243979-fe0be8158232?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80';
-        } else if (target.alt === "David Kimani") {
-            target.src = 'https://images.unsplash.com/photo-1530538987395-032d1800fdd4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80';
-        }
-    }
+
 </script>
 
 <div class="max-w-6xl mx-auto px-4 py-16 md:py-24">
@@ -104,10 +95,9 @@
             <div class="bg-black/40 rounded-lg overflow-hidden backdrop-blur-sm border border-[#00BFFF]/20 hover:border-[#00BFFF]/50 transition-all group">
                 <div class="aspect-square overflow-hidden">
                     <img 
-                        src="/team1.jpg" 
+                        src="/services/recording.jpg" 
                         alt="James Osuwo" 
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        on:error={handleImageError}
                     />
                 </div>
                 <div class="p-6">
@@ -123,10 +113,9 @@
             <div class="bg-black/40 rounded-lg overflow-hidden backdrop-blur-sm border border-[#00BFFF]/20 hover:border-[#00BFFF]/50 transition-all group">
                 <div class="aspect-square overflow-hidden">
                     <img 
-                        src="/team2.jpg" 
+                        src="/services/mixingmastering.jpg" 
                         alt="Sarah Mwende" 
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        on:error={handleImageError}
                     />
                 </div>
                 <div class="p-6">
@@ -141,10 +130,9 @@
             <div class="bg-black/40 rounded-lg overflow-hidden backdrop-blur-sm border border-[#00BFFF]/20 hover:border-[#00BFFF]/50 transition-all group">
                 <div class="aspect-square overflow-hidden">
                     <img 
-                        src="/team3.jpg" 
+                        src="/services/songwriting.jpg" 
                         alt="David Kimani" 
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        on:error={handleImageError}
                     />
                 </div>
                 <div class="p-6">
