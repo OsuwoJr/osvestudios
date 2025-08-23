@@ -15,6 +15,7 @@
     }
     
     let projects: Project[] = [
+        // Beats
         {
             id: "boom-bap",
             title: "BOOM BAP",
@@ -58,6 +59,350 @@
             date: "2024",
             featured: true,
             link: "/beats/4.DANCEHALL.mp3"
+        },
+        
+        // Original Songs
+        {
+            id: "kisiwa-cha-upendo",
+            title: "Kisiwa Cha Upendo",
+            artist: "OSVE STUDIOS",
+            type: "Original Song",
+            description: "A beautiful Swahili love song with traditional African rhythms and modern production techniques.",
+            image: "/services/recording.jpg",
+            date: "2024",
+            featured: true,
+            link: "/music/Kisiwa Cha Upendo.wav"
+        },
+        {
+            id: "upendo-wa-kweli",
+            title: "Upendo Wa Kweli",
+            artist: "OSVE STUDIOS",
+            type: "Original Song",
+            description: "Authentic love ballad showcasing our vocal recording and mixing capabilities.",
+            image: "/services/recording.jpg",
+            date: "2024",
+            featured: false,
+            link: "/music/Upendo Wa Kweli.wav"
+        },
+        {
+            id: "mpenzi-wa-moyo",
+            title: "Mpenzi Wa Moyo",
+            artist: "OSVE STUDIOS",
+            type: "Original Song",
+            description: "Heartfelt composition demonstrating our songwriting and production skills.",
+            image: "/services/songwriting.jpg",
+            date: "2024",
+            featured: false,
+            link: "/music/Mpenzi Wa Moyo.wav"
+        },
+        {
+            id: "mama-raised-me-right",
+            title: "Mama Raised Me Right",
+            artist: "OSVE STUDIOS",
+            type: "Original Song",
+            description: "Tribute song highlighting our ability to capture emotional storytelling through music.",
+            image: "/services/recording.jpg",
+            date: "2024",
+            featured: false,
+            link: "/music/Mam Raised Me Right.wav"
+        },
+        {
+            id: "hustle-fi-di-street",
+            title: "Hustle Fi Di Street",
+            artist: "OSVE STUDIOS",
+            type: "Original Song",
+            description: "Street anthem showcasing our urban music production and mixing expertise.",
+            image: "/services/mixingmastering.jpg",
+            date: "2024",
+            featured: false,
+            link: "/music/Hustle Fi Di Street.wav"
+        },
+        
+        // Cover Songs
+        {
+            id: "youre-my-sunshine",
+            title: "You're My Sunshine",
+            artist: "OSVE STUDIOS",
+            type: "Cover Song",
+            description: "Classic cover demonstrating our ability to reinterpret and produce timeless songs.",
+            image: "/services/recording.jpg",
+            date: "2024",
+            featured: false,
+            link: "/music/You're My Sunshine.wav"
+        },
+        {
+            id: "upside-down-perfect-world",
+            title: "Upside Down In Perfect World",
+            artist: "OSVE STUDIOS",
+            type: "Cover Song",
+            description: "Modern cover showcasing our contemporary production and arrangement skills.",
+            image: "/services/mixingmastering.jpg",
+            date: "2024",
+            featured: false,
+            link: "/music/Upside Down In Perfect World.wav"
+        },
+        
+        // Demo Recordings
+        {
+            id: "toxic-feminism",
+            title: "Toxic Feminism",
+            artist: "OSVE STUDIOS",
+            type: "Demo Recording",
+            description: "Demo track demonstrating our raw recording and initial production capabilities.",
+            image: "/services/recording.jpg",
+            date: "2024",
+            featured: false,
+            link: "/music/Toxic Feminism.wav"
+        },
+        {
+            id: "silhouettes-moon",
+            title: "Silhouettes On The Moon",
+            artist: "OSVE STUDIOS",
+            type: "Demo Recording",
+            description: "Atmospheric demo showcasing our sound design and ambient music production.",
+            image: "/services/sounddesign.jpg",
+            date: "2024",
+            featured: false,
+            link: "/music/Silhouettes On The Moon.wav"
+        },
+        {
+            id: "shining-through",
+            title: "Shining Through",
+            artist: "OSVE STUDIOS",
+            type: "Demo Recording",
+            description: "Uplifting demo highlighting our positive message music production.",
+            image: "/services/recording.jpg",
+            date: "2024",
+            featured: false,
+            link: "/music/Shining Through.wav"
+        },
+        
+        // Studio Showcase
+        {
+            id: "rise-from-dust",
+            title: "Rise From The Dust",
+            artist: "OSVE STUDIOS",
+            type: "Studio Showcase",
+            description: "Studio showcase track demonstrating our full production pipeline from recording to mastering.",
+            image: "/services/mixingmastering.jpg",
+            date: "2024",
+            featured: true,
+            link: "/music/Rise From The Dust.wav"
+        },
+        {
+            id: "on-top-world",
+            title: "On Top Of The World",
+            artist: "OSVE STUDIOS",
+            type: "Studio Showcase",
+            description: "High-energy showcase track highlighting our dynamic range and production versatility.",
+            image: "/services/recording.jpg",
+            date: "2024",
+            featured: false,
+            link: "/music/On Top Of The World.wav"
+        },
+        {
+            id: "no-finance-bill",
+            title: "No Finance Bill, No Bill",
+            artist: "OSVE STUDIOS",
+            type: "Studio Showcase",
+            description: "Social commentary track showcasing our ability to handle meaningful and impactful content.",
+            image: "/services/recording.jpg",
+            date: "2024",
+            featured: false,
+            link: "/music/No Finance Bill,No Bill.wav"
+        },
+        
+        // Genre Exploration
+        {
+            id: "moonlight-freedom",
+            title: "Moonlight Freedom",
+            artist: "OSVE STUDIOS",
+            type: "Genre Exploration",
+            description: "Experimental track exploring different musical genres and production techniques.",
+            image: "/services/sounddesign.jpg",
+            date: "2024",
+            featured: false,
+            link: "/music/Monlight Freedom.wav"
+        },
+        {
+            id: "lost-in-rain",
+            title: "Lost In The Rain",
+            artist: "OSVE STUDIOS",
+            type: "Genre Exploration",
+            description: "Moody atmospheric track demonstrating our emotional music production capabilities.",
+            image: "/services/sounddesign.jpg",
+            date: "2024",
+            featured: false,
+            link: "/music/Lost In The Rain.wav"
+        },
+        {
+            id: "lifestyles-clash",
+            title: "Lifestyles Clash",
+            artist: "OSVE STUDIOS",
+            type: "Genre Exploration",
+            description: "Genre-blending track showcasing our ability to fuse different musical styles.",
+            image: "/services/mixingmastering.jpg",
+            date: "2024",
+            featured: false,
+            link: "/music/Lifestyles Clash.wav"
+        },
+        
+        // Live Performance
+        {
+            id: "life-party",
+            title: "Life Of The Party",
+            artist: "OSVE STUDIOS",
+            type: "Live Performance",
+            description: "Live performance recording demonstrating our live sound engineering capabilities.",
+            image: "/services/livesound.jpg",
+            date: "2024",
+            featured: false,
+            link: "/music/Life Of The Party.wav"
+        },
+        {
+            id: "heartbreak-groove",
+            title: "Heartbreak Groove",
+            artist: "OSVE STUDIOS",
+            type: "Live Performance",
+            description: "Live recording showcasing our ability to capture authentic live performances.",
+            image: "/services/livesound.jpg",
+            date: "2024",
+            featured: false,
+            link: "/music/Heartbreak Groove.wav"
+        },
+        
+        // Special Projects
+        {
+            id: "growing-together",
+            title: "Growing Up Together",
+            artist: "OSVE STUDIOS",
+            type: "Special Project",
+            description: "Collaborative project demonstrating our ability to work with multiple artists and styles.",
+            image: "/services/artistdevelopment.jpg",
+            date: "2024",
+            featured: false,
+            link: "/music/Growing Up Together.wav"
+        },
+        {
+            id: "ghosts-yesterday",
+            title: "Ghosts Of Yesterday",
+            artist: "OSVE STUDIOS",
+            type: "Special Project",
+            description: "Conceptual project showcasing our storytelling and thematic music production.",
+            image: "/services/songwriting.jpg",
+            date: "2024",
+            featured: false,
+            link: "/music/Ghosts Of Yesterday.wav"
+        },
+        {
+            id: "ghosts-love",
+            title: "Ghosts Of Love",
+            artist: "OSVE STUDIOS",
+            type: "Special Project",
+            description: "Emotional project highlighting our ability to convey deep feelings through music.",
+            image: "/services/songwriting.jpg",
+            date: "2024",
+            featured: false,
+            link: "/music/Ghosts Of Love.wav"
+        },
+        {
+            id: "first-moment",
+            title: "First Moment",
+            artist: "OSVE STUDIOS",
+            type: "Special Project",
+            description: "Intimate recording showcasing our ability to capture delicate and personal moments.",
+            image: "/services/recording.jpg",
+            date: "2024",
+            featured: false,
+            link: "/music/First Moment.wav"
+        },
+        {
+            id: "first-love-secret",
+            title: "First Love Secret",
+            artist: "OSVE STUDIOS",
+            type: "Special Project",
+            description: "Romantic project demonstrating our ability to create intimate and personal music.",
+            image: "/services/songwriting.jpg",
+            date: "2024",
+            featured: false,
+            link: "/music/First Love Secret.wav"
+        },
+        {
+            id: "fantasy-groove",
+            title: "Fantasy Groove",
+            artist: "OSVE STUDIOS",
+            type: "Special Project",
+            description: "Imaginative project showcasing our creative and experimental production techniques.",
+            image: "/services/sounddesign.jpg",
+            date: "2024",
+            featured: false,
+            link: "/music/Fantasy Groove.wav"
+        },
+        {
+            id: "cold-steel-streets",
+            title: "Cold Steel Streets",
+            artist: "OSVE STUDIOS",
+            type: "Special Project",
+            description: "Urban project highlighting our ability to capture street culture and urban life.",
+            image: "/services/recording.jpg",
+            date: "2024",
+            featured: false,
+            link: "/music/Cold Steel Streets.wav"
+        },
+        {
+            id: "city-nights",
+            title: "City Nights",
+            artist: "OSVE STUDIOS",
+            type: "Special Project",
+            description: "Atmospheric project showcasing our ability to create mood and atmosphere through music.",
+            image: "/services/sounddesign.jpg",
+            date: "2024",
+            featured: false,
+            link: "/music/City Nights.wav"
+        },
+        {
+            id: "city-lights",
+            title: "City Lights",
+            artist: "OSVE STUDIOS",
+            type: "Special Project",
+            description: "Urban nightlife project demonstrating our ability to capture city energy and vibes.",
+            image: "/services/sounddesign.jpg",
+            date: "2024",
+            featured: false,
+            link: "/music/City Lights.wav"
+        },
+        {
+            id: "circle-life",
+            title: "Circle Of Life",
+            artist: "OSVE STUDIOS",
+            type: "Special Project",
+            description: "Philosophical project showcasing our ability to create meaningful and thought-provoking music.",
+            image: "/services/songwriting.jpg",
+            date: "2024",
+            featured: false,
+            link: "/music/Circle Of Life.wav"
+        },
+        {
+            id: "blue-sky-dreams",
+            title: "Blue Sky Dreams",
+            artist: "OSVE STUDIOS",
+            type: "Special Project",
+            description: "Dreamy project highlighting our ability to create ethereal and atmospheric music.",
+            image: "/services/sounddesign.jpg",
+            date: "2024",
+            featured: false,
+            link: "/music/Blue Sky Dreams.wav"
+        },
+        {
+            id: "beyond-years",
+            title: "Beyond The Years",
+            artist: "OSVE STUDIOS",
+            type: "Special Project",
+            description: "Timeless project showcasing our ability to create music that transcends generations.",
+            image: "/services/songwriting.jpg",
+            date: "2024",
+            featured: false,
+            link: "/music/Beyond The Years.wav"
         }
     ];
     
@@ -136,18 +481,15 @@
     });
 </script>
 
+<!-- svelte-ignore css_unused_selector -->
+<!-- svelte-ignore css_unused_selector -->
 <svelte:head>
     <title>Projects | OSVE STUDIOS</title>
     <meta name="description" content="View our portfolio of recording studio projects, including albums, singles, and sound design work.">
 </svelte:head>
 
 <style>
-    .project-card {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-    
+  
     .filter-item {
         transition: color 0.3s, border-color 0.3s;
     }
@@ -157,11 +499,7 @@
         border-color: #00BFFF;
     }
     
-    .category-badge {
-        background: linear-gradient(to right, rgba(0, 191, 255, 0.8), rgba(0, 191, 255, 0.4));
-        box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
-    }
-    
+   
     /* Focus styles for accessibility */
     button:focus, input:focus, a:focus {
         outline: 2px solid #00BFFF;
@@ -179,9 +517,7 @@
             margin-bottom: 0.5rem;
         }
         
-        .project-card {
-            height: auto;
-        }
+       
     }
 </style>
 
@@ -299,55 +635,73 @@
             </div>
         {/if}
         
-        <!-- Other Projects Grid -->
-        {#if filteredProjects.filter(p => p.type !== "Beat").length > 0}
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-                {#each filteredProjects.filter(p => p.type !== "Beat") as project (project.id)}
-                    <article class="project-card group bg-black/30 backdrop-blur-md border border-[#00BFFF]/30 rounded-xl overflow-hidden hover:border-[#00BFFF]/70 transition-all duration-300 flex flex-col h-full">
-                        <!-- Project Image -->
-                        <div class="relative w-full h-64 overflow-hidden">
-                            <img 
-                                src={project.image} 
-                                alt={project.title} 
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                on:error={(e) => handleImageError(e)}
-                            />
-                            <div class="absolute top-0 right-0 m-3">
-                                <span class="category-badge text-xs font-bold py-1 px-2 rounded text-black">
-                                    {project.type}
-                                </span>
-                            </div>
-                            {#if project.featured}
-                                <div class="absolute top-0 left-0 m-3">
-                                    <span class="bg-[#00BFFF] text-black text-xs font-bold py-1 px-2 rounded">
-                                        Featured
-                                    </span>
+        {#if (activeFilter === "Original Song" || activeFilter === "Cover Song" || activeFilter === "Demo Recording" || activeFilter === "Studio Showcase" || activeFilter === "Genre Exploration" || activeFilter === "Live Performance" || activeFilter === "Special Project") || activeFilter === "all"}
+            <!-- Songs List (Spotify-style) -->
+            <div class="w-full max-w-4xl mx-auto mt-8">
+                <div class="bg-black/20 backdrop-blur-sm border border-[#00BFFF]/20 rounded-xl overflow-hidden">
+                    <!-- Header -->
+                    <div class="bg-[#00BFFF]/10 px-6 py-4 border-b border-[#00BFFF]/20">
+                        <h3 class="text-xl font-bold text-white">Songs</h3>
+                        <p class="text-gray-300 text-sm">Stream our complete song collection</p>
+                    </div>
+                    
+                    <!-- Songs List -->
+                    <div class="divide-y divide-[#00BFFF]/10">
+                        {#each filteredProjects.filter(p => p.type !== "Beat") as project, index (project.id)}
+                            <div class="flex items-center p-4 hover:bg-[#00BFFF]/5 transition-colors">
+                                <!-- Track Number -->
+                                <div class="w-8 h-8 flex items-center justify-center text-gray-400 font-mono text-sm mr-4">
+                                    {index + 1}
                                 </div>
-                            {/if}
-                        </div>
-                        
-                        <!-- Project Info -->
-                        <div class="p-6 flex-grow flex flex-col">
-                            <h3 class="text-2xl font-bold mb-2 text-white">{project.title}</h3>
-                            <p class="text-[#00BFFF] mb-3">{project.artist} • {project.date}</p>
-                            <p class="text-gray-300 mb-4 flex-grow">{project.description}</p>
-                            
-                            <a 
-                                href={project.link} 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                class="inline-flex items-center justify-center bg-[#00BFFF]/10 hover:bg-[#00BFFF]/20 text-[#00BFFF] py-2 px-4 rounded-lg transition-all duration-300 border border-[#00BFFF]/30 hover:border-[#00BFFF]/70 mt-auto"
-                            >
-                                <span>Listen/View Project</span>
-                                <svg class="w-4 h-4 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                </svg>
-                            </a>
-                        </div>
-                    </article>
-                {/each}
+                                
+                                <!-- Album Art -->
+                                <div class="w-12 h-12 rounded-lg overflow-hidden mr-4 flex-shrink-0">
+                                    <img 
+                                        src={project.image} 
+                                        alt={project.title} 
+                                        class="w-full h-full object-cover"
+                                    />
+                                </div>
+                                
+                                <!-- Track Info -->
+                                <div class="flex-grow min-w-0 mr-4">
+                                    <h4 class="text-white font-semibold truncate">{project.title}</h4>
+                                    <p class="text-[#00BFFF] text-sm truncate">{project.artist} • {project.type}</p>
+                                </div>
+                                
+                                <!-- Duration (placeholder) -->
+                                <div class="text-gray-400 text-sm mr-4 w-16 text-right">
+                                    --:--
+                                </div>
+                                
+                                <!-- Play Button -->
+                                <button 
+                                    class="w-10 h-10 rounded-full bg-[#00BFFF] hover:bg-[#00BFFF]/80 text-black flex items-center justify-center transition-colors mr-4"
+                                    on:click={() => togglePlay(project.id)}
+                                >
+                                    {#if currentlyPlaying === project.id}
+                                        <i class="fas fa-pause"></i>
+                                    {:else}
+                                        <i class="fas fa-play"></i>
+                                    {/if}
+                                </button>
+                                
+                                <!-- Audio Player (Hidden) -->
+                                <audio 
+                                    id="audio-{project.id}"
+                                    src={project.link} 
+                                    preload="none"
+                                    on:ended={() => currentlyPlaying = null}
+                                    on:timeupdate={(e) => updateProgress(project.id, e)}
+                                ></audio>
+                            </div>
+                        {/each}
+                    </div>
+                </div>
             </div>
         {/if}
+        
+
             
             {#if filteredProjects.length === 0}
                 <div class="col-span-full text-center py-16">
