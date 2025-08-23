@@ -4,13 +4,13 @@
     function handleImageError(event: Event) {
         const target = event.target as HTMLImageElement;
         if (target.alt === "Studio Control Room") {
-            target.src = 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80';
+            target.src = '/services/recording.jpg';
         } else if (target.alt === "Recording Booth") {
-            target.src = 'https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80';
+            target.src = '/services/musicequipment.jpg';
         } else if (target.alt === "Mixing Console") {
-            target.src = 'https://images.unsplash.com/photo-1519552928909-67ca7aef9265?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2232&q=80';
+            target.src = '/services/mixingmastering.jpg';
         } else if (target.alt === "Recording Session") {
-            target.src = 'https://images.unsplash.com/photo-1619983081563-430f63602796?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';
+            target.src = '/services/livesound.jpg';
         }
     }
 </script>
